@@ -1,0 +1,13 @@
+.title {
+    color: var(--ColorTitulo);
+    font-size: var(--SizeTitulo);
+    text-align: center;
+}
+.title::after {
+    content: "/>";
+    color: var(--ColorPrincipal);
+}
+.title::before {
+    content: "<";
+    color: var(--ColorPrincipal);
+}
