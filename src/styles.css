@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root{
   /*COLOR PRINCIPAL rgb(23, 101, 190) */
   --ColorPrincipal: rgb(255, 255, 255);
@@ -18,13 +18,13 @@
 
   --Padding:10px;
   --Margin:10px;
-  --SpaseLetter:1.5px;
+  --SpaseLetter:0.5px;
   /*--Border: 1.5px;*/
   --Border:1.5px;
-  --BorderRadius: 6px;
+  --BorderRadius: 3px;
 
-  --SizeTitulo:1.6rem;
-  --SizeDescripcion:0.9rem;
+  --SizeTitulo:1.13rem;
+  --SizeDescripcion:0.75rem;
 
   --FontSize:16px;
 
@@ -36,11 +36,13 @@
   margin: 0;
   border: 0;
   box-sizing: border-box;
+  outline: none;
 }
 html {
   font-size:var(--FontSize);
   scroll-behavior: smooth;
 }
 body{
-  font-family: "Poppins" ,sans-serif;
+  font-family: "Roboto" ,sans-serif;
+  background-color: var(--ColorFondo);
 }
