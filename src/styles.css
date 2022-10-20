@@ -1,12 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root{
-  --ColorPrincipal:rgb(23, 101, 190);
-  --ColorSecundario:rgb(255,255,255);
+  /*COLOR PRINCIPAL rgb(23, 101, 190) */
+  --ColorPrincipal: rgb(255, 255, 255);
+  --ColorSecundario:rgb(75, 175, 79);
+  --ColorFondo:rgb(242, 242, 242);
+  
   --ColorExtra:rgb(29, 29, 29);
 
-  --ColorTitulo:#6D6D6D;
-  --ColorDescripcion:#555555;
+  
+
+  --ColorTitulo:rgb(33, 33, 33);
+  --ColorDescripcion:rgb(206, 206, 206);
+
   --ColorTextoPrincipal:#666666;
   --ColorTextoSecundario:#5A5A5A;
 
