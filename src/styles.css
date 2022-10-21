@@ -1,17 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root{
-  /*COLOR PRINCIPAL rgb(23, 101, 190) */
+  /*COLOR PRINCIPAL rgb(75, 175, 79)*/
   --ColorPrincipal: rgb(255, 255, 255);
-  --ColorSecundario:rgb(75, 175, 79);
+  
+  --ColorSecundario:rgb(23, 101, 190) ;
   --ColorFondo:rgb(242, 242, 242);
   
   --ColorExtra:rgb(29, 29, 29);
 
+  /*COLOR WHITE PARA FILTER EN UNA IMAGEN SVG*/
+  --ColorImgSvg:invert(100%) sepia(0%) saturate(7491%) hue-rotate(217deg) brightness(106%) contrast(101%);
+
   
 
   --ColorTitulo:rgb(33, 33, 33);
-  --ColorDescripcion:rgb(206, 206, 206);
+  --ColorDescripcion: #827582;
+  /*rgb(206,206.206);*/
 
   --ColorTextoPrincipal:#666666;
   --ColorTextoSecundario:#5A5A5A;

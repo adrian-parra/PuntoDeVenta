@@ -1,0 +1,90 @@
+.app-dashboard {
+    width: 100%;
+    height: 100%;
+   
+}
+
+.app-dashboard nav {
+    height: 48px;
+    width: 100%;
+    background-color: var(--ColorSecundario);
+    box-shadow: 0 1px 5px rgb(0 0 0 / 40%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.app-dashboard nav .contenedor-btn-menu {
+    width: 72px;
+    height: 48px;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.app-dashboard nav .btn-menu {
+    width: 48px;
+    height: 48px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all .2s;
+    border-radius: 50%;
+}
+.app-dashboard nav .btn-menu:active {
+    background-color: rgb(206,206,206);
+    transform: scale(1.1);
+}
+.app-dashboard nav .btn-menu .img-menu {
+    width: 24px;
+    height: 24px;
+    filter: var(--ColorImgSvg);
+}
+
+.app-dashboard nav h1 {
+    font-size:calc(var(--SizeTitulo) + 2px);
+    color: var(--ColorPrincipal);
+    font-weight: 400;
+}
+
+/*ESTILOS PARA ASIDE FLOTANE TOP|LEFT */
+.app-dashboard aside {
+    width: 72px;
+    height: 100%;
+    background-color: var(--ColorPrincipal);
+    position: fixed;
+    top: 48px;
+    left: 0;
+}
+.app-dashboard aside .item-profile {
+    height: 64px;
+    width: 72px;
+    border-bottom: var(--Border) solid var(--ColorFondo);
+}
+.app-dashboard aside .menu-item {
+    width: 72px;
+    height: 56px;
+    border: 0;
+    border-left:calc(var(--Border) * 2) solid transparent;
+    transition: all .3s;
+}
+.app-dashboard aside .menu-item:hover {
+    background-color: var(--ColorFondo);
+    border-left-color: red;
+    cursor: pointer;
+}
+
+.app-dashboard aside .menu-item div ,
+.app-dashboard aside .item-profile div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.app-dashboard aside .menu-item div img {
+    width: 24px;
+    height: 24px;
+}
+.app-dashboard aside .item-profile div img {
+    width: 36px;
+    height: 36px;
+}
