@@ -65,10 +65,10 @@
     border: 0;
     border-left:calc(var(--Border) * 2) solid transparent;
     transition: all .3s;
+    position: relative;
 }
 .app-dashboard aside .menu-item:hover {
     background-color: var(--ColorFondo);
-    border-left-color: red;
     cursor: pointer;
 }
 
@@ -88,5 +88,55 @@
 .app-dashboard aside .item-profile div img {
     width: 36px;
     height: 36px;
+}
+
+/*ESTILOS PARA CARDVIEW CON ENLASES A OTRO COMPONENTE (ROUTER LINK)*/
+.app-dashboard aside .menu-item .contenedor-enlases {
+    width: 224px;
+    height: auto;
+    background-color: red;
+    position: absolute;
+    top: 0;
+    left: 69px;
+    background-color: var(--ColorPrincipal);
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--BorderRadius);
+    padding:5px 0;
+    box-shadow: 0 2px 5px rgb(0 0 0 / 15%);
+   
+}
+.app-dashboard aside .menu-item .contenedor-enlases a {
+    text-decoration: none;
+    color: #000000de;
+    font-size:calc(var(--SizeDescripcion) + 2px);
+    padding: 0 16px;
+    width: 100%;
+    height: 36px;
+    display: flex;
+    align-items: center;
+   
+}
+.app-dashboard aside .menu-item .contenedor-enlases a:hover {
+    background-color: var(--ColorFondo);
+}
+
+/*CLASS ENCARGADA DE DETECTAR ROUTERLINKACTIVE */
+.app-dashboard aside .menu-item.dashboard-menu-active {
+    background-color: var(--ColorFondo);
+}
+
+/*MENU ITEM REPORT COLOR BORDER */
+.app-dashboard aside .menu-item.border-color-informes {
+    border-left-color: #4CAF50;
+}
+/*COLOR PARA ENLASES EN MENI-ITEM INFORME */
+.app-dashboard aside .menu-item .contenedor-enlases a.color-informes {
+    color: var(--ColorSecundario);
+}
+
+/*MENU ITEM REPORT COLOR BORDER */
+.app-dashboard aside .menu-item.border-color-articulos {
+    border-left-color: #4CAF50;
 }
 /*FIN ESTILOS PARA ASIDE FLOTANE TOP|LEFT */
