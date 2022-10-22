@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { DashboardGoodsCategoriesComponent } from './dashboard-goods-categories/dashboard-goods-categories.component';
+import { DashboardGoodsPriceComponent } from './dashboard-goods-price/dashboard-goods-price.component';
 import { DashboardReportSalesComponent } from './dashboard-report-sales/dashboard-report-sales.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
@@ -10,7 +12,9 @@ const routes: Routes = [
   {path:'signup' ,component:RegistroComponent},
   {path:'dashboard' ,component:DashboardComponent ,
     children:[
-      {path:'report/sales' ,component:DashboardReportSalesComponent} 
+      {path:'report/sales' ,component:DashboardReportSalesComponent},
+      {path:'goods/price' ,component:DashboardGoodsPriceComponent},
+      {path:'goods/categories' ,component:DashboardGoodsCategoriesComponent}
     ]
   }
 
