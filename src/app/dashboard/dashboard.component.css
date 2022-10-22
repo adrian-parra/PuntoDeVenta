@@ -1,9 +1,9 @@
 .app-dashboard {
     width: 100%;
     height: 100%;
-   
 }
 
+/*ESTILOS PARA NAV BAR */
 .app-dashboard nav {
     height: 48px;
     width: 100%;
@@ -43,6 +43,7 @@
     color: var(--ColorPrincipal);
     font-weight: 400;
 }
+/*FIN ESTILOS PARA NAV BAR */
 
 /*ESTILOS PARA ASIDE FLOTANE TOP|LEFT */
 .app-dashboard aside {
@@ -88,3 +89,4 @@
     width: 36px;
     height: 36px;
 }
+/*FIN ESTILOS PARA ASIDE FLOTANE TOP|LEFT */
