@@ -8,6 +8,7 @@ import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
 
 const routes: Routes = [
+  {path:'' ,redirectTo:'/dashboard' ,pathMatch:'full'},
   { path:'login' ,component:InicioSesionComponent},
   {path:'signup' ,component:RegistroComponent},
   {path:'dashboard' ,component:DashboardComponent ,
