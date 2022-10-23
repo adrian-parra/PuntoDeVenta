@@ -16,6 +16,7 @@ import { DashboardInventoryHistoryComponent } from './dashboard-inventory-histor
 import { DashboardEmployeesListComponent } from './dashboard-employees-list/dashboard-employees-list.component';
 import { DashboardClientsDatabaseComponent } from './dashboard-clients-database/dashboard-clients-database.component';
 
+import {ReactiveFormsModule ,FormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -36,7 +37,9 @@ import { DashboardClientsDatabaseComponent } from './dashboard-clients-database/
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

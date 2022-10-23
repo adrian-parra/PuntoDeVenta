@@ -1,23 +1,23 @@
 <section class="app-registro">
     <div class="contenedor-registro">
-        <form class="form-registro">
+        <form class="form-registro" [formGroup]="usuarioForm" (ngSubmit)="addUsuario(usuarioForm.value)">
             <p class="logo">LOAL</p>
             <h1>Crea tu cuenta gratis de LOAL</h1>
             <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese correo electronico">
+                <input type="text" placeholder="Ingrese correo electronico" formControlName="correo">
                 <label for="">Correo</label>
             </div>
             <div class="contenedor-input">
                 
-                <input type="text" placeholder="Ingrese contraseña">
+                <input type="text" placeholder="Ingrese contraseña" formControlName="clave">
                 <label for="">Contraseña</label>
             </div>
             <div class="contenedor-input">
                 
-                <input type="text" placeholder="Ingrese nombre de la empresa">
+                <input type="text" placeholder="Ingrese nombre de la empresa" formControlName="nombre_empresa">
                 <label for="">Empresa</label>
             </div>
-            <button>REGISTRARSE</button>
+            <button type="submit">REGISTRARSE</button>
             <div class="contenedor-enlase">
                 <label for="">¿Ya tienes una cuenta? </label>
                 <a routerLink="/login">INICIAR SESIÓN</a>
