@@ -16,4 +16,7 @@ import { Usuario } from "../modelos/usuario";
     addUsuario(obj: any):Observable<any> {
         return this.http.post(this.baseUrl+'usuario/?insertar=1', obj)
       }
+      vericarSecionUsuario(obj: any):Observable<Usuario> {
+        return this.http.post<Usuario>(this.baseUrl+'usuario/?verificar_sesion',obj)
+      }
   }

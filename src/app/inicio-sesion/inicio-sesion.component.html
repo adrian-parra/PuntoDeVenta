@@ -1,22 +1,27 @@
 <section class="app-inicio-sesion">
     <div class="contenedor-inicio-sesion">
-        <form class="form-inicio-sesion">
+        <form class="form-inicio-sesion" [formGroup]="usuarioFormLogin" (ngSubmit)="vericarSesion()">
             <p class="logo">LOAL</p>
             <h1>Inicie sesión en su cuenta de LOAL</h1>
             <div class="conetenedor-input">
-                <input type="text" placeholder="Ingrese correo electronico">
+                <input type="email" placeholder="Ingrese correo electronico" formControlName="correo" >
                 <label for="">Correo</label>
-            </div>
-            <div class="conetenedor-input">
+                <p class="smsError" *ngIf="usuarioFormLogin.get('correo')?.touched && usuarioFormLogin.get('correo')?.errors?.['required']">El campo no puede estar en blanco</p>
+                <p class="smsError" *ngIf="usuarioFormLogin.get('correo')?.touched && usuarioFormLogin.get('correo')?.errors?.['email']">Introduzca un correo valido</p>
                 
-                <input type="text" placeholder="Ingrese contraseña">
+               </div>
+            <div class="conetenedor-input">
+                <input type="password" placeholder="Ingrese contraseña" formControlName="clave">
                 <label for="">Contraseña</label>
+                <p class="smsError" *ngIf="usuarioFormLogin.get('clave')?.touched && usuarioFormLogin.get('clave')?.errors?.['required']">El campo no puede estar en blanco</p>
+                <p class="smsError" *ngIf="usuarioFormLogin.get('clave')?.touched && usuarioFormLogin.get('clave')?.errors?.['minlength']">El campo debe contener al menos {{usuarioFormLogin.get('clave')?.errors?.['minlength'].requiredLength}} caracteres</p>
+            
             </div>
             <div class="contenedor-botones">
                 <label>
                     <input type="checkbox"> Recuerdame
                 </label>
-                <button (click)="irDashboard()">INICIAR SESÍON</button>
+                <button type="submit" [disabled]="usuarioFormLogin.invalid">INICIAR SESÍON</button>
             </div>
             <div class="contenedor-enlases">
                 <a  >¿Has olvidado la contraseña?</a>

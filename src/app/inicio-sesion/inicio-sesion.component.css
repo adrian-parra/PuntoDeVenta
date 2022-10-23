@@ -118,6 +118,17 @@ input:focus + label {
     color: var(--ColorSecundario);
 }
 
+.app-inicio-sesion
+.contenedor-inicio-sesion 
+.form-inicio-sesion
+.conetenedor-input
+.smsError {
+    position: absolute;
+    color: var(--ColorDanger);
+    font-size: var(--SizeDescripcion);
+    bottom: -15px;
+}
+
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
 .form-inicio-sesion
@@ -164,6 +175,21 @@ button {
     border-radius: var(--BorderRadius);
     color: var(--ColorPrincipal);
     opacity: .9;
+    transition: all .3s;
+}
+.app-inicio-sesion
+.contenedor-inicio-sesion
+.form-inicio-sesion
+button:hover {
+    opacity: .8;
+}
+.app-inicio-sesion 
+.contenedor-inicio-sesion 
+.form-inicio-sesion
+.contenedor-botones 
+button:disabled {
+    opacity: .2;
+    pointer-events: none;
 }
 
 .app-inicio-sesion 
