@@ -18,6 +18,10 @@ import { DashboardClientsDatabaseComponent } from './dashboard-clients-database/
 
 import {ReactiveFormsModule ,FormsModule} from '@angular/forms'
 
+//peticiones http
+//agregar HttpClientModule a  imports
+import {HttpClientModule} from '@angular/common/http'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,7 +43,8 @@ import {ReactiveFormsModule ,FormsModule} from '@angular/forms'
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule ,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

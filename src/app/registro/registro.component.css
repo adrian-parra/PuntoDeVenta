@@ -120,6 +120,17 @@ input:focus + label {
 .app-registro 
 .contenedor-registro 
 .form-registro
+.contenedor-input
+.smsError {
+    position: absolute;
+    color: var(--ColorDanger);
+    font-size: var(--SizeDescripcion);
+    bottom: -15px;
+}
+
+.app-registro 
+.contenedor-registro 
+.form-registro
 button {
     padding: var(--Padding) 0;
     font-size: calc(var(--SizeDescripcion) + 2px);
@@ -130,6 +141,20 @@ button {
     font-weight: 600;
     opacity: .9;
     margin-bottom: 24px;
+    transition: all .3s;
+}
+.app-registro 
+.contenedor-registro 
+.form-registro
+button:hover {
+    opacity: .8;
+}
+.app-registro 
+.contenedor-registro 
+.form-registro
+button:disabled {
+    opacity: .2;
+    pointer-events: none;
 }
 
 .app-registro 
