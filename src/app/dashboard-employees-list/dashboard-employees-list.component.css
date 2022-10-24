@@ -1,0 +1,71 @@
+.contenedor-lista-empleados {
+    width:calc(100% - 0px);
+    height:calc(100% - 48px);
+    padding: 24px 24px 15px 96px;
+}
+
+.contenedor-lista-empleados .cardview-lista-empleados {
+    width: 100%;
+    height: 100%;
+    max-width: 810px;
+    background-color: var(--ColorPrincipal);
+    box-shadow: 0 2px 5px rgb(0 0 0 / 15%);
+    border-radius: var(--BorderRadius);
+}
+.contenedor-lista-empleados 
+.cardview-lista-empleados
+.cardview-header {
+    height: 66px;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-lista-empleados 
+.cardview-lista-empleados
+.cardview-header
+button {
+    width: 173px;
+    min-width: 173px;
+    font-size:calc(var(--SizeDescripcion) + 2px);
+    height: 36px;
+    border-radius: var(--BorderRadius);
+    color: var(--ColorPrincipal);
+    background-color: var(--ColorSecundario);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+/*ESTILO DE CUERPO DE CARDVIEW DONDE ESTARA LA TABLA CON LOS DATOS*/
+.contenedor-lista-empleados 
+.cardview-lista-empleados
+.cardview-body {
+    position: relative;
+    width: 100%;
+    padding: 0 24px;
+    overflow-x: auto;
+    border-bottom: var(--Border) solid var(--ColorFondo);
+    
+}
+.contenedor-lista-empleados 
+.cardview-lista-empleados
+.cardview-body
+.header-table {
+    width: 100%;
+    min-width: 710px;
+    height: 55px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+}
+.contenedor-lista-empleados 
+.cardview-lista-empleados
+.cardview-body
+.header-table
+div {
+    display: flex;
+    align-items: center;
+    font-size:calc(var(--SizeDescripcion) + 2px);
+    font-weight: 500;
+    color: var(--ColorDescripcion);
+}
