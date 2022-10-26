@@ -20,7 +20,8 @@ import {ReactiveFormsModule ,FormsModule} from '@angular/forms'
 
 //peticiones http
 //agregar HttpClientModule a  imports
-import {HttpClientModule} from '@angular/common/http'
+import {HttpClientModule} from '@angular/common/http';
+import { DashboardEmployeesCreateemployeeComponent } from './dashboard-employees-createemployee/dashboard-employees-createemployee.component'
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import {HttpClientModule} from '@angular/common/http'
     DashboardInventoryHistoryComponent,
     DashboardEmployeesListComponent,
     DashboardClientsDatabaseComponent,
+    DashboardEmployeesCreateemployeeComponent,
  
   ],
   imports: [
