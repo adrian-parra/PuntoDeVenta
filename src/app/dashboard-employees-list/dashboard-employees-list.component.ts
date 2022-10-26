@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Empleado } from '../modelos/empleado';
+import { ApiService } from '../servicios/api.service';
 
 @Component({
   selector: 'app-dashboard-employees-list',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardEmployeesListComponent implements OnInit {
 
-  constructor() { }
+  empleados:Empleado[] = []
+
+  constructor(public apiService:ApiService) { }
 
   ngOnInit(): void {
+    this.getEmpleados()
+  }
+
+  getEmpleados(){
+    this.apiService.getUsuarios().subscribe((empleados:any) => {
+        this.empleados = empleados
+    })
   }
 
 }

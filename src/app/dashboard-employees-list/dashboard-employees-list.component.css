@@ -120,6 +120,7 @@ div {
     font-size:calc(var(--SizeDescripcion) + 2px);
     font-weight: 400;
     color: var(--ColorDescripcion);
-    
+    max-width: 150px;
+    overflow: hidden;
 
 }

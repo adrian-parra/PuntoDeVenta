@@ -1,4 +1,4 @@
-export interface Usuario {
+export interface Empleado {
     id:number ,
     telefono:string ,
     correo:string ,

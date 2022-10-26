@@ -11,19 +11,12 @@
                 <div>Rol</div>
             </div>
             <div class="body-table">
-                <div class="contenedor-element-table">
-                    <div>Juan</div>
-                    <div>juan@gmail.com</div>
-                    <div>__</div>
-                    <div>Propietario</div>
+                <div class="contenedor-element-table" *ngFor="let empleado of empleados">
+                    <div>{{ empleado.nombre }}</div>
+                    <div>{{ empleado.correo }}</div>
+                    <div>{{ empleado.telefono }}</div>
+                    <div>{{ empleado.rol }}</div>
                 </div>
-                <div class="contenedor-element-table">
-                    <div>Pedro</div>
-                    <div>Pedro@gmail.com</div>
-                    <div>6688561055</div>
-                    <div>Cajero</div>
-                </div>
-                
             </div>
         </div>
         <div class="cardview-footer">
