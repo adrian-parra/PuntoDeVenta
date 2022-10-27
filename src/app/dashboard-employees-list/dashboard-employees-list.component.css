@@ -19,7 +19,7 @@
     height: 66px;
     padding: 0 24px;
     display: flex;
-    align-items: center;
+    align-items:flex-end;
 }
 
 .contenedor-lista-empleados 
@@ -52,7 +52,7 @@ button:hover {
     position: relative;
     width: 100%;
     overflow-x: auto;
-   
+   padding: 20px 0 0 0;
     
 }
 .contenedor-lista-empleados 
