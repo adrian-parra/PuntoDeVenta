@@ -46,8 +46,8 @@ export class DashboardEmployeesCreateemployeeComponent implements OnInit {
   
     this.apiService.addEmpleado(this.empleadoFormRegistro.value).subscribe((r:any) =>{
       if(r['0'] == true){
-        this.empleadoFormRegistro.reset
         alert("Cuenta creada")
+        this.router.navigate(['dashboard/employees/list'])
       }else {
         alert(r['2'])
       }
