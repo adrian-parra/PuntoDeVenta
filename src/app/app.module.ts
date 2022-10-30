@@ -18,6 +18,9 @@ import { DashboardClientsDatabaseComponent } from './dashboard-clients-database/
 
 import {ReactiveFormsModule ,FormsModule} from '@angular/forms'
 
+//SERVICE PARA TRABAJAR CON COOKIE
+import {CookieService} from 'ngx-cookie-service';
+
 //peticiones http
 //agregar HttpClientModule a  imports
 import {HttpClientModule} from '@angular/common/http';
@@ -48,7 +51,7 @@ import { DashboardEmployeesCreateemployeeComponent } from './dashboard-employees
     FormsModule ,
     HttpClientModule 
   ],
-  providers: [],
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
