@@ -26,6 +26,7 @@ import {CookieService} from 'ngx-cookie-service';
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardEmployeesCreateemployeeComponent } from './dashboard-employees-createemployee/dashboard-employees-createemployee.component'
 import { LoginGuard } from './servicios/login-guard.service';
+import { DashboardEmployeesEditemployeeComponent } from './dashboard-employees-editemployee/dashboard-employees-editemployee.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { LoginGuard } from './servicios/login-guard.service';
     DashboardEmployeesListComponent,
     DashboardClientsDatabaseComponent,
     DashboardEmployeesCreateemployeeComponent,
+    DashboardEmployeesEditemployeeComponent,
  
   ],
   imports: [
