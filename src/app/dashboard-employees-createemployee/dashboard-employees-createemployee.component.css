@@ -1,0 +1,11 @@
+.contenedor-componente .cardview {
+max-width: 468px;
+        padding: 24px;
+}
+
+.contenedor-componente .cardview .cardview-header {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

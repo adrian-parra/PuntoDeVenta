@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardClientsDatabaseComponent } from './dashboard-clients-database/dashboard-clients-database.component';
+import { DashboardEmployeesCreateemployeeComponent } from './dashboard-employees-createemployee/dashboard-employees-createemployee.component';
 import { DashboardEmployeesListComponent } from './dashboard-employees-list/dashboard-employees-list.component';
 import { DashboardGoodsCategoriesComponent } from './dashboard-goods-categories/dashboard-goods-categories.component';
 import { DashboardGoodsPriceComponent } from './dashboard-goods-price/dashboard-goods-price.component';
@@ -30,6 +31,7 @@ const routes: Routes = [
       {path:'inventory/history' ,component:DashboardInventoryHistoryComponent},
 
       {path:'employees/list' ,component:DashboardEmployeesListComponent},
+      {path:'employees/createemployee' ,component:DashboardEmployeesCreateemployeeComponent},
 
       {path:'clients/database' ,component:DashboardClientsDatabaseComponent}
     ]
