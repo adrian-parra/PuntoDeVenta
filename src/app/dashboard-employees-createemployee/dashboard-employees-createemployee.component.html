@@ -9,17 +9,24 @@
             <div class="contenedor-input">
                 <input type="text" placeholder="Ingrese nombre completo" required formControlName="nombre">
                 <label for="">Nombre</label>
-               
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('nombre')?.touched && empleadoFormRegistro.get('nombre')?.errors?.['required']">El campo no puede estar en blanco</p>
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('nombre')?.touched && empleadoFormRegistro.get('nombre')?.errors?.['minlength']">Introduzca un nombre valido</p>
             </div>
 
             <div class="contenedor-input">
                 <input type="email" placeholder="Ingrese correo electronico" required formControlName="correo">
                 <label for="">Correo</label>
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('correo')?.touched && empleadoFormRegistro.get('correo')?.errors?.['required']">El campo no puede estar en blanco</p>
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('correo')?.touched && empleadoFormRegistro.get('correo')?.errors?.['email']">Ingrese correo valido</p>
             </div>
 
             <div class="contenedor-input">
                 <input type="tel" placeholder="Ingrese numero de telefono" required formControlName="telefono">
                 <label for="">Teléfono</label>
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('telefono')?.touched && empleadoFormRegistro.get('telefono')?.errors?.['required']">El campo no puede estar en blanco</p>
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('telefono')?.touched && empleadoFormRegistro.get('telefono')?.errors?.['minlength'] && !empleadoFormRegistro.get('telefono')?.errors?.['pattern']">Introdusca numero valido</p>
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('telefono')?.touched && empleadoFormRegistro.get('telefono')?.errors?.['maxlength'] && !empleadoFormRegistro.get('telefono')?.errors?.['pattern']">Introdusca numero valido, igual a 10 caracteres</p>
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('telefono')?.touched && empleadoFormRegistro.get('telefono')?.errors?.['pattern']">Solo numeros</p>
             </div>
             
             <div class="contenedor-input">
@@ -29,6 +36,7 @@
                     <option>Cajero</option>
                 </select>
                 <label for="">Rol</label>
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('rol')?.touched && empleadoFormRegistro.get('rol')?.errors?.['required']">El campo no puede estar en blanco</p>
             </div>
 
             

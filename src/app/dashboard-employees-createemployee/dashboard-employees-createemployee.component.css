@@ -133,4 +133,10 @@ button:last-child {
     background-color: var(--ColorSecundario);
     color: var(--ColorPrincipal);
 }
+.form
+.contenedor-botones
+button:last-child:disabled {
+    pointer-events: none;
+    opacity: .3;
+}
 /*FIN DISEÑO GENERAL PARA UN FORMULARIO */
