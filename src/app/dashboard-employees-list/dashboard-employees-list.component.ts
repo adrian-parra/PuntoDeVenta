@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Empleado } from '../modelos/empleado';
 import { ApiService } from '../servicios/api.service';
 
@@ -9,13 +10,20 @@ import { ApiService } from '../servicios/api.service';
 })
 export class DashboardEmployeesListComponent implements OnInit {
 
+
   empleados:Empleado[] = []
 
-  constructor(public apiService:ApiService) { }
+  constructor(public apiService:ApiService ,private router:Router) { }
 
   ngOnInit(): void {
     this.getEmpleados()
   }
+
+    
+  irComponenteAgregarEmpleado() {
+     this.router.navigate(['dashboard/employees/createemployee']);
+  }
+  
 
   getEmpleados(){
     this.apiService.getUsuarios().subscribe((empleados:any) => {
