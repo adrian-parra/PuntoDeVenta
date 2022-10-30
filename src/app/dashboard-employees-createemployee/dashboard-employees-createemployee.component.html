@@ -21,6 +21,13 @@
             </div>
 
             <div class="contenedor-input">
+                <input type="password" placeholder="Ingrese contraseña" required formControlName="clave">
+                <label for="">Contraseña</label>
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('clave')?.touched && empleadoFormRegistro.get('clave')?.errors?.['required']">El campo no puede estar en blanco</p>
+                <p class="smsError" *ngIf="empleadoFormRegistro.get('clave')?.touched && empleadoFormRegistro.get('clave')?.errors?.['minlength']">Ingrese contraseña valida ,mayor a 7 caracteres</p>
+            </div>
+
+            <div class="contenedor-input">
                 <input type="tel" placeholder="Ingrese numero de telefono" required formControlName="telefono">
                 <label for="">Teléfono</label>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('telefono')?.touched && empleadoFormRegistro.get('telefono')?.errors?.['required']">El campo no puede estar en blanco</p>
