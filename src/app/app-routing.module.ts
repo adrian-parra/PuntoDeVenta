@@ -13,12 +13,13 @@ import { DashboardReportSalesComponent } from './dashboard-report-sales/dashboar
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
+import { LoginGuard } from './servicios/login-guard.service';
 
 const routes: Routes = [
   {path:'' ,redirectTo:'/dashboard' ,pathMatch:'full'},
   { path:'login' ,component:InicioSesionComponent},
   {path:'signup' ,component:RegistroComponent},
-  {path:'dashboard' ,component:DashboardComponent ,
+  {path:'dashboard' ,component:DashboardComponent ,canActivate:[LoginGuard],
     children:[
       {path:'report/sales' ,component:DashboardReportSalesComponent},
 
