@@ -3,5 +3,40 @@
         <div class="cardview-header">
             <img src="../../assets/dashboard-empleado-icon-perfil.svg" width="85px" height="85px" alt="">
         </div>
+
+        <form class="form" [formGroup]="empleadoFormRegistro" (ngSubmit)="agregarEmpleado()">
+
+            <div class="contenedor-input">
+                <input type="text" placeholder="Ingrese nombre completo" required formControlName="nombre">
+                <label for="">Nombre</label>
+               
+            </div>
+
+            <div class="contenedor-input">
+                <input type="email" placeholder="Ingrese correo electronico" required formControlName="correo">
+                <label for="">Correo</label>
+            </div>
+
+            <div class="contenedor-input">
+                <input type="tel" placeholder="Ingrese numero de telefono" required formControlName="telefono">
+                <label for="">Teléfono</label>
+            </div>
+            
+            <div class="contenedor-input">
+                <select required formControlName="rol">
+                    <option>Administrador</option>
+                    <option>Gerente</option>
+                    <option>Cajero</option>
+                </select>
+                <label for="">Rol</label>
+            </div>
+
+            
+            <div class="contenedor-botones">
+                <button (click)="irComponenteListaEmpleados()">CANCELAR</button>
+                <button type="submit" [disabled]="empleadoFormRegistro.invalid">GUARDAR</button>
+            </div>
+                
+        </form>    
     </div>
 </section>
