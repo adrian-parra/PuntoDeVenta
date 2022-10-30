@@ -35,6 +35,15 @@ export class InicioSesionComponent implements OnInit {
       }else {
         //CREAR COOKIE ENCARGADA DE MANEJAR LA SESION ACTIVA DEL USUARIO
         this.cookie.set('login','true')
+
+        //DATOS IMPORTANTES QUE SE TIENEN QUE GUARDAR EN COOKIES
+        this.cookie.set('correo',r['0'].correo)
+        this.cookie.set('id',r['0'].id)
+        this.cookie.set('id_nombre_empresa',r['0'].id_nombre_empresa)
+        this.cookie.set('id_rol',r['0'].id_rol)
+        this.cookie.set('nombre_empresa',r['0'].nombre_empresa)
+        this.cookie.set('nombre_rol',r['0'].nombre_rol)
+        
         this.router.navigate(['dashboard/report/sales']);
       }
 
