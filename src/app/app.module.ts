@@ -25,6 +25,7 @@ import {CookieService} from 'ngx-cookie-service';
 //agregar HttpClientModule a  imports
 import {HttpClientModule} from '@angular/common/http';
 import { DashboardEmployeesCreateemployeeComponent } from './dashboard-employees-createemployee/dashboard-employees-createemployee.component'
+import { LoginGuard } from './servicios/login-guard.service';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,7 @@ import { DashboardEmployeesCreateemployeeComponent } from './dashboard-employees
     FormsModule ,
     HttpClientModule 
   ],
-  providers: [CookieService],
+  providers: [CookieService ,LoginGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
