@@ -41,6 +41,13 @@ export class ApiService {
   getEmpleado(id:any): Observable<Empleado> {
     return this.http.get<Empleado>(this.baseUrl + 'empleado/?id='+id)
   }
+
+  updateEmpleado(obj:any):Observable<any> {
+    return this.http.post<Empleado>(
+      this.baseUrl + 'empleado/?actualizar=1',
+      obj
+    )
+  }
   /*FIN METODOS PARA TRABJAR CON TABLE 'EMPLEADO'*/
 
   //************************************************

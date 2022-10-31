@@ -50,6 +50,13 @@ select {
     border-bottom: var(--Border) solid var(--ColorDescripcion);
     transition: border .3s;
 }
+/*CLASS ENCARGADA DE DESHABILITAR INPUT*/
+.deshabilitar-input {
+    pointer-events: none;
+    border: 0 !important;
+    appearance: none;
+}
+
 .form
 .contenedor-input
 input::placeholder {

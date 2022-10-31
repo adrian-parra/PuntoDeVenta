@@ -14,7 +14,7 @@
             </div>
 
             <div class="contenedor-input">
-                <input type="email" placeholder="Ingrese correo electronico" required formControlName="correo">
+                <input [ngClass]="{'deshabilitar-input': esPropietario}" type="email" placeholder="Ingrese correo electronico" required formControlName="correo">
                 <label for="">Correo</label>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('correo')?.touched && empleadoFormRegistro.get('correo')?.errors?.['required']">El campo no puede estar en blanco</p>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('correo')?.touched && empleadoFormRegistro.get('correo')?.errors?.['email']">Ingrese correo valido</p>
@@ -37,7 +37,8 @@
             </div>
             
             <div class="contenedor-input">
-                <select required formControlName="rol">
+                <select required formControlName="rol" [ngClass]="{'deshabilitar-input': esPropietario}" >
+                    <option *ngIf="esPropietario">Propietario</option>
                     <option>Administrador</option>
                     <option>Gerente</option>
                     <option>Cajero</option>
@@ -49,7 +50,9 @@
             
             <div class="contenedor-botones">
                 <button (click)="irComponenteListaEmpleados()">CANCELAR</button>
-                <button type="submit" [disabled]="empleadoFormRegistro.invalid">GUARDAR</button>
+                <button *ngIf="!editarEmpleado" type="submit" [disabled]="empleadoFormRegistro.invalid">GUARDAR</button>
+                <button *ngIf="editarEmpleado" (click)="updateEmpleado()" type="button" [disabled]="empleadoFormRegistro.invalid">GUARDAR</button>
+                
             </div>
                 
         </form>    

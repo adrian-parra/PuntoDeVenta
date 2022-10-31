@@ -15,6 +15,7 @@ export class DashboardEmployeesCreateemployeeComponent implements OnInit {
   
 
   empleadoFormRegistro = new FormGroup({
+    id:new FormControl(''),
     id_usuario: new FormControl(null),
     nombre: new FormControl('' ,[Validators.required ,Validators.minLength(2)]) ,
     telefono: new FormControl('' ,[Validators.required ,Validators.minLength(10) ,Validators.maxLength(10) ,Validators.pattern("[0-9]*")]) ,
@@ -28,6 +29,8 @@ export class DashboardEmployeesCreateemployeeComponent implements OnInit {
   empleado?: Empleado;
   
   editarEmpleado:boolean = false
+
+  esPropietario:boolean = false
 
   constructor(private router:Router ,public apiService:ApiService ,private cookie:CookieService ,private readonly route: ActivatedRoute) { }
 
@@ -67,31 +70,59 @@ export class DashboardEmployeesCreateemployeeComponent implements OnInit {
       this.empleadoFormRegistro.controls.correo.setValue(this.empleado.correo)
       this.empleadoFormRegistro.controls.rol.setValue(this.empleado.rol)
       this.empleadoFormRegistro.controls.telefono.setValue(this.empleado.telefono)
-
-     
-
-      console.log(this.empleadoFormRegistro.value)
-
+    
+      //DESHABILITAR CLAVE POR SGURIDA
+      this.empleadoFormRegistro.controls.clave.disable()
+      
+      //VERIFICAR SI EL ROL ES PROPIETARIO
+      if(  this.empleado.rol == "Propietario"){
+        this.esPropietario = true
+      }
+    
+    
   })
 }
+  updateEmpleado(){
+    
+    let rol:any = this.empleadoFormRegistro.controls.rol.value
+    let id_rol = this.empleadoFormRegistro.controls.id_rol
+    id_rol.setValue(this.obtenerIdRol(rol))
 
+    this.empleadoFormRegistro.controls.id.setValue(this.cookie.get('id_empleado'))
+
+    this.apiService.updateEmpleado(this.empleadoFormRegistro.value).subscribe((r:any) =>{
+      if(r['0'] == true){
+        alert("Empleado actualizado")
+        this.router.navigate(['dashboard/employees/list'])
+      }else {
+        alert(r['2'])
+      }
+    })
+  }
+
+  obtenerIdRol(rol:string):number{
+    let id_rol:number = 1 //ROL PROPIETARIO
+    if(rol == "Administrador"){
+      id_rol = 4
+    }else if(rol == "Gerente"){
+      id_rol = 3
+    }else if(rol == "Cajero"){
+      id_rol = 2
+    }
+
+    return id_rol
+
+  }
 
   agregarEmpleado() {
-    
-    let rol = this.empleadoFormRegistro.controls.rol.value
+
+    let rol:any = this.empleadoFormRegistro.controls.rol.value
     let id_rol = this.empleadoFormRegistro.controls.id_rol
 
     this.empleadoFormRegistro.controls.id_nombre_empresa.setValue(this.cookie.get('id_nombre_empresa'))
-
-    if(rol == "Administrador"){
-      id_rol.setValue(4)
-    }else if(rol == "Gerente"){
-      id_rol.setValue(3)
-    }else if(rol == "Cajero"){
-      id_rol.setValue(2)
-    }
-
+      id_rol.setValue(this.obtenerIdRol(rol))
   
+
     this.apiService.addEmpleado(this.empleadoFormRegistro.value).subscribe((r:any) =>{
       if(r['0'] == true){
         alert("Cuenta creada")
