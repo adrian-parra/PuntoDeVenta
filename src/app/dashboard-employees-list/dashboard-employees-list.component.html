@@ -11,7 +11,7 @@
                 <div>Rol</div>
             </div>
             <div class="body-table">
-                <div class="contenedor-element-table" *ngFor="let empleado of empleados">
+                <div class="contenedor-element-table" *ngFor="let empleado of empleados" (click)="irComponenteEditarEmpleado(empleado.id)">
                     <div>{{ empleado.nombre }}</div>
                     <div>{{ empleado.correo }}</div>
                     <div>{{ empleado.telefono }}</div>

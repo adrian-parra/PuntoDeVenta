@@ -38,6 +38,9 @@ export class ApiService {
      obj 
     )
   }
+  getEmpleado(id:any): Observable<Empleado> {
+    return this.http.get<Empleado>(this.baseUrl + 'empleado/?id='+id)
+  }
   /*FIN METODOS PARA TRABJAR CON TABLE 'EMPLEADO'*/
 
   //************************************************

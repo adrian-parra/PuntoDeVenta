@@ -34,7 +34,7 @@ const routes: Routes = [
 
       {path:'employees/list' ,component:DashboardEmployeesListComponent},
       {path:'employees/createemployee' ,component:DashboardEmployeesCreateemployeeComponent},
-      {path:'employees/editemployee/:id' ,component:DashboardEmployeesEditemployeeComponent},
+      {path:'employees/editemployee/:id' ,component:DashboardEmployeesCreateemployeeComponent},
 
       {path:'clients/database' ,component:DashboardClientsDatabaseComponent}
     ]
