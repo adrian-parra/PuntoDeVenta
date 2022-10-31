@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class DashboardComponent implements OnInit {
   tituloComponente!:string
 
-  constructor() { }
+  constructor(private sharedTitleService:SharedTitleComponentService) {
+    sharedTitleService.changeEmitted$.subscribe(tituloComponente => {
+      this.tituloComponente = tituloComponente
+  });
+   }
 
   ngOnInit(): void {
   }

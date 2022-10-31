@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Empleado } from '../modelos/empleado';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-employees-list',
@@ -14,7 +15,16 @@ export class DashboardEmployeesListComponent implements OnInit {
 
   empleados:Empleado[] = []
 
-  constructor(public apiService:ApiService ,private router:Router ,private cookie:CookieService) { }
+  constructor(
+    public apiService:ApiService ,
+    private router:Router ,
+    private cookie:CookieService ,
+    private sharedTitleService:SharedTitleComponentService) {
+      //ENVIA DATOS POR SERVICIO 
+      //EN ESTE CASO SE LE ENVIA EL TITULO DE LA INTERFAZ 
+      //ACTUAL AL COMPONENTE PADRE QUE DASHBOARD 
+      this.sharedTitleService.emitChange("Lista de empleados");
+    }
 
   ngOnInit(): void {
     this.getEmpleados()

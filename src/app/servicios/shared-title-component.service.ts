@@ -3,7 +3,7 @@ import { Subject } from "rxjs";
 
 
 @Injectable()
-export class SharedTitleComponent {
+export class SharedTitleComponentService {
     // Observable string sources
     private emitChangeSource = new Subject<any>();
     // Observable string streams

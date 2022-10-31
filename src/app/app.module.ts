@@ -27,6 +27,7 @@ import {HttpClientModule} from '@angular/common/http';
 import { DashboardEmployeesCreateemployeeComponent } from './dashboard-employees-createemployee/dashboard-employees-createemployee.component'
 import { LoginGuard } from './servicios/login-guard.service';
 import { DashboardEmployeesEditemployeeComponent } from './dashboard-employees-editemployee/dashboard-employees-editemployee.component';
+import { SharedTitleComponentService } from './servicios/shared-title-component.service';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,7 @@ import { DashboardEmployeesEditemployeeComponent } from './dashboard-employees-e
     FormsModule ,
     HttpClientModule 
   ],
-  providers: [CookieService ,LoginGuard],
+  providers: [CookieService ,LoginGuard ,SharedTitleComponentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

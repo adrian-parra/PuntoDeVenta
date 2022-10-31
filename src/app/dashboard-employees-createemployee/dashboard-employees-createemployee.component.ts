@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Empleado } from '../modelos/empleado';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-employees-createemployee',
@@ -32,7 +33,17 @@ export class DashboardEmployeesCreateemployeeComponent implements OnInit {
 
   esPropietario:boolean = false
 
-  constructor(private router:Router ,public apiService:ApiService ,private cookie:CookieService ,private readonly route: ActivatedRoute) { }
+  constructor(private router:Router ,
+    public apiService:ApiService ,
+    private cookie:CookieService ,
+    private readonly route: ActivatedRoute ,
+    private sharedTitleService:SharedTitleComponentService) {
+      if(this.cookie.get('editarEmpleado') == 'true'){
+        sharedTitleService.emitChange("Editar empleado")
+      }else {
+        sharedTitleService.emitChange("Añadir empleado")
+      }
+     }
 
   ngOnInit(): void {
     
