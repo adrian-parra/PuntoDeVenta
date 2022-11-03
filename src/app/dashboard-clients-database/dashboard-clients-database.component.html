@@ -25,13 +25,13 @@
                 <div>Gasto total</div>
             </div>
             <div class="body-table">
-                <div class="contenedor-element-table" >
-                    <div>Loal</div>
-                    <div>6681131546 adria@gmail.com</div>
-                    <div>_</div>
-                    <div>_</div>
-                    <div>0</div>
-                    <div>0</div>
+                <div class="contenedor-element-table" *ngFor="let cliente of clientes">
+                    <div>{{cliente.nombre}}</div>
+                    <div>{{cliente.telefono}} {{cliente.correo}} </div>
+                    <div> {{cliente.primera_visita}} </div>
+                    <div> {{cliente.ultima_visita}} </div>
+                    <div> {{cliente.visitas}} </div>
+                    <div> ${{cliente.gasto_total}} </div>
                 </div>
             </div>
         </div>

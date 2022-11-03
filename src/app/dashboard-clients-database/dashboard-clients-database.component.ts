@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Cliente } from '../modelos/cliente';
+import { ApiService } from '../servicios/api.service';
 
 @Component({
   selector: 'app-dashboard-clients-database',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardClientsDatabaseComponent implements OnInit {
 
-  constructor() { }
+  clientes:Cliente [] = []
+
+  constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
+    this.getClientes()
+  }
+
+
+  getClientes(){
+    this.apiService.getClientes().subscribe((clientes:any) => {
+        this.clientes = clientes
+    })
   }
 
 }
