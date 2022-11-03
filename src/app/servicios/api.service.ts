@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { Cliente } from '../modelos/cliente';
 import { Empleado } from '../modelos/empleado';
 import { Usuario } from '../modelos/usuario';
 
@@ -53,7 +54,9 @@ export class ApiService {
   //************************************************
 
   /*METODOS PARA TRABAJAR CON TABLE 'CLIENTE'*/
-  
+  getClientes(): Observable<Cliente> { //TABLE EMPLEADO
+    return this.http.get<Cliente>(this.baseUrl + 'cliente/');
+  }
   /*METODOS PARA TRABAJAR CON TABLE 'CLIENTE'*/
 
   //************************************************
