@@ -112,6 +112,7 @@ body{
     background-color: var(--ColorSecundario);
     box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
     transition: .3s all;
+    min-width: 173px;
 }
 .l-btn-d:hover {
     cursor: pointer;
