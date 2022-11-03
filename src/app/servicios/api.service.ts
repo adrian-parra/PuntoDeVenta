@@ -14,7 +14,7 @@ export class ApiService {
   constructor(public http: HttpClient) {}
 
   /*METODOS PARA TRABAJAR CON TABLE 'USUARIO'*/
-  getUsuarios(): Observable<Empleado> {
+  getUsuarios(): Observable<Empleado> { //TABLE EMPLEADO
     return this.http.get<Empleado>(this.baseUrl + 'empleado/');
   }
 
@@ -49,6 +49,12 @@ export class ApiService {
     )
   }
   /*FIN METODOS PARA TRABJAR CON TABLE 'EMPLEADO'*/
+
+  //************************************************
+
+  /*METODOS PARA TRABAJAR CON TABLE 'CLIENTE'*/
+  
+  /*METODOS PARA TRABAJAR CON TABLE 'CLIENTE'*/
 
   //************************************************
 
