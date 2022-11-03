@@ -69,5 +69,98 @@ body{
   border-radius: var(--BorderRadius);
 }
 
+.contenedor-componente .cardview .cardview-body {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  padding: 20px 0 0 0;
+}
+
+.contenedor-componente .cardview .cardview-header {
+  height: 66px;
+  padding: 0 24px;
+  display: flex;
+  align-items:flex-end;
+}
+
 /*FIN ESTILOS GENERALES PARA COMPONENTES HIJOS DENTRO DEL DASHBOARD*/
 
+/*------------------------------------------------------------------*/
+
+/*ESTILOS G. PARA BOTONES */
+
+/*---BUTTON DEFAULT---*/
+.l-btn-d {
+    font-size: calc(var(--SizeDescripcion) + 2px);
+    font-family: "Roboto" ,sans-serif;
+    color: var(--ColorPrincipal);
+    font-weight: 550;
+    padding: 0 16px;
+    height: 36px;
+    border-radius: var(--BorderRadius);
+    background-color: var(--ColorSecundario);
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+    transition: .3s all;
+}
+.l-btn-d:hover {
+    cursor: pointer;
+    opacity: .7;
+}
+
+/*---FIN BUTTON DEFAULT---*/
+
+
+/*FIN ESTILOS G. PARA BOTONES */ 
+
+
+/*ESTILOS G PARA TABLAS DENTRO DEL SISTEMA */
+.header-table {
+      width: 100%;
+      min-width: 710px;
+      height: 55px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      border-bottom: var(--Border) solid var(--ColorFondo);
+      padding: 0 24px;
+}
+
+.header-table div {
+  display: flex;
+    align-items: center;
+    font-size:calc(var(--SizeDescripcion) + 2px);
+    font-weight: 500;
+    color: var(--ColorDescripcion);
+}
+
+.body-table {
+
+}
+.body-table .contenedor-element-table {
+  width: 100%;
+  min-width: 710px;
+  height: 55px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  padding: 0 24px;
+  border-bottom: var(--Border) solid var(--ColorFondo);
+  transition: all .3s;
+}
+
+.body-table .contenedor-element-table:hover {
+  background-color: var(--ColorFondo);
+    cursor: pointer;
+}
+
+.body-table .contenedor-element-table div {
+  display: flex;
+    align-items: center;
+    font-size:calc(var(--SizeDescripcion) + 2px);
+    font-weight: 400;
+    color: var(--ColorDescripcion);
+    max-width: 150px;
+    overflow: hidden;
+}
+
+
+
+/*ESTILOS G PARA TABLAS DENTRO DEL SISTEMA */

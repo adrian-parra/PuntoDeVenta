@@ -1,1 +1,39 @@
-<p>dashboard-clients-database works!</p>
+<section class="contenedor-componente">
+    <div class="cardview" >
+
+        <!--SOLO SE MUESTRA CUANDO NO HAY CLIENTES REGISTRADOS-->
+        <div class="cardview-content" *ngIf="false">
+            <div class="contenedor-img">
+                <img src="https://r.loyverse.com/dashboard/images/ic_group_black-24b702f664cad56268f631.svg" alt="">
+            </div>
+            <h1>Clientes</h1>
+            <p>Aquí puedes administrar tus clientes.</p>
+            <button class="l-btn-d">+ AGREGAR CLIENTE</button>
+        </div>
+
+        <div class="cardview-header">
+            <button class="l-btn-d">+ AGREGAR CLIENTE</button>
+        </div>
+
+        <div class="cardview-body">
+            <div class="header-table">
+                <div>Cliente</div>
+                <div>Contactos</div>
+                <div>Primera visita</div>
+                <div>Ultima visita</div>
+                <div>Total de visitas</div>
+                <div>Gasto total</div>
+            </div>
+            <div class="body-table">
+                <div class="contenedor-element-table" >
+                    <div>Loal</div>
+                    <div>6681131546 adria@gmail.com</div>
+                    <div>_</div>
+                    <div>_</div>
+                    <div>0</div>
+                    <div>0</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
