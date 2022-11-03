@@ -62,11 +62,22 @@ body{
     overflow: auto;
 }
 .contenedor-componente .cardview {
-  width: 100%;
   max-width: 810px;
   background-color: var(--ColorPrincipal);
   box-shadow: 0 2px 5px rgb(0 0 0 / 15%);
   border-radius: var(--BorderRadius);
+  animation: opacity 1s;
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+    width: 0%;
+  }
+  to{
+    opacity: 1;
+    width: 100%;
+  }
 }
 
 .contenedor-componente .cardview .cardview-body {
