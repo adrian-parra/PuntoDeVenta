@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CookieService } from 'ngx-cookie-service';
+import { Cliente } from '../modelos/cliente';
+import { ApiService } from '../servicios/api.service';
 
 @Component({
   selector: 'app-dashboard-clients-createcustomer',
@@ -20,13 +24,26 @@ export class DashboardClientsCreatecustomerComponent implements OnInit {
     codigo_postal: new FormControl('' ,[Validators.required ,Validators.minLength(5) ,Validators.maxLength(5) ,Validators.pattern("[0-9]*")]) ,
   });
 
-  constructor() { }
+  constructor(private apiService:ApiService ,
+    private router:Router ,
+    private cookie:CookieService ) { }
 
   ngOnInit(): void {
   }
 
   addCliente() {
-    
+
+
+    this.clienteFormRegistro.controls.id_empresa.setValue(this.cookie.get("id_nombre_empresa"))
+
+    this.apiService.addCliente(this.clienteFormRegistro.value).subscribe((r:any) =>{
+      if(r['0'] == true){
+        alert("Cliente registrado")
+        this.router.navigate(['dashboard/clients/database'])
+      }else {
+        alert(r['2'])
+      }
+    })
   }
 
 }
