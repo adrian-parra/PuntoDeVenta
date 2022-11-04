@@ -4,53 +4,75 @@
             <img src="../../assets/dashboard-empleado-icon-perfil.svg" width="85px" height="85px" alt="">
         </div>
 
-        <form class="form" >
+        <form class="form" [formGroup]="clienteFormRegistro">
 
             <div class="contenedor-input">
                 <input type="text" placeholder="Ingrese nombre completo" required formControlName="nombre">
                 <label for="">Nombre</label>
+                <p class="smsError" *ngIf="clienteFormRegistro.get('nombre')?.touched && clienteFormRegistro.get('nombre')?.errors?.['required']">El campo no puede estar en blanco</p>
+                <p class="smsError" *ngIf="clienteFormRegistro.get('nombre')?.touched && clienteFormRegistro.get('nombre')?.errors?.['minlength']">Introduzca un nombre valido</p>
                 </div>
     
             <div class="contenedor-input">
                 <input  type="email" placeholder="Ingrese correo electronico" required formControlName="correo">
                 <label for="">Correo</label>
+                <p class="smsError" *ngIf="clienteFormRegistro.get('correo')?.touched && clienteFormRegistro.get('correo')?.errors?.['required']">El campo no puede estar en blanco</p>
+                <p class="smsError" *ngIf="clienteFormRegistro.get('correo')?.touched && clienteFormRegistro.get('correo')?.errors?.['email']">Ingrese correo validocliente
                 </div>
     
             <div class="contenedor-input">
                 <input type="tel" placeholder="Ingrese numero de telefono" required formControlName="telefono">
                 <label for="">Teléfono</label>
+                <p class="smsError" *ngIf="clienteFormRegistro.get('telefono')?.touched && clienteFormRegistro.get('telefono')?.errors?.['required']">El campo no puede estar en blanco</p>
+                <p class="smsError" *ngIf="clienteFormRegistro.get('telefono')?.touched && clienteFormRegistro.get('telefono')?.errors?.['minlength'] && !clienteFormRegistro.get('telefono')?.errors?.['pattern']">Introdusca numero valido</p>
+                <p class="smsError" *ngIf="clienteFormRegistro.get('telefono')?.touched && clienteFormRegistro.get('telefono')?.errors?.['maxlength'] && !clienteFormRegistro.get('telefono')?.errors?.['pattern']">Introdusca numero valido, igual a 10 caracteres</p>
+                <p class="smsError" *ngIf="clienteFormRegistro.get('telefono')?.touched && clienteFormRegistro.get('telefono')?.errors?.['pattern']">Solo numeros</p>
+           
                    </div>
 
                    <div class="contenedor-input">
                     <input type="text" placeholder="Ingrese dirección" required formControlName="direccion">
                     <label for="">Dirección</label>
+                    <p class="smsError" *ngIf="clienteFormRegistro.get('direccion')?.touched && clienteFormRegistro.get('direccion')?.errors?.['required']">El campo no puede estar en blanco</p>
+                    <p class="smsError" *ngIf="clienteFormRegistro.get('direccion')?.touched && clienteFormRegistro.get('direccion')?.errors?.['minlength']">Introduzca una direccion valida</p>    
                     </div>
 
                     <div class="contenedor-input">
                         <input type="text" placeholder="Ingrese ciudad" required formControlName="ciudad">
                         <label for="">Ciudad</label>
+                        <p class="smsError" *ngIf="clienteFormRegistro.get('ciudad')?.touched && clienteFormRegistro.get('ciudad')?.errors?.['required']">El campo no puede estar en blanco</p>
+                        <p class="smsError" *ngIf="clienteFormRegistro.get('ciudad')?.touched && clienteFormRegistro.get('ciudad')?.errors?.['minlength']">Introduzca un nombre valido</p>
+                       
                         </div>
             
                         
                             <div class="contenedor-input">
                                 <input type="text" placeholder="Ingrese estado" required formControlName="estado">
                                 <label for="">Estado</label>
+                                <p class="smsError" *ngIf="clienteFormRegistro.get('estado')?.touched && clienteFormRegistro.get('estado')?.errors?.['required']">El campo no puede estar en blanco</p>
+                                <p class="smsError" *ngIf="clienteFormRegistro.get('estado')?.touched && clienteFormRegistro.get('estado')?.errors?.['minlength']">Introduzca un nombre valido</p>
+                               
                                 </div>
 
                                 <div class="contenedor-input">
                                     <input type="text" placeholder="Ingrese codigo postal" required formControlName="codigo_postal">
                                     <label for="">Codigo postal</label>
+                                    <p class="smsError" *ngIf="clienteFormRegistro.get('codigo_postal')?.touched && clienteFormRegistro.get('codigo_postal')?.errors?.['required']">El campo no puede estar en blanco</p>
+                                    <p class="smsError" *ngIf="clienteFormRegistro.get('codigo_postal')?.touched && clienteFormRegistro.get('codigo_postal')?.errors?.['minlength'] && !clienteFormRegistro.get('codigo_postal')?.errors?.['pattern']">Introdusca codigo postal valido</p>
+                                    <p class="smsError" *ngIf="clienteFormRegistro.get('codigo_postal')?.touched && clienteFormRegistro.get('codigo_postal')?.errors?.['maxlength'] && !clienteFormRegistro.get('codigo_postal')?.errors?.['pattern']">Introdusca codigo postal valido, igual a 5 caracteres</p>
+                                    <p class="smsError" *ngIf="clienteFormRegistro.get('codigo_postal')?.touched && clienteFormRegistro.get('codigo_postal')?.errors?.['pattern']">Solo numeros</p>
+                                                                
                                     </div>
 
                                     <div class="contenedor-input">
-                                        <input type="text" placeholder="Ingrese nota" required formControlName="nota">
+                                        <input type="text" placeholder="Ingrese nota" formControlName="nota">
                                         <label for="">Nota</label>
                                         </div>
     
             
             <div class="contenedor-botones">
                 <button >CANCELAR</button>
-                <button type="submit" >GUARDAR</button>
+                <button type="submit" [disabled]="clienteFormRegistro.invalid">GUARDAR</button>
             </div>
                 
         </form>    

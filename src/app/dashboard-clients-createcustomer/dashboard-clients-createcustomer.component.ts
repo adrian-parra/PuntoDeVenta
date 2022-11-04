@@ -16,8 +16,8 @@ export class DashboardClientsCreatecustomerComponent implements OnInit {
     direccion: new FormControl('' ,[Validators.required ,Validators.minLength(2)]) ,
     ciudad: new FormControl('' ,[Validators.required ,Validators.minLength(2)]) ,
     estado: new FormControl('' ,[Validators.required ,Validators.minLength(2)]) ,
-    codigo_postal: new FormControl('' ,[Validators.required ,Validators.minLength(2)]) ,
-    nota: new FormControl('' ,[Validators.required ,Validators.minLength(5) ,Validators.maxLength(5) ,Validators.pattern("[0-9]*")]) ,
+    nota: new FormControl(null) ,
+    codigo_postal: new FormControl('' ,[Validators.required ,Validators.minLength(5) ,Validators.maxLength(5) ,Validators.pattern("[0-9]*")]) ,
   });
 
   constructor() { }
