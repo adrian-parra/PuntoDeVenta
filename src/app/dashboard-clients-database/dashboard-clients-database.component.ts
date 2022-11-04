@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Route, Router } from '@angular/router';
 import { Cliente } from '../modelos/cliente';
 import { ApiService } from '../servicios/api.service';
 
@@ -11,7 +12,7 @@ export class DashboardClientsDatabaseComponent implements OnInit {
 
   clientes:Cliente [] = []
 
-  constructor(private apiService:ApiService) { }
+  constructor(private apiService:ApiService ,private router:Router) { }
 
   ngOnInit(): void {
     this.getClientes()
@@ -22,6 +23,10 @@ export class DashboardClientsDatabaseComponent implements OnInit {
     this.apiService.getClientes().subscribe((clientes:any) => {
         this.clientes = clientes
     })
+  }
+
+  irAgregarCliente(){
+    this.router.navigate(['dashboard/clients/createcustomer'])
   }
 
 }

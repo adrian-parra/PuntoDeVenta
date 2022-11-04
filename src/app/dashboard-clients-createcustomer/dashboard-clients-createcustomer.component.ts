@@ -31,6 +31,10 @@ export class DashboardClientsCreatecustomerComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  irListaCliente() {
+    this.router.navigate(['dashboard/clients/database'])
+  }
+
   addCliente() {
 
 
