@@ -176,3 +176,140 @@ body{
 
 
 /*ESTILOS G PARA TABLAS DENTRO DEL SISTEMA */
+
+/*ESTILOS GENERALES PARA FORM */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--Padding); 
+}
+
+.form 
+.contenedor-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  position: relative;
+  padding-top: var(--Padding);
+}
+
+.form 
+.contenedor-input
+label {
+  font-size: var(--SizeDescripcion);
+  position: absolute;
+  color: var(--ColorDescripcion);
+  top: 0;
+  left: 0;
+  transition: color .3s;
+}
+.form
+.contenedor-input
+input ,
+.form
+.contenedor-input
+select {
+  border: 0;
+  padding: 7px 0;
+  font-size: .9rem;
+  border-bottom: var(--Border) solid var(--ColorDescripcion);
+  transition: border .3s;
+}
+/*CLASS ENCARGADA DE DESHABILITAR INPUT*/
+.deshabilitar-input {
+  pointer-events: none;
+  border: 0 !important;
+  appearance: none;
+}
+
+.form
+.contenedor-input
+input::placeholder {
+  color:rgb(206,206,206);
+}
+
+.form
+.contenedor-input
+input:focus ,
+.form
+.contenedor-input
+select:focus {
+  border-color: var(--ColorSecundario);
+}
+
+.form
+.contenedor-input
+input:focus + label ,
+.form
+.contenedor-input
+select:focus + label {
+  color: var(--ColorSecundario);
+}
+
+/*DISEÑO A SELECT,OPTION */
+.form 
+.contenedor-input
+select {
+  cursor: pointer;
+  /*appearance: none;*/
+}
+
+.form 
+.contenedor-input
+select
+option {
+  background-color: var(--ColorPrincipal);
+  border-radius: 20px;
+  font-size: var(--SizeTitulo);
+}
+/*FIN DISEÑO A SELECT,OPTION */
+
+.form
+.contenedor-input
+.smsError {
+  position: absolute;
+  color: var(--ColorDanger);
+  font-size: var(--SizeDescripcion);
+  bottom: -15px;
+}
+
+.form
+.contenedor-botones {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--Padding);
+}
+.form
+.contenedor-botones
+button {
+  font-size: calc(var(--SizeDescripcion) + 2px);
+  color: black;
+  font-weight: 550;
+  padding: 0 16px;
+  height: 36px;
+  border-radius: var(--BorderRadius);
+  background-color: var(--ColorPrincipal);
+  box-shadow: 0 2px 5px 0 rgb(0 0 0 / 26%);
+  transition: .3s all;
+}
+.form
+.contenedor-botones
+button:hover {
+  cursor: pointer;
+  opacity: .7;
+}
+.form
+.contenedor-botones
+button:last-child {
+  background-color: var(--ColorSecundario);
+  color: var(--ColorPrincipal);
+}
+.form
+.contenedor-botones
+button:last-child:disabled {
+  pointer-events: none;
+  opacity: .3;
+}
+/*ESTILOS GENERALES PARA FORM */
+
