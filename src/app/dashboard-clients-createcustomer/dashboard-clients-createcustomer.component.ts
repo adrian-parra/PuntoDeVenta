@@ -12,7 +12,7 @@ export class DashboardClientsCreatecustomerComponent implements OnInit {
     nombre: new FormControl('' ,[Validators.required ,Validators.minLength(2)]) ,
     correo: new FormControl('' ,[Validators.email ,Validators.required]) ,
     telefono: new FormControl('' ,[Validators.required ,Validators.minLength(10) ,Validators.maxLength(10) ,Validators.pattern("[0-9]*")]) ,
-    id_nombre_empresa: new FormControl(null),
+    id_empresa: new FormControl(),
     direccion: new FormControl('' ,[Validators.required ,Validators.minLength(2)]) ,
     ciudad: new FormControl('' ,[Validators.required ,Validators.minLength(2)]) ,
     estado: new FormControl('' ,[Validators.required ,Validators.minLength(2)]) ,
