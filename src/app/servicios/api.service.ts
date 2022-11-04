@@ -54,6 +54,11 @@ export class ApiService {
   //************************************************
 
   /*METODOS PARA TRABAJAR CON TABLE 'CLIENTE'*/
+  addCliente(obj:Cliente):Observable<Cliente> {
+    return this.http.post<Cliente>(this.baseUrl + 'cliente/?insertar=1' ,
+    obj);
+  }
+
   getClientes(): Observable<Cliente> { //TABLE EMPLEADO
     return this.http.get<Cliente>(this.baseUrl + 'cliente/');
   }
