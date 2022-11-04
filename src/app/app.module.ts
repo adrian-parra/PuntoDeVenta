@@ -28,6 +28,7 @@ import { DashboardEmployeesCreateemployeeComponent } from './dashboard-employees
 import { LoginGuard } from './servicios/login-guard.service';
 import { DashboardEmployeesEditemployeeComponent } from './dashboard-employees-editemployee/dashboard-employees-editemployee.component';
 import { SharedTitleComponentService } from './servicios/shared-title-component.service';
+import { DashboardClientsCreatecustomerComponent } from './dashboard-clients-createcustomer/dashboard-clients-createcustomer.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +47,7 @@ import { SharedTitleComponentService } from './servicios/shared-title-component.
     DashboardClientsDatabaseComponent,
     DashboardEmployeesCreateemployeeComponent,
     DashboardEmployeesEditemployeeComponent,
+    DashboardClientsCreatecustomerComponent,
  
   ],
   imports: [
