@@ -86,7 +86,7 @@
 }
 
 .app-dashboard aside .menu-item div {
-    border-left:calc(var(--Border) * 2) solid transparent;
+    border-left:calc(var(--Border) * 3) solid transparent;
 }
 
 .app-dashboard aside .menu-item div img {
