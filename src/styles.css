@@ -154,12 +154,12 @@ body{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   padding: 0 24px;
-  border-bottom: var(--Border) solid var(--ColorFondo);
+  border-bottom: var(--Border) solid #eaeaea;
   transition: all .3s;
 }
 
 .body-table .contenedor-element-table:hover {
-  background-color: var(--ColorFondo);
+  background-color: #FAFAFA;
     cursor: pointer;
 }
 
