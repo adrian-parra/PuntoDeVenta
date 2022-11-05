@@ -101,6 +101,24 @@ body{
 /*ESTILOS G. PARA BOTONES */
 
 /*---BUTTON DEFAULT---*/
+.l-btn-outline {
+  font-size: calc(var(--SizeDescripcion) + 2px);
+    font-family: "Roboto" ,sans-serif;
+    font-weight: 450;
+    padding: 0 16px;
+    height: 36px;
+    border-radius: var(--BorderRadius);
+    background-color: transparent;
+    transition: .3s all;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.l-btn-outline:hover {
+  cursor: pointer;
+  background-color: #FAFAFA;
+}
 .l-btn-d {
     font-size: calc(var(--SizeDescripcion) + 2px);
     font-family: "Roboto" ,sans-serif;
