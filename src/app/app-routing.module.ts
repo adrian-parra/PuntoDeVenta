@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardClientsCreatecustomerComponent } from './dashboard-clients-createcustomer/dashboard-clients-createcustomer.component';
 import { DashboardClientsDatabaseComponent } from './dashboard-clients-database/dashboard-clients-database.component';
+import { DashboardClientsDetailcustomerComponent } from './dashboard-clients-detailcustomer/dashboard-clients-detailcustomer.component';
 import { DashboardEmployeesCreateemployeeComponent } from './dashboard-employees-createemployee/dashboard-employees-createemployee.component';
 import { DashboardEmployeesEditemployeeComponent } from './dashboard-employees-editemployee/dashboard-employees-editemployee.component';
 import { DashboardEmployeesListComponent } from './dashboard-employees-list/dashboard-employees-list.component';
@@ -38,7 +39,8 @@ const routes: Routes = [
       {path:'employees/editemployee/:id' ,component:DashboardEmployeesCreateemployeeComponent},
 
       {path:'clients/database' ,component:DashboardClientsDatabaseComponent} ,
-      {path:'clients/createcustomer' ,component:DashboardClientsCreatecustomerComponent}
+      {path:'clients/createcustomer' ,component:DashboardClientsCreatecustomerComponent} ,
+      {path:'clients/detailcustomer/:id' ,component:DashboardClientsDetailcustomerComponent} 
 
     ]
   }
