@@ -62,6 +62,10 @@ export class ApiService {
   getClientes(): Observable<Cliente> { //TABLE EMPLEADO
     return this.http.get<Cliente>(this.baseUrl + 'cliente/');
   }
+
+  getCliente(id:any):Observable<Cliente>{
+    return this.http.get<Cliente>(this.baseUrl +'cliente/?id='+id)
+  }
   /*METODOS PARA TRABAJAR CON TABLE 'CLIENTE'*/
 
   //************************************************
