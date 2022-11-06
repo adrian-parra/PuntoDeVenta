@@ -2,7 +2,7 @@
     <div class="cardview">
         <div class="navbar">
             <div class="contenedor-left">
-                <button class="l-btn-outline" type="button"><img src="https://r.loyverse.com/dashboard/images/ic_chevron_left4f7cbec42fccfe6a0b71.svg" width="20px" height="20px" alt=""> BASE DE CLIENTES</button>
+                <button (click)="irComponenteListarClientes()"class="l-btn-outline" type="button"><img src="https://r.loyverse.com/dashboard/images/ic_chevron_left4f7cbec42fccfe6a0b71.svg" width="20px" height="20px" alt=""> BASE DE CLIENTES</button>
             </div>
             <div class="contenedor-right">
                 <button class="l-btn-outline" type="button">EDITAR PERFIL</button>
@@ -12,17 +12,17 @@
 
         <div class="cardview-header">
             <img src="../../assets/dashboard-empleado-icon-perfil.svg" width="85px" height="85px" alt="">
-            <h1>LOAL</h1>
-            <div><img src="https://r.loyverse.com/dashboard/images/ic_mail_black_24px925ee95c65a866bb33ac.svg" width="24px" height="24px" alt=""> adrian.adrianborquez@hotmail.com</div>
-            <div><img src="https://r.loyverse.com/dashboard/images/ic_local_phone3a6c63cd7ea86e8891af.svg" width="24px" height="24px" alt=""> 6682180316</div>
-            <div><img src="https://r.loyverse.com/dashboard/images/ic_location_on_black_24pxab4789b2bb636e18220c.svg" width="24px" height="24px" alt=""> Las flores 2, Los mochis, sinaloa, 81295</div>
+            <h1>{{cliente?.nombre}} </h1>
+            <div><img src="https://r.loyverse.com/dashboard/images/ic_mail_black_24px925ee95c65a866bb33ac.svg" width="24px" height="24px" alt=""> {{cliente?.correo}}</div>
+            <div><img src="https://r.loyverse.com/dashboard/images/ic_local_phone3a6c63cd7ea86e8891af.svg" width="24px" height="24px" alt=""> {{cliente?.telefono}}</div>
+            <div><img src="https://r.loyverse.com/dashboard/images/ic_location_on_black_24pxab4789b2bb636e18220c.svg" width="24px" height="24px" alt=""> {{cliente?.direccion}} , {{cliente?.ciudad}}, {{cliente?.estado}} , {{cliente?.codigo_postal}} </div>
         </div>
 
         <div class="cardview-body">
             <article>
                 <img src="https://r.loyverse.com/dashboard/images/calendar-checkd48cc31df87cb10bb74a.svg" width="24px" height="24px"  alt="">
                 <div>
-                    <p>02 nov 2022</p>
+                    <p> {{cliente?.primera_visita == null ? "__" : cliente?.primera_visita}} </p>
                     <p>Primera visita</p>
                 </div>
             </article>
@@ -30,7 +30,7 @@
             <article>
                 <img src="https://r.loyverse.com/dashboard/images/ic_date_range_24px7c85711769f4aba54e99.svg" width="24px" height="24px" alt="">
                 <div>
-                    <p>02 nov 2022 en 15:00</p>
+                    <p> {{cliente?.ultima_visita == null ? "__" : cliente?.ultima_visita}} </p>
                     <p>Última visita</p>
                 </div>
             </article>
@@ -38,7 +38,7 @@
             <article>
                 <img src="https://r.loyverse.com/dashboard/images/ic_shopping_basket_black_24px1830b449e7e09deaf1d6.svg" width="24px" height="24px" alt="">
                 <div>
-                    <p>2</p>
+                    <p> {{cliente?.visitas == null ? "_" : cliente?.visitas}} </p>
                     <p>Visitas</p>
                 </div>
             </article>
@@ -46,7 +46,7 @@
             <article>
                 <img src="https://r.loyverse.com/dashboard/images/ic_attach_money_black_24px5aed7e64f0908d855c47.svg" width="24px" height="24px" alt="">
                 <div>
-                    <p>$90.00</p>
+                    <p> ${{cliente?.gasto_total == null ? "_" : cliente?.gasto_total}} </p>
                     <p>Gasto total</p>
                 </div>
             </article>
