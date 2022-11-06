@@ -66,6 +66,13 @@ export class ApiService {
   getCliente(id:any):Observable<Cliente>{
     return this.http.get<Cliente>(this.baseUrl +'cliente/?id='+id)
   }
+
+  updateCliente(obj:any):Observable<any> {
+    return this.http.post<Cliente>(
+      this.baseUrl + 'cliente/?actualizar=1',
+      obj
+    )
+  }
   /*METODOS PARA TRABAJAR CON TABLE 'CLIENTE'*/
 
   //************************************************
