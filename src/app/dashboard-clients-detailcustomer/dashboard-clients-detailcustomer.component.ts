@@ -12,6 +12,8 @@ export class DashboardClientsDetailcustomerComponent implements OnInit {
 
   cliente?:Cliente
 
+  id:number = 0
+
   constructor(private router:Router ,private readonly route: ActivatedRoute ,
     private apiService:ApiService) { }
   
@@ -19,6 +21,7 @@ export class DashboardClientsDetailcustomerComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.params.subscribe((params:Params) => {
+      this.id = params['id']
       this.getCliente(params['id'])
     })
   }
@@ -32,9 +35,11 @@ export class DashboardClientsDetailcustomerComponent implements OnInit {
 
     this.apiService.getCliente(id).subscribe((cliente:Cliente) => {
         this.cliente = cliente
-
-        console.log(cliente)
     })
+  }
+
+  irComponenteEditarCliente(id:number){
+    this.router.navigate(['dashboard/clients/editcustomer' ,id])
   }
 
 }

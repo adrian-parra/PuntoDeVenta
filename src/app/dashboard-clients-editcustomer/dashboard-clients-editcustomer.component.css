@@ -1,0 +1,15 @@
+.contenedor-componente .cardview {
+    max-width: 468px;
+            padding: 24px;
+    }
+    
+    .contenedor-componente .cardview .cardview-header {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .contenedor-componente .cardview .cardview-header img {
+        filter: invert(74%) sepia(41%) saturate(5525%) hue-rotate(201deg) brightness(88%) contrast(77%);
+    }
