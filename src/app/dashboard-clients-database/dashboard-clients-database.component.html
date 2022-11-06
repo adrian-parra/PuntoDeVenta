@@ -25,7 +25,7 @@
                 <div>Gasto total</div>
             </div>
             <div class="body-table">
-                <div class="contenedor-element-table" *ngFor="let cliente of clientes">
+                <div class="contenedor-element-table" *ngFor="let cliente of clientes" (click)="irComponentePerfilCliente(cliente.id)">
                     <div>{{cliente.nombre}}</div>
                     <div>{{cliente.telefono}} {{cliente.correo}} </div>
                     <div> {{cliente.primera_visita}} </div>

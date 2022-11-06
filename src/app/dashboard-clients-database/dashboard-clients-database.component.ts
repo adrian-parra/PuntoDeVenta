@@ -29,4 +29,8 @@ export class DashboardClientsDatabaseComponent implements OnInit {
     this.router.navigate(['dashboard/clients/createcustomer'])
   }
 
+  irComponentePerfilCliente(id:number){
+    this.router.navigate(['dashboard/clients/detailcustomer',id])
+  }
+
 }
