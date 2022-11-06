@@ -30,6 +30,7 @@ import { DashboardEmployeesEditemployeeComponent } from './dashboard-employees-e
 import { SharedTitleComponentService } from './servicios/shared-title-component.service';
 import { DashboardClientsCreatecustomerComponent } from './dashboard-clients-createcustomer/dashboard-clients-createcustomer.component';
 import { DashboardClientsDetailcustomerComponent } from './dashboard-clients-detailcustomer/dashboard-clients-detailcustomer.component';
+import { DashboardClientsEditcustomerComponent } from './dashboard-clients-editcustomer/dashboard-clients-editcustomer.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { DashboardClientsDetailcustomerComponent } from './dashboard-clients-det
     DashboardEmployeesEditemployeeComponent,
     DashboardClientsCreatecustomerComponent,
     DashboardClientsDetailcustomerComponent,
+    DashboardClientsEditcustomerComponent,
  
   ],
   imports: [
