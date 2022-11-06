@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Cliente } from '../modelos/cliente';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-clients-editcustomer',
@@ -24,7 +25,10 @@ export class DashboardClientsEditcustomerComponent implements OnInit {
     codigo_postal: new FormControl('' ,[Validators.required ,Validators.minLength(5) ,Validators.maxLength(5) ,Validators.pattern("[0-9]*")]) ,
   });
   constructor(private apiService:ApiService ,
-    private router:Router ,private readonly route: ActivatedRoute) { }
+    private router:Router ,private readonly route: ActivatedRoute ,
+    private sharedTitleService:SharedTitleComponentService) {
+      sharedTitleService.emitChange("Editar cliente")
+     }
 
   ngOnInit(): void {
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Route, Router } from '@angular/router';
 import { Cliente } from '../modelos/cliente';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-clients-database',
@@ -12,7 +13,10 @@ export class DashboardClientsDatabaseComponent implements OnInit {
 
   clientes:Cliente [] = []
 
-  constructor(private apiService:ApiService ,private router:Router) { }
+  constructor(private apiService:ApiService ,private router:Router ,
+    private sharedTitleService:SharedTitleComponentService) {
+      sharedTitleService.emitChange("Lista de clientes")
+     }
 
   ngOnInit(): void {
     this.getClientes()

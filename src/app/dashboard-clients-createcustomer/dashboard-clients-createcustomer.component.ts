@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { Cliente } from '../modelos/cliente';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-clients-createcustomer',
@@ -26,7 +27,10 @@ export class DashboardClientsCreatecustomerComponent implements OnInit {
 
   constructor(private apiService:ApiService ,
     private router:Router ,
-    private cookie:CookieService ) { }
+    private cookie:CookieService ,
+    private sharedTitleService:SharedTitleComponentService ) {
+      sharedTitleService.emitChange("Añadir cliente")
+     }
 
   ngOnInit(): void {
   }

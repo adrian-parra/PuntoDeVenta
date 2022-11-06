@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Cliente } from '../modelos/cliente';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-clients-detailcustomer',
@@ -15,7 +16,10 @@ export class DashboardClientsDetailcustomerComponent implements OnInit {
   id:number = 0
 
   constructor(private router:Router ,private readonly route: ActivatedRoute ,
-    private apiService:ApiService) { }
+    private apiService:ApiService ,
+    private sharedTitleService:SharedTitleComponentService) {
+      sharedTitleService.emitChange("Perfil del cliente")
+     }
   
 
   ngOnInit(): void {
