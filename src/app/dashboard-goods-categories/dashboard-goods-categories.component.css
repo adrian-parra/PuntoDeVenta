@@ -1,0 +1,6 @@
+.header-table {
+    grid-template-columns: 1fr;
+}
+.body-table .contenedor-element-table {
+    grid-template-columns: 1fr;
+}

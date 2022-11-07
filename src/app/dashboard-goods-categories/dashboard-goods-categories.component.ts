@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CategoriaArticulo } from '../modelos/categoriaArticulo';
+import { ApiService } from '../servicios/api.service';
 
 @Component({
   selector: 'app-dashboard-goods-categories',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardGoodsCategoriesComponent implements OnInit {
 
-  constructor() { }
+  categoriaArticulo:CategoriaArticulo [] = []
+
+  constructor(private apiService:ApiService) { }
 
   ngOnInit(): void {
+
+    this.getCategoriasArticulos()
+  }
+
+  getCategoriasArticulos(){
+    this.apiService.getCategoriasArticulos().subscribe((categoriaArticulo:any) => {
+      this.categoriaArticulo = categoriaArticulo
+  })
   }
 
 }
