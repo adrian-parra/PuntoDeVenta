@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
 import { ApiService } from '../servicios/api.service';
 
@@ -11,11 +12,15 @@ export class DashboardGoodsCategoriesComponent implements OnInit {
 
   categoriaArticulo:CategoriaArticulo [] = []
 
-  constructor(private apiService:ApiService) { }
+  constructor(private apiService:ApiService ,private router:Router) { }
 
   ngOnInit(): void {
 
     this.getCategoriasArticulos()
+  }
+
+  irComponenteAddCategoria(){
+    this.router.navigate(['dashboard/goods/categorycreate'])
   }
 
   getCategoriasArticulos(){
