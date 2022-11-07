@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { CategoriaArticulo } from '../modelos/categoriaArticulo';
 import { Cliente } from '../modelos/cliente';
 import { Empleado } from '../modelos/empleado';
 import { Usuario } from '../modelos/usuario';
@@ -73,8 +74,19 @@ export class ApiService {
       obj
     )
   }
-  /*METODOS PARA TRABAJAR CON TABLE 'CLIENTE'*/
+  /*FIN METODOS PARA TRABAJAR CON TABLE 'CLIENTE'*/
 
   //************************************************
+
+  /*METODO PARA TRABAJAR CON TABLE CATEGORIA ARTICULO*/
+  
+  getCategoriasArticulos(): Observable<CategoriaArticulo> { 
+    return this.http.get<CategoriaArticulo>(this.baseUrl + 'categoria_articulo/');
+  }
+
+  /*FIN METODO PARA TRABAJAR CON TABLE CATEGORIA ARTICULO*/
+
+  //******************************************************
+
 
 }
