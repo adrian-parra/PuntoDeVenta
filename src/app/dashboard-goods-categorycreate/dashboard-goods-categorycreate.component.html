@@ -1,16 +1,23 @@
 <section class="contenedor-componente">
     <div class="cardview">
         <div class="cardview-body">
-            <form  class="form">
+            <form  class="form"  [formGroup]="categoriaArticuloFormRegistro" (ngSubmit)="addCategoriaArticulo()">
                 <div class="contenedor-input">
-                    <input type="text" placeholder=" ">
+                    <input type="text" placeholder=" " formControlName="nombre">
                     <label for="">nombre de la categoria</label>
                     <label for="">Ingrese</label>
+                    <p class="smsError"
+                    *ngIf="categoriaArticuloFormRegistro.get('nombre')?.touched && categoriaArticuloFormRegistro.get('nombre')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+                <p class="smsError"
+                    *ngIf="categoriaArticuloFormRegistro.get('nombre')?.touched && categoriaArticuloFormRegistro.get('nombre')?.errors?.['minlength']">
+                    Introduzca un nombre valido</p>
+
                 </div>
 
                 <div class="contenedor-botones">
                     <button type="button" >CANCELAR</button>
-                    <button type="submit">GUARDAR</button>
+                    <button type="submit" [disabled]="categoriaArticuloFormRegistro.invalid">GUARDAR</button>
                 </div>
             </form>
         </div>
