@@ -8,6 +8,7 @@ import { DashboardEmployeesCreateemployeeComponent } from './dashboard-employees
 import { DashboardEmployeesEditemployeeComponent } from './dashboard-employees-editemployee/dashboard-employees-editemployee.component';
 import { DashboardEmployeesListComponent } from './dashboard-employees-list/dashboard-employees-list.component';
 import { DashboardGoodsCategoriesComponent } from './dashboard-goods-categories/dashboard-goods-categories.component';
+import { DashboardGoodsCategorycreateComponent } from './dashboard-goods-categorycreate/dashboard-goods-categorycreate.component';
 import { DashboardGoodsPriceComponent } from './dashboard-goods-price/dashboard-goods-price.component';
 import { DashboardInventoryAdjustmentComponent } from './dashboard-inventory-adjustment/dashboard-inventory-adjustment.component';
 import { DashboardInventoryHistoryComponent } from './dashboard-inventory-history/dashboard-inventory-history.component';
@@ -29,6 +30,8 @@ const routes: Routes = [
 
       {path:'goods/price' ,component:DashboardGoodsPriceComponent},
       {path:'goods/categories' ,component:DashboardGoodsCategoriesComponent},
+      {path:'goods/categorycreate' ,component:DashboardGoodsCategorycreateComponent},
+
 
       {path:'inventory/purchase' ,component:DashboardInventoryPurchaseComponent},
       {path:'inventory/adjustment' ,component:DashboardInventoryAdjustmentComponent},
