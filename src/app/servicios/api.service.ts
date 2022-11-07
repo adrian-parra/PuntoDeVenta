@@ -84,6 +84,11 @@ export class ApiService {
     return this.http.get<CategoriaArticulo>(this.baseUrl + 'categoria_articulo/');
   }
 
+  addCategoriaArticulo(obj:any):Observable<CategoriaArticulo> {
+    return this.http.post<CategoriaArticulo>(this.baseUrl + 'categoria_articulo/?insertar=1' ,
+    obj);
+  }
+
   /*FIN METODO PARA TRABAJAR CON TABLE CATEGORIA ARTICULO*/
 
   //******************************************************
