@@ -7,8 +7,9 @@
         <form class="form" [formGroup]="clienteFormRegistro" (ngSubmit)="addCliente()">
 
             <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese nombre completo" required formControlName="nombre">
-                <label for="">Nombre</label>
+                <input type="text" placeholder=" " required formControlName="nombre">
+                <label for="">nombre completo</label>
+                <label for="">Ingrese</label>
                 <p class="smsError"
                     *ngIf="clienteFormRegistro.get('nombre')?.touched && clienteFormRegistro.get('nombre')?.errors?.['required']">
                     El campo no puede estar en blanco</p>
@@ -18,8 +19,9 @@
             </div>
 
             <div class="contenedor-input">
-                <input type="email" placeholder="Ingrese correo electronico" required formControlName="correo">
-                <label for="">Correo</label>
+                <input type="email" placeholder=" " required formControlName="correo">
+                <label for="">correo electronico</label>
+                <label for="">Ingrese</label>
                 <p class="smsError"
                     *ngIf="clienteFormRegistro.get('correo')?.touched && clienteFormRegistro.get('correo')?.errors?.['required']">
                     El campo no puede estar en blanco</p>
@@ -29,8 +31,9 @@
             </div>
 
             <div class="contenedor-input">
-                <input type="tel" placeholder="Ingrese numero de telefono" required formControlName="telefono">
-                <label for="">Teléfono</label>
+                <input type="tel" placeholder=" " required formControlName="telefono">
+                <label for="">numero de teléfono</label>
+                <label for="">Ingrese</label>
                 <p class="smsError"
                     *ngIf="clienteFormRegistro.get('telefono')?.touched && clienteFormRegistro.get('telefono')?.errors?.['required']">
                     El campo no puede estar en blanco</p>
@@ -47,8 +50,9 @@
             </div>
 
             <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese dirección" required formControlName="direccion">
-                <label for="">Dirección</label>
+                <input type="text" placeholder=" " required formControlName="direccion">
+                <label for="">dirección</label>
+                <label for="">Ingrese</label>
                 <p class="smsError"
                     *ngIf="clienteFormRegistro.get('direccion')?.touched && clienteFormRegistro.get('direccion')?.errors?.['required']">
                     El campo no puede estar en blanco</p>
@@ -58,8 +62,9 @@
             </div>
 
             <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese ciudad" required formControlName="ciudad">
-                <label for="">Ciudad</label>
+                <input type="text" placeholder=" " required formControlName="ciudad">
+                <label for="">ciudad</label>
+                <label for="">Ingrese</label>
                 <p class="smsError"
                     *ngIf="clienteFormRegistro.get('ciudad')?.touched && clienteFormRegistro.get('ciudad')?.errors?.['required']">
                     El campo no puede estar en blanco</p>
@@ -71,8 +76,9 @@
 
 
             <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese estado" required formControlName="estado">
-                <label for="">Estado</label>
+                <input type="text" placeholder=" " required formControlName="estado">
+                <label for="">estado</label>
+                <label for="">Ingrese</label>
                 <p class="smsError"
                     *ngIf="clienteFormRegistro.get('estado')?.touched && clienteFormRegistro.get('estado')?.errors?.['required']">
                     El campo no puede estar en blanco</p>
@@ -83,8 +89,9 @@
             </div>
 
             <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese codigo postal" required formControlName="codigo_postal">
-                <label for="">Codigo postal</label>
+                <input type="text" placeholder=" " required formControlName="codigo_postal">
+                <label for="">codigo postal</label>
+                <label for="">Ingrese</label>
                 <p class="smsError"
                     *ngIf="clienteFormRegistro.get('codigo_postal')?.touched && clienteFormRegistro.get('codigo_postal')?.errors?.['required']">
                     El campo no puede estar en blanco</p>
@@ -101,8 +108,9 @@
             </div>
 
             <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese nota" formControlName="nota">
-                <label for="">Nota</label>
+                <input type="text" placeholder=" " formControlName="nota">
+                <label for="">nota</label>
+                <label for="">Ingrese</label>
             </div>
 
 

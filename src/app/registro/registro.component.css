@@ -16,16 +16,10 @@
     box-shadow: 0 1px 4px #00000024;
     border-radius: var(--BorderRadius);
 }
+
 .app-registro 
 .contenedor-registro 
-.form-registro{
-    display: flex;
-    flex-direction: column;
-    gap: var(--Padding); 
-}
-.app-registro 
-.contenedor-registro 
-.form-registro
+.form
 .logo {
     font-size:calc(var(--SizeTitulo) * 2);
     font-weight: 500;
@@ -35,14 +29,14 @@
 
 .app-registro 
 .contenedor-registro 
-.form-registro
+.form
 .logo::after {
     content: '/>';
     color: var(--ColorDescripcion);
 }
 .app-registro 
 .contenedor-registro 
-.form-registro
+.form
 .logo::before {
     content: '<';
     color: var(--ColorDescripcion);
@@ -51,86 +45,17 @@
 
 .app-registro 
 .contenedor-registro 
-.form-registro
+.form
 h1 {
     font-size: var(--SizeTitulo);
     font-weight: 400;
     margin-bottom: 24px;
     letter-spacing: var(--SpaseLetter);
 }
-.app-registro 
-.contenedor-registro 
-.form-registro
-.contenedor-input {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
-    position: relative;
-    padding-top: var(--Padding);
-    
-}
-.app-registro 
-.contenedor-registro 
-.form-registro
-.contenedor-input
-label {
-    font-size: var(--SizeDescripcion);
-    position: absolute;
-    color: var(--ColorDescripcion);
-    top: 0;
-    left: 0;
-    transition: color .3s;
-}
-.app-registro 
-.contenedor-registro 
-.form-registro
-.contenedor-input
-input {
-    border: 0;
-    padding: 7px 0;
-    font-size: .9rem;
-    border-bottom: var(--Border) solid var(--ColorDescripcion);
-    transition: border .3s;
-}
-.app-registro 
-.contenedor-registro 
-.form-registro
-.contenedor-input
-input::placeholder {
-    color:rgb(206,206,206);
-   
-}
 
 .app-registro 
 .contenedor-registro 
-.form-registro
-.contenedor-input
-input:focus {
-    border-color: var(--ColorSecundario);
-    
-}
-.app-registro 
-.contenedor-registro 
-.form-registro
-.contenedor-input
-input:focus + label {
-    color: var(--ColorSecundario);
-}
-
-.app-registro 
-.contenedor-registro 
-.form-registro
-.contenedor-input
-.smsError {
-    position: absolute;
-    color: var(--ColorDanger);
-    font-size: var(--SizeDescripcion);
-    bottom: -15px;
-}
-
-.app-registro 
-.contenedor-registro 
-.form-registro
+.form
 button {
     padding: var(--Padding) 0;
     font-size: calc(var(--SizeDescripcion) + 2px);
@@ -145,13 +70,13 @@ button {
 }
 .app-registro 
 .contenedor-registro 
-.form-registro
+.form
 button:hover {
     opacity: .8;
 }
 .app-registro 
 .contenedor-registro 
-.form-registro
+.form
 button:disabled {
     opacity: .2;
     pointer-events: none;
@@ -159,7 +84,7 @@ button:disabled {
 
 .app-registro 
 .contenedor-registro 
-.form-registro
+.form
 .contenedor-enlase {
     display: flex;
     flex-direction: row;
@@ -168,7 +93,7 @@ button:disabled {
 }
 .app-registro 
 .contenedor-registro 
-.form-registro
+.form
 .contenedor-enlase
 label {
     font-size: var(--SizeDescripcion);
@@ -178,7 +103,7 @@ label {
 }
 .app-registro 
 .contenedor-registro 
-.form-registro
+.form
 .contenedor-enlase
 a {
     font-size: var(--SizeDescripcion);

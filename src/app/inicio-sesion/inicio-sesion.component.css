@@ -18,7 +18,7 @@
 
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
-.form-inicio-sesion{
+.form{
     display: flex;
     flex-direction: column;
     gap: var(--Padding);
@@ -28,7 +28,7 @@
 
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
-.form-inicio-sesion
+.form
 .logo {
     font-size:calc(var(--SizeTitulo) * 2);
     font-weight: 500;
@@ -37,14 +37,13 @@
 }
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
-.form-inicio-sesion
+.form
 .logo::after {
     content: '/>';
     color: var(--ColorDescripcion);
 }
 .app-inicio-sesion 
-.contenedor-inicio-sesion 
-.form-inicio-sesion
+.contenedor-inicio-sesion .form
 .logo::before {
     content: '<';
     color: var(--ColorDescripcion);
@@ -52,86 +51,17 @@
 }
 
 .app-inicio-sesion 
-.contenedor-inicio-sesion 
-.form-inicio-sesion
+.contenedor-inicio-sesion .form
 h1 {
     font-size: var(--SizeTitulo);
     font-weight: 400;
     margin-bottom: 24px;
     letter-spacing: var(--SpaseLetter);
 }
-.app-inicio-sesion 
-.contenedor-inicio-sesion 
-.form-inicio-sesion
-.conetenedor-input {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 24px;
-    position: relative;
-   
-    padding-top: var(--Padding);
-    
-}
-
 
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
-.form-inicio-sesion
-.conetenedor-input
-label {
-    font-size: var(--SizeDescripcion);
-    position: absolute;
-    color: var(--ColorDescripcion);
-    top: 0;
-    left: 0;
-    transition: color .3s;
-}
-.app-inicio-sesion 
-.contenedor-inicio-sesion 
-.form-inicio-sesion
-input {
-    border: 0;
-    padding: 7px 0;
-    font-size: .9rem;
-    border-bottom: var(--Border) solid var(--ColorDescripcion);
-    transition: border .3s;
-    
-}
-.app-inicio-sesion 
-.contenedor-inicio-sesion 
-.form-inicio-sesion
-input::placeholder {
-    color:rgb(206,206,206);
-}
-
-.app-inicio-sesion 
-.contenedor-inicio-sesion 
-.form-inicio-sesion
-input:focus {
-    border-color: var(--ColorSecundario);
-}
-
-.app-inicio-sesion 
-.contenedor-inicio-sesion 
-.form-inicio-sesion
-input:focus + label {
-    color: var(--ColorSecundario);
-}
-
-.app-inicio-sesion
-.contenedor-inicio-sesion 
-.form-inicio-sesion
-.conetenedor-input
-.smsError {
-    position: absolute;
-    color: var(--ColorDanger);
-    font-size: var(--SizeDescripcion);
-    bottom: -15px;
-}
-
-.app-inicio-sesion 
-.contenedor-inicio-sesion 
-.form-inicio-sesion
+.form
 .contenedor-botones {
     display: flex;
     flex-direction: row;
@@ -142,7 +72,7 @@ input:focus + label {
 
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
-.form-inicio-sesion
+.form
 .contenedor-botones 
 label {
     font-size: var(--SizeDescripcion);
@@ -151,7 +81,7 @@ label {
 }
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
-.form-inicio-sesion
+.form
 .contenedor-botones 
 label
 input {
@@ -163,7 +93,7 @@ input {
 }
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
-.form-inicio-sesion
+.form
 .contenedor-botones 
 button {
     width: 132px;
@@ -179,13 +109,13 @@ button {
 }
 .app-inicio-sesion
 .contenedor-inicio-sesion
-.form-inicio-sesion
+.form
 button:hover {
     opacity: .8;
 }
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
-.form-inicio-sesion
+.form
 .contenedor-botones 
 button:disabled {
     opacity: .2;
@@ -194,7 +124,7 @@ button:disabled {
 
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
-.form-inicio-sesion
+.form
 .contenedor-enlases {
     display: flex;
     flex-direction: column;
@@ -203,7 +133,7 @@ button:disabled {
 }
 .app-inicio-sesion 
 .contenedor-inicio-sesion 
-.form-inicio-sesion
+.form
 .contenedor-enlases
 a {
     font-size: var(--SizeDescripcion);

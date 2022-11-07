@@ -7,29 +7,33 @@
         <form class="form" [formGroup]="empleadoFormRegistro" (ngSubmit)="agregarEmpleado()">
 
             <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese nombre completo" required formControlName="nombre">
-                <label for="">Nombre</label>
+                <input type="text" placeholder=" " required formControlName="nombre">
+                <label for="">nombre completo</label>
+                <label for="">Ingrese</label>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('nombre')?.touched && empleadoFormRegistro.get('nombre')?.errors?.['required']">El campo no puede estar en blanco</p>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('nombre')?.touched && empleadoFormRegistro.get('nombre')?.errors?.['minlength']">Introduzca un nombre valido</p>
             </div>
 
             <div class="contenedor-input">
-                <input [ngClass]="{'deshabilitar-input': esPropietario}" type="email" placeholder="Ingrese correo electronico" required formControlName="correo">
-                <label for="">Correo</label>
+                <input [ngClass]="{'deshabilitar-input': esPropietario}" type="email" placeholder=" " required formControlName="correo">
+                <label for="">correo electronico</label>
+                <label for="">Ingrese</label>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('correo')?.touched && empleadoFormRegistro.get('correo')?.errors?.['required']">El campo no puede estar en blanco</p>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('correo')?.touched && empleadoFormRegistro.get('correo')?.errors?.['email']">Ingrese correo valido</p>
             </div>
 
             <div class="contenedor-input" *ngIf="!editarEmpleado">
-                <input type="password" placeholder="Ingrese contraseña" required formControlName="clave">
-                <label for="">Contraseña</label>
+                <input type="password" placeholder=" " required formControlName="clave">
+                <label for="">contraseña</label>
+                <label for="">Ingrese</label>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('clave')?.touched && empleadoFormRegistro.get('clave')?.errors?.['required']">El campo no puede estar en blanco</p>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('clave')?.touched && empleadoFormRegistro.get('clave')?.errors?.['minlength']">Ingrese contraseña valida ,mayor a 7 caracteres</p>
             </div>
 
             <div class="contenedor-input">
-                <input type="tel" placeholder="Ingrese numero de telefono" required formControlName="telefono">
-                <label for="">Teléfono</label>
+                <input type="tel" placeholder=" " required formControlName="telefono">
+                <label for="">numero de teléfono</label>
+                <label for="">Ingrese</label>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('telefono')?.touched && empleadoFormRegistro.get('telefono')?.errors?.['required']">El campo no puede estar en blanco</p>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('telefono')?.touched && empleadoFormRegistro.get('telefono')?.errors?.['minlength'] && !empleadoFormRegistro.get('telefono')?.errors?.['pattern']">Introdusca numero valido</p>
                 <p class="smsError" *ngIf="empleadoFormRegistro.get('telefono')?.touched && empleadoFormRegistro.get('telefono')?.errors?.['maxlength'] && !empleadoFormRegistro.get('telefono')?.errors?.['pattern']">Introdusca numero valido, igual a 10 caracteres</p>

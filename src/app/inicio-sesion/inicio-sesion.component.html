@@ -1,18 +1,20 @@
 <section class="app-inicio-sesion">
     <div class="contenedor-inicio-sesion">
-        <form class="form-inicio-sesion" [formGroup]="usuarioFormLogin" (ngSubmit)="vericarSesion()">
+        <form class="form" [formGroup]="usuarioFormLogin" (ngSubmit)="vericarSesion()">
             <p class="logo">LOAL</p>
             <h1>Inicie sesión en su cuenta de LOAL</h1>
-            <div class="conetenedor-input">
-                <input type="email" placeholder="Ingrese correo electronico" formControlName="correo" >
-                <label for="">Correo</label>
+            <div class="contenedor-input">
+                <input type="email" placeholder=" " formControlName="correo" >
+                <label for="">correo electronico</label>
+                <label for="">Ingrese</label>
                 <p class="smsError" *ngIf="usuarioFormLogin.get('correo')?.touched && usuarioFormLogin.get('correo')?.errors?.['required']">El campo no puede estar en blanco</p>
                 <p class="smsError" *ngIf="usuarioFormLogin.get('correo')?.touched && usuarioFormLogin.get('correo')?.errors?.['email']">Introduzca un correo valido</p>
                 
                </div>
-            <div class="conetenedor-input">
-                <input type="password" placeholder="Ingrese contraseña" formControlName="clave">
-                <label for="">Contraseña</label>
+            <div class="contenedor-input">
+                <input type="password" placeholder=" " formControlName="clave">
+                <label for="">contraseña</label>
+                <label for="">Ingrese</label>
                 <p class="smsError" *ngIf="usuarioFormLogin.get('clave')?.touched && usuarioFormLogin.get('clave')?.errors?.['required']">El campo no puede estar en blanco</p>
                 <p class="smsError" *ngIf="usuarioFormLogin.get('clave')?.touched && usuarioFormLogin.get('clave')?.errors?.['minlength']">El campo debe contener al menos {{usuarioFormLogin.get('clave')?.errors?.['minlength'].requiredLength}} caracteres</p>
             

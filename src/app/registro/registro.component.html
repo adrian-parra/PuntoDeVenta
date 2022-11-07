@@ -1,24 +1,27 @@
 <section class="app-registro">
     <div class="contenedor-registro">
-        <form class="form-registro" [formGroup]="usuarioForm" (ngSubmit)="addUsuario()">
+        <form class="form" [formGroup]="usuarioForm" (ngSubmit)="addUsuario()">
             <p class="logo">LOAL</p>
             <h1>Crea tu cuenta gratis de LOAL</h1>
             <div class="contenedor-input">
-                <input type="email" placeholder="Ingrese correo electronico" required formControlName="correo">
-                <label for="">Correo</label>
+                <input type="email" placeholder=" " required formControlName="correo">
+                <label for="">correo electronico</label>
+                <label for="">Ingrese</label>
                 <p class="smsError" *ngIf="usuarioForm.get('correo')?.touched && usuarioForm.get('correo')?.errors?.['required']">El campo no puede estar en blanco</p>
                 <p class="smsError" *ngIf="usuarioForm.get('correo')?.touched && usuarioForm.get('correo')?.errors?.['email']">Ingrese correo valido</p>
             </div>
             <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese contraseña" required formControlName="clave">
-                <label for="">Contraseña</label>
+                <input type="text" placeholder=" " required formControlName="clave">
+                <label for="">contraseña</label>
+                <label for="">Ingrese</label>
                 <p class="smsError" *ngIf="usuarioForm.get('clave')?.touched && usuarioForm.get('clave')?.errors?.['required']">El campo no puede estar en blanco</p>
                 <p class="smsError" *ngIf="usuarioForm.get('clave')?.touched && usuarioForm.get('clave')?.errors?.['minlength']">El campo debe contener al menos {{usuarioForm.get('clave')?.errors?.['minlength'].requiredLength}} caracteres</p>
        
             </div>
             <div class="contenedor-input">
-                <input type="text" placeholder="Ingrese nombre de la empresa" required formControlName="nombre_empresa">
-                <label for="">Empresa</label>
+                <input type="text" placeholder= " " required formControlName="nombre_empresa">
+                <label for="">nombre de empresa</label>
+                <label for="">Ingrese</label>
                 <p class="smsError" *ngIf="usuarioForm.get('nombre_empresa')?.touched && usuarioForm.get('nombre_empresa')?.errors?.['required']">El campo no puede estar en blanco</p>
                 <p class="smsError" *ngIf="usuarioForm.get('nombre_empresa')?.touched && usuarioForm.get('nombre_empresa')?.errors?.['minlength']">Introduzca un nombre del negocio válido</p>
        

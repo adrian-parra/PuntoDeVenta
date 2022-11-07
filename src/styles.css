@@ -196,7 +196,7 @@ body{
 /*ESTILOS G PARA TABLAS DENTRO DEL SISTEMA */
 
 /*ESTILOS GENERALES PARA FORM */
-form {
+.form {
   display: flex;
   flex-direction: column;
   gap: var(--Padding); 
@@ -213,13 +213,26 @@ form {
 
 .form 
 .contenedor-input
-label {
-  font-size: var(--SizeDescripcion);
+label:first-of-type {
+  font-size: calc(var(--SizeDescripcion) + 2px);
   position: absolute;
   color: var(--ColorDescripcion);
-  top: 0;
-  left: 0;
-  transition: color .3s;
+  bottom:10px;
+  left :53px;
+  pointer-events:none;
+  transition: all .3s;
+}
+
+.form 
+.contenedor-input
+label:last-of-type {
+  font-size: calc(var(--SizeDescripcion) + 2px);
+  position: absolute;
+  color: var(--ColorDescripcion);
+  bottom:10px;
+  left :1px;
+  pointer-events:none;
+  transition: all .3s;
 }
 .form
 .contenedor-input
@@ -257,12 +270,43 @@ select:focus {
 
 .form
 .contenedor-input
-input:focus + label ,
+input:focus + label:first-of-type ,
 .form
 .contenedor-input
-select:focus + label {
+select:focus + label:first-of-type ,
+.form
+.contenedor-input
+input:focus ~ label:last-of-type ,
+.form
+.contenedor-input
+select:focus ~ label:last-of-type {
   color: var(--ColorSecundario);
 }
+
+/*ANIMACION EN INPUT COMO ANDROID MATERIAL */
+
+.form
+.contenedor-input
+input:not(:placeholder-shown){
+  color:black;
+}
+.form
+.contenedor-input
+input:not(:placeholder-shown) + label:first-of-type{
+  bottom:30px;
+  left :0px;
+  transform:scale(1);
+  
+}
+
+.form
+.contenedor-input
+input:not(:placeholder-shown) ~ label:last-of-type{
+  bottom:-11px;
+  opacity:0;
+}
+/*ANIMACION EN INPUT COMO ANDROID MATERIAL */
+
 
 /*DISEÑO A SELECT,OPTION */
 .form 
@@ -270,6 +314,13 @@ select:focus + label {
 select {
   cursor: pointer;
   /*appearance: none;*/
+}
+
+.form
+.contenedor-input
+select + label {
+  top: 0;
+  left: 0;
 }
 
 .form 
