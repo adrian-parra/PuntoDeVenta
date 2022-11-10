@@ -34,7 +34,14 @@ export class DashboardGoodsCategoryeditComponent implements OnInit {
   
 
   updateCategoriaArticulo(){
-    
+    this.apiService.updateCategoriaArticulo(this.categoriaArticuloFormRegistro.value).subscribe((r:any) => {
+      if(r['0'] == true){
+        alert("Categoria actualizado")
+        this.router.navigate(['dashboard/goods/categories']);
+      }else {
+        alert(r['2'])
+      }
+    })
   }
 
   irComponneteListaCategoriaArticulo(){
