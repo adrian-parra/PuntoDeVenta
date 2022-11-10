@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-goods-categories',
@@ -12,7 +13,10 @@ export class DashboardGoodsCategoriesComponent implements OnInit {
 
   categoriaArticulo:CategoriaArticulo [] = []
 
-  constructor(private apiService:ApiService ,private router:Router) { }
+  constructor(private apiService:ApiService ,private router:Router ,
+    private sharedTitleService:SharedTitleComponentService) {
+      sharedTitleService.emitChange('Categorías')
+     }
 
   ngOnInit(): void {
 

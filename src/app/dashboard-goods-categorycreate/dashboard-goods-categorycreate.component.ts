@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-goods-categorycreate',
@@ -17,8 +18,11 @@ export class DashboardGoodsCategorycreateComponent implements OnInit {
   constructor(
     private apiService: ApiService,
     private router: Router,
-    private cookie: CookieService
-  ) {}
+    private cookie: CookieService ,
+    private sharedTitleService:SharedTitleComponentService
+  ) {
+    sharedTitleService.emitChange('Crear categoría')
+  }
 
   ngOnInit(): void {
     //this.cookie.delete('login'); // delete Test cookie from the browser

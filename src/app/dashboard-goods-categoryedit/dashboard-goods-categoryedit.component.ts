@@ -4,6 +4,7 @@ import { ActivatedRoute, Params, Route, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-goods-categoryedit',
@@ -18,7 +19,10 @@ export class DashboardGoodsCategoryeditComponent implements OnInit {
   constructor( private apiService: ApiService,
     private router: Router,
     private cookie: CookieService ,
-    private route:ActivatedRoute) { }
+    private route:ActivatedRoute ,
+    private sharedTitleService:SharedTitleComponentService) {
+      sharedTitleService.emitChange('Editar categoría')
+     }
 
   ngOnInit(): void {
     this.route.params.subscribe((params:Params) => {
