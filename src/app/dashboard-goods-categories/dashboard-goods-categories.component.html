@@ -8,7 +8,7 @@
                 <div>Nombre</div>
             </div>
             <div class="body-table">
-                <div class="contenedor-element-table" *ngFor="let categoria of categoriaArticulo">
+                <div class="contenedor-element-table" *ngFor="let categoria of categoriaArticulo" (click)="editarCategoria(categoria.id)">
                     <div>{{categoria.nombre}} <br> 2 articulos</div>
 
                 </div>

@@ -29,4 +29,8 @@ export class DashboardGoodsCategoriesComponent implements OnInit {
   })
   }
 
+  editarCategoria(id:number) {
+    this.router.navigate(['dashboard/goods/categoryedit' ,id])
+  }
+
 }
