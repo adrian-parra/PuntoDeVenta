@@ -1,9 +1,19 @@
 <section class="contenedor-componente">
     <div class="cardview">
-        <div class="cardview-header">
+         <!--SOLO SE MUESTRA CUANDO NO HAY CATEGORIAS REGISTRADAS-->
+         <div class="cardview-content" *ngIf="!categoriasDisponibles">
+            <div class="contenedor-img">
+                <img src="https://r.loyverse.com/dashboard/images/ic_category_18pxf144903da087bd5fc838.svg" alt="">
+            </div>
+            <h1>Categorías</h1>
+            <p>Las categorias te ayudan a organizar artículos.</p>
             <button class="l-btn-d" (click)="irComponenteAddCategoria()">+ AGREGAR CATEGORÍA</button>
         </div>
-        <div class="cardview-body">
+
+        <div class="cardview-header" *ngIf="categoriasDisponibles">
+            <button class="l-btn-d" (click)="irComponenteAddCategoria()">+ AGREGAR CATEGORÍA</button>
+        </div>
+        <div class="cardview-body" *ngIf="categoriasDisponibles">
             <div class="header-table">
                 <div>Nombre</div>
             </div>

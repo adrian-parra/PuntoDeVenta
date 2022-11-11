@@ -13,6 +13,8 @@ export class DashboardGoodsCategoriesComponent implements OnInit {
 
   categoriaArticulo:CategoriaArticulo [] = []
 
+  categoriasDisponibles:Boolean = false
+
   constructor(private apiService:ApiService ,private router:Router ,
     private sharedTitleService:SharedTitleComponentService) {
       sharedTitleService.emitChange('Categorías')
@@ -30,6 +32,9 @@ export class DashboardGoodsCategoriesComponent implements OnInit {
   getCategoriasArticulos(){
     this.apiService.getCategoriasArticulos().subscribe((categoriaArticulo:any) => {
       this.categoriaArticulo = categoriaArticulo
+      
+      if(this.categoriaArticulo.length > 0) this.categoriasDisponibles = true
+      
   })
   }
 
