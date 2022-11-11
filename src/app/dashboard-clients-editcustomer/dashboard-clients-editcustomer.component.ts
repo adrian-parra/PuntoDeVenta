@@ -11,7 +11,7 @@ import { SharedTitleComponentService } from '../servicios/shared-title-component
   styleUrls: ['./dashboard-clients-editcustomer.component.css']
 })
 export class DashboardClientsEditcustomerComponent implements OnInit {
-
+    idCliente!:number 
 
   clienteFormRegistro = new FormGroup({
     id:new FormControl(),
@@ -33,6 +33,7 @@ export class DashboardClientsEditcustomerComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.params.subscribe((params:Params) => {
+      this.idCliente = params['id']
       this.getCliente(params['id'])
     })
   }
