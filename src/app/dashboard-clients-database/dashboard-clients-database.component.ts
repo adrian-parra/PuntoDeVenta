@@ -13,6 +13,8 @@ export class DashboardClientsDatabaseComponent implements OnInit {
 
   clientes:Cliente [] = []
 
+  clientesDisponibles:Boolean = false
+
   constructor(private apiService:ApiService ,private router:Router ,
     private sharedTitleService:SharedTitleComponentService) {
       sharedTitleService.emitChange("Lista de clientes")
@@ -26,6 +28,9 @@ export class DashboardClientsDatabaseComponent implements OnInit {
   getClientes(){
     this.apiService.getClientes().subscribe((clientes:any) => {
         this.clientes = clientes
+
+        if(this.clientes.length > 0) this.clientesDisponibles = true
+        
     })
   }
 

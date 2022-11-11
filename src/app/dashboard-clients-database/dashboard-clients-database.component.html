@@ -2,20 +2,20 @@
     <div class="cardview" >
 
         <!--SOLO SE MUESTRA CUANDO NO HAY CLIENTES REGISTRADOS-->
-        <div class="cardview-content" *ngIf="false">
+        <div class="cardview-content" *ngIf="!clientesDisponibles">
             <div class="contenedor-img">
                 <img src="https://r.loyverse.com/dashboard/images/ic_group_black-24b702f664cad56268f631.svg" alt="">
             </div>
             <h1>Clientes</h1>
             <p>Aquí puedes administrar tus clientes.</p>
-            <button class="l-btn-d">+ AGREGAR CLIENTE</button>
-        </div>
-
-        <div class="cardview-header">
             <button class="l-btn-d" (click)="irAgregarCliente()">+ AGREGAR CLIENTE</button>
         </div>
 
-        <div class="cardview-body">
+        <div class="cardview-header" *ngIf="clientesDisponibles">
+            <button class="l-btn-d" (click)="irAgregarCliente()">+ AGREGAR CLIENTE</button>
+        </div>
+
+        <div class="cardview-body" *ngIf="clientesDisponibles">
             <div class="header-table">
                 <div>Cliente</div>
                 <div>Contactos</div>
