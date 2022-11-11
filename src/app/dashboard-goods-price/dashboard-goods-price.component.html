@@ -1,1 +1,40 @@
+<section class="contenedor-componente">
+    <div class="cardview" >
+
+        <!--SOLO SE MUESTRA CUANDO NO HAY CLIENTES REGISTRADOS-->
+        <div class="cardview-content" *ngIf="!articulosDisponibles">
+            <div class="contenedor-img">
+                <img src="https://r.loyverse.com/dashboard/images/ic_shopping_basket_black_24px1830b449e7e09deaf1d6.svg" alt="">
+            </div>
+            <h1>Artículos</h1>
+            <p>Aquí puedes administrar tus artículos.</p>
+            <button class="l-btn-d" (click)="irAgregarArticulo()">+ AGREGAR ARTÍCULO</button>
+        </div>
+
+        <div class="cardview-header" *ngIf="articulosDisponibles">
+            <button class="l-btn-d" (click)="irAgregarArticulo()">+ AGREGAR ARTÍCULO</button>
+        </div>
+
+        <div class="cardview-body" *ngIf="articulosDisponibles">
+            <div class="header-table">
+                <div>Nombre</div>
+                <div>Categoría</div>
+                <div>Precio</div>
+                <div>Coste</div>
+                <div>En stock</div>
+                <div></div>
+            </div>
+            <div class="body-table">
+                <div class="contenedor-element-table">
+                    <div>coco</div>
+                    <div>sin categoria </div>
+                    <div> 20 </div>
+                    <div> 10 </div>
+                    <div> 0 </div>
+                    <div> No disponible en inventario </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 

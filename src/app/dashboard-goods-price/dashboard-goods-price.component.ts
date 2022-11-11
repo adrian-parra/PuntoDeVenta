@@ -7,9 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardGoodsPriceComponent implements OnInit {
 
+  articulosDisponibles:Boolean = false
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  irAgregarArticulo(){
+
   }
 
 }
