@@ -10,6 +10,7 @@
   --ColorExtra:rgb(29, 29, 29);
 
   --ColorDanger:#FF4A56;
+  --ColorWarning:#F57C00;
 
   /*COLOR WHITE PARA FILTER EN UNA IMAGEN SVG*/
   --ColorImgSvg:invert(100%) sepia(0%) saturate(7491%) hue-rotate(217deg) brightness(106%) contrast(101%);
