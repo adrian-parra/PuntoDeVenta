@@ -25,13 +25,16 @@
                 <div></div>
             </div>
             <div class="body-table">
-                <div class="contenedor-element-table">
-                    <div>coco</div>
-                    <div>sin categoria </div>
-                    <div> 20 </div>
-                    <div> 10 </div>
-                    <div> 0 </div>
-                    <div> No disponible en inventario </div>
+                <div class="contenedor-element-table" *ngFor="let articulo of articulos">
+                    <div> {{articulo.nombre}} </div>
+                    <div> {{articulo.nombre_categoria}} </div>
+                    <div> {{articulo.precio}} </div>
+                    <div> {{articulo.coste}} </div>
+                    <div> {{articulo.stock}} </div>
+
+                    
+                    <div *ngIf="articulo.stock <= 0" style="color: var(--ColorDanger); font-weight: 500;"> No disponible en inventario </div>
+                    <div *ngIf="articulo.stock <= articulo.stock_bajo && articulo.stock > 0 && articulo.stock_bajo != null" style="color: var(--ColorWarning);font-weight: 500;"> Inventario bajo </div>
                 </div>
             </div>
         </div>
