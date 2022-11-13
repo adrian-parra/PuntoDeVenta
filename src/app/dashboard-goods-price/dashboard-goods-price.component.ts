@@ -24,7 +24,10 @@ export class DashboardGoodsPriceComponent implements OnInit {
   irAgregarArticulo(){
       this.router.navigate(['dashboard/goods/new'])
   }
-
+  
+  irEditarArticulo(id:number){
+    this.router.navigate(["dashboard/goods/edit",id])
+  }
   obtenerArticulos(){
     this.apiService.getArticulos().subscribe((articulos:any) => {
 

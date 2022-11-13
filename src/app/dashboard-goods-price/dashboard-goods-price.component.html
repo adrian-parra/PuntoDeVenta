@@ -25,11 +25,11 @@
                 <div></div>
             </div>
             <div class="body-table">
-                <div class="contenedor-element-table" *ngFor="let articulo of articulos">
+                <div class="contenedor-element-table" *ngFor="let articulo of articulos" (click)="irEditarArticulo(articulo.id)">
                     <div> {{articulo.nombre}} </div>
                     <div> {{articulo.nombre_categoria}} </div>
-                    <div> {{articulo.precio}} </div>
-                    <div> {{articulo.coste}} </div>
+                    <div> ${{articulo.precio}} </div>
+                    <div> ${{articulo.coste}} </div>
                     <div> {{articulo.stock}} </div>
 
                     
