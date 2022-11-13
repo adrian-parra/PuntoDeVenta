@@ -1,1 +1,125 @@
-<p>dashboard-goods-new works!</p>
+<section class="contenedor-componente">
+    <div class="cardview">
+
+        <form class="form" [formGroup]="articuloFormRegistro" (ngSubmit)="addArticulo()">
+            <div class="contenedor-grid-2">
+                <div class="contenedor-input">
+                    <input type="text" placeholder=" " formControlName="nombre">
+                    <label for="">nombre de articulo</label>
+                    <label for="">Ingrese</label>
+                </div>
+                <div class="contenedor-input">
+                    <select formControlName="categoria">
+                        <option>sin categoria</option>
+                    </select>
+                    <label for="">Categoria</label>
+                
+                </div>
+            </div>
+
+
+            <div class="contenedor-input">
+                <input type="text" placeholder=" " formControlName="descripcion">
+                <label for="">descripción</label>
+                <label for="">Ingrese</label>
+            </div>
+
+            <div class="contenedor-checkbox">
+                <label>
+                    <input type="checkbox"> El artículo está disponible para la venta
+                </label>
+            </div>
+
+            <div class="contenedor-grid-2">
+                <div class="contenedor-input">
+                    <select formControlName="vendido_por">
+                        <option>Unidad</option>
+                        <option>Peso/Volumen</option>
+                    </select>
+                    <label for="">Vendido por</label>
+                
+                </div>
+                <div class="contenedor-input">
+                    <input type="text" placeholder=" " formControlName="ref">
+                    <label for="">REF</label>
+                    <label for="">Ingrese</label>
+                </div>
+                
+            </div>
+
+
+            <div class="contenedor-grid-2">
+                <div class="contenedor-input">
+                    <input type="text" placeholder=" " formControlName="precio">
+                    <label for="">Precio</label>
+                    <label for="">Ingrese</label>
+                
+                </div>
+                <div class="contenedor-input">
+                    <input type="text" placeholder=" " formControlName="coste">
+                    <label for="">coste</label>
+                    <label for="">Ingrese</label>
+                </div>
+                
+            </div>
+
+            <div class="contenedor-grid-2">
+                <div class="contenedor-input">
+                    <input type="text" placeholder=" " formControlName="codigo_barras">
+                    <label for="">Código de barras</label>
+                    <label for="">Ingrese</label>
+                
+                </div>
+            </div>
+
+            <h1>Inventario</h1>
+
+            <div class="contenedor-grid-2">
+                <div class="contenedor-input">
+                    <input type="text" placeholder=" " formControlName="stock">
+                    <label for="">stock</label>
+                    <label for="">Ingrese</label>
+                
+                </div>
+                <div class="contenedor-input">
+                    <input type="text" placeholder=" " formControlName="inventario_bajo">
+                    <label for="">inventario bajo</label>
+                    <label for="">Ingrese</label>
+                </div>
+                
+            </div>
+
+            <div class="contenedor-grid-2">
+                <div class="contenedor-input">
+                    <input type="text" placeholder=" " formControlName="stock_optimo">
+                    <label for="">stock optimo</label>
+                    <label for="">Ingrese</label>
+                
+                </div>
+               
+                
+            </div>
+
+            <div class="contenedor-grid-2">
+                <div class="contenedor-input">
+                    <input type="text" placeholder=" " formControlName="id_proveedor">
+                    <label for="">proveedor principal</label>
+                    <label for="">Ingrese</label>
+                
+                </div>
+                <div class="contenedor-input">
+                    <input type="text" placeholder=" " formControlName="costo_defecto">
+                    <label for="">costo de compra por defecto</label>
+                    <label for="">Ingrese</label>
+                </div>
+                
+            </div>
+
+            <div class="contenedor-botones">
+                <button>CANCELAR</button>
+                <button type="submit">GUARDAR</button>
+            </div>
+
+        </form>
+    </div>
+</section>
