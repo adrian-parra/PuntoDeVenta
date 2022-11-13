@@ -111,6 +111,12 @@ export class ApiService {
     return this.http.get<Articulo>(this.baseUrl + 'articulo/');
   }
 
+  addArticulo(obj:any):Observable<Articulo> {
+    return this.http.post<Articulo>(this.baseUrl + 'articulo/?insertar=1' ,
+    obj);
+  }
+
+
   /*fin METODO PARA TRABAJAR CON TABLE ARTICULO*/
 
   //******************************************************
