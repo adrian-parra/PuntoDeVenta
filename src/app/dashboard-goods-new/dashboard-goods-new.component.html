@@ -15,12 +15,13 @@
                     Introduzca un nombre valido</p>
                 </div>
                 <div class="contenedor-input">
-                    <select formControlName="categoria">
-                        <option>sin categoria</option>
+                    <select formControlName="id_categoria">
+                        <option value="1">Sin categoría </option>
+                        <option value="{{categoriaArticulo.id}}" *ngFor="let categoriaArticulo of categoriasArticulos"> {{categoriaArticulo.nombre}} </option>
                     </select>
                     <label for="">Categoria</label>
                     <p class="smsError"
-                    *ngIf="articuloFormRegistro.get('categoria')?.touched && articuloFormRegistro.get('categoria')?.errors?.['required']">
+                    *ngIf="articuloFormRegistro.get('id_categoria')?.touched && articuloFormRegistro.get('id_categoria')?.errors?.['required']">
                     El campo no puede estar en blanco</p>
                 </div>
             </div>
@@ -40,13 +41,13 @@
 
             <div class="contenedor-grid-2">
                 <div class="contenedor-input">
-                    <select formControlName="vendido_por">
-                        <option>Unidad</option>
-                        <option>Peso/Volumen</option>
+                    <select formControlName="id_vendido_por">
+                        <option value="1">Unidad</option>
+                        <option value="2">Peso/Volumen</option>
                     </select>
                     <label for="">Vendido por</label>
                     <p class="smsError"
-                    *ngIf="articuloFormRegistro.get('vendido_por')?.touched && articuloFormRegistro.get('vendido_por')?.errors?.['required']">
+                    *ngIf="articuloFormRegistro.get('id_vendido_por')?.touched && articuloFormRegistro.get('id_vendido_por')?.errors?.['required']">
                     El campo no puede estar en blanco</p>
                 </div>
                 <div class="contenedor-input">
@@ -131,8 +132,8 @@
 
             <div class="contenedor-grid-2">
                 <div class="contenedor-input">
-                    <select formControlName="proveedor_principal">
-                        <option>LOAL</option>
+                    <select formControlName="id_proveedor_principal">
+                       
                     </select>
                     <label for="">proveedor principal</label>
                 
