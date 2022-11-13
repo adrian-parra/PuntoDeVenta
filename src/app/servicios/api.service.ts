@@ -111,6 +111,11 @@ export class ApiService {
     return this.http.get<Articulo>(this.baseUrl + 'articulo/');
   }
 
+  
+  getArticulo(id:any):Observable<Articulo>{
+    return this.http.get<Articulo>(this.baseUrl +'articulo/?id='+id)
+  }
+
   addArticulo(obj:any):Observable<Articulo> {
     return this.http.post<Articulo>(this.baseUrl + 'articulo/?insertar=1' ,
     obj);
