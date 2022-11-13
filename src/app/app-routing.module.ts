@@ -10,6 +10,7 @@ import { DashboardEmployeesListComponent } from './dashboard-employees-list/dash
 import { DashboardGoodsCategoriesComponent } from './dashboard-goods-categories/dashboard-goods-categories.component';
 import { DashboardGoodsCategorycreateComponent } from './dashboard-goods-categorycreate/dashboard-goods-categorycreate.component';
 import { DashboardGoodsCategoryeditComponent } from './dashboard-goods-categoryedit/dashboard-goods-categoryedit.component';
+import { DashboardGoodsEditComponent } from './dashboard-goods-edit/dashboard-goods-edit.component';
 import { DashboardGoodsNewComponent } from './dashboard-goods-new/dashboard-goods-new.component';
 import { DashboardGoodsPriceComponent } from './dashboard-goods-price/dashboard-goods-price.component';
 import { DashboardInventoryAdjustmentComponent } from './dashboard-inventory-adjustment/dashboard-inventory-adjustment.component';
@@ -35,6 +36,8 @@ const routes: Routes = [
       {path:'goods/categorycreate' ,component:DashboardGoodsCategorycreateComponent},
       {path:'goods/categoryedit/:id' ,component:DashboardGoodsCategoryeditComponent},
       {path:'goods/new' ,component:DashboardGoodsNewComponent},
+      {path:'goods/edit/:id' ,component:DashboardGoodsEditComponent},
+
   
 
 
