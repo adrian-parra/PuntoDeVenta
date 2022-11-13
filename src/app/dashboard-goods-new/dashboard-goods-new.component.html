@@ -7,13 +7,21 @@
                     <input type="text" placeholder=" " formControlName="nombre">
                     <label for="">nombre de articulo</label>
                     <label for="">Ingrese</label>
+                    <p class="smsError"
+                    *ngIf="articuloFormRegistro.get('nombre')?.touched && articuloFormRegistro.get('nombre')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+                <p class="smsError"
+                    *ngIf="articuloFormRegistro.get('nombre')?.touched && articuloFormRegistro.get('nombre')?.errors?.['minlength']">
+                    Introduzca un nombre valido</p>
                 </div>
                 <div class="contenedor-input">
                     <select formControlName="categoria">
                         <option>sin categoria</option>
                     </select>
                     <label for="">Categoria</label>
-                
+                    <p class="smsError"
+                    *ngIf="articuloFormRegistro.get('categoria')?.touched && articuloFormRegistro.get('categoria')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
                 </div>
             </div>
 
@@ -26,7 +34,7 @@
 
             <div class="contenedor-checkbox">
                 <label>
-                    <input type="checkbox"> El artículo está disponible para la venta
+                    <input type="checkbox" formControlName="disponible"> El artículo está disponible para la venta
                 </label>
             </div>
 
@@ -37,10 +45,12 @@
                         <option>Peso/Volumen</option>
                     </select>
                     <label for="">Vendido por</label>
-                
+                    <p class="smsError"
+                    *ngIf="articuloFormRegistro.get('vendido_por')?.touched && articuloFormRegistro.get('vendido_por')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
                 </div>
                 <div class="contenedor-input">
-                    <input type="text" placeholder=" " formControlName="ref">
+                    <input type="text" placeholder=" " formControlName="ref" >
                     <label for="">REF</label>
                     <label for="">Ingrese</label>
                 </div>
@@ -50,15 +60,25 @@
 
             <div class="contenedor-grid-2">
                 <div class="contenedor-input">
-                    <input type="text" placeholder=" " formControlName="precio">
+                    <input type="number" min="0" placeholder=" " formControlName="precio">
                     <label for="">Precio</label>
                     <label for="">Ingrese</label>
+
+                    <p class="smsError"
+                    *ngIf="articuloFormRegistro.get('precio')?.touched && articuloFormRegistro.get('precio')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
                 
                 </div>
                 <div class="contenedor-input">
-                    <input type="text" placeholder=" " formControlName="coste">
+                    <input type="number" placeholder=" " formControlName="coste">
                     <label for="">coste</label>
                     <label for="">Ingrese</label>
+                    <p class="smsError"
+                    *ngIf="articuloFormRegistro.get('coste')?.touched && articuloFormRegistro.get('coste')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+                    <p class="smsError"
+                    *ngIf="articuloFormRegistro.get('coste')?.touched && articuloFormRegistro.get('coste')?.errors?.['min']">
+                    Ingrese un coste valido</p>
                 </div>
                 
             </div>
@@ -76,24 +96,33 @@
 
             <div class="contenedor-grid-2">
                 <div class="contenedor-input">
-                    <input type="text" placeholder=" " formControlName="stock">
+                    <input type="number" placeholder=" "  formControlName="stock">
                     <label for="">stock</label>
                     <label for="">Ingrese</label>
-                
+                    <p class="smsError"
+                    *ngIf="articuloFormRegistro.get('stock')?.touched && articuloFormRegistro.get('stock')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
                 </div>
                 <div class="contenedor-input">
-                    <input type="text" placeholder=" " formControlName="inventario_bajo">
-                    <label for="">inventario bajo</label>
+                    <input type="number" placeholder=" " min="2" formControlName="stock_bajo">
+                    <label for="">stock bajo</label>
                     <label for="">Ingrese</label>
+                    <p class="smsError"
+                    *ngIf="articuloFormRegistro.get('stock_bajo')?.touched && articuloFormRegistro.get('stock_bajo')?.errors?.['min']">
+                    stock bajo incorrecto , tiene que ser mayor que 4</p>
                 </div>
                 
             </div>
 
             <div class="contenedor-grid-2">
                 <div class="contenedor-input">
-                    <input type="text" placeholder=" " formControlName="stock_optimo">
+                    <input type="number" placeholder=" " min="10" formControlName="stock_optimo">
                     <label for="">stock optimo</label>
                     <label for="">Ingrese</label>
+
+                    <p class="smsError"
+                    *ngIf="articuloFormRegistro.get('stock_optimo')?.touched && articuloFormRegistro.get('stock_optimo')?.errors?.['min']">
+                    stock optimo incorrecto ,tiene que ser mayor a 9</p>
                 
                 </div>
                
@@ -102,14 +131,14 @@
 
             <div class="contenedor-grid-2">
                 <div class="contenedor-input">
-                    <select formControlName="id_proveedor">
+                    <select formControlName="proveedor_principal">
                         <option>LOAL</option>
                     </select>
                     <label for="">proveedor principal</label>
                 
                 </div>
                 <div class="contenedor-input">
-                    <input type="text" placeholder=" " formControlName="costo_defecto">
+                    <input type="number" placeholder=" " formControlName="compra_defecto">
                     <label for="">costo de compra por defecto</label>
                     <label for="">Ingrese</label>
                 </div>
@@ -117,8 +146,8 @@
             </div>
 
             <div class="contenedor-botones">
-                <button>CANCELAR</button>
-                <button type="submit">GUARDAR</button>
+                <button (click)="irListaArticulos()">CANCELAR</button>
+                <button type="submit" [disabled]="articuloFormRegistro.invalid">GUARDAR</button>
             </div>
 
         </form>
