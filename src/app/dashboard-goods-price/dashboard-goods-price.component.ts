@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Articulo } from '../modelos/articulo';
 import { ApiService } from '../servicios/api.service';
 
@@ -14,14 +15,14 @@ export class DashboardGoodsPriceComponent implements OnInit {
   articulosDisponibles:Boolean = false
 
   
-  constructor(private apiService:ApiService) { }
+  constructor(private apiService:ApiService , private router:Router) { }
 
   ngOnInit(): void {
     this.obtenerArticulos()
   }
 
   irAgregarArticulo(){
-
+      this.router.navigate(['dashboard/goods/new'])
   }
 
   obtenerArticulos(){
