@@ -309,8 +309,22 @@ select {
   border: 0;
   padding: 7px 0;
   font-size: .9rem;
-  border-bottom: var(--Border) solid var(--ColorDescripcion);
+  border-bottom:calc(var(--Border) + .5px) solid var(--ColorDescripcion);
   transition: border .3s;
+}
+
+.form
+.contenedor-input:after {
+  content: '';
+  display: flex;
+  position: absolute;
+  top: calc(50% - 1px);
+  left: -12px;
+  width: 0; 
+     height: 0; 
+     border-left: 8px solid var(--ColorDescripcion);
+     border-top: 4px solid transparent;
+     border-bottom: 4px solid transparent;
 }
 /*CLASS ENCARGADA DE DESHABILITAR INPUT*/
 .deshabilitar-input {
@@ -371,7 +385,7 @@ input:not(:placeholder-shown) ~ label:last-of-type{
   bottom:-11px;
   opacity:0;
 }
-/*ANIMACION EN INPUT COMO ANDROID MATERIAL */
+/*FIN ANIMACION EN INPUT COMO ANDROID MATERIAL */
 
 
 /*DISEÑO A SELECT,OPTION */
@@ -446,5 +460,34 @@ button:last-child:disabled {
   pointer-events: none;
   opacity: .3;
 }
-/*ESTILOS GENERALES PARA FORM */
+
+/*DISEÑO PARA AGREGAR DOS COLUMNAS EN FORM*/
+.form .contenedor-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--Padding);
+}
+
+/*DISEÑO PARA CONTENEDOR CHECKBOX*/
+.form
+.contenedor-checkbox 
+label {
+  font-size:calc(var(--SizeDescripcion) + 2px);
+}
+.form
+.contenedor-checkbox {
+  margin-bottom: 24px;
+}
+.form
+.contenedor-checkbox 
+label
+input {
+    margin: 0;
+    margin-right: 10px;
+    transform: scale(1.4);
+    background-color: var(--ColorSecundario);
+
+}
+
+/*FIN ESTILOS GENERALES PARA FORM */
 
