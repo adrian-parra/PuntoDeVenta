@@ -121,8 +121,14 @@ export class ApiService {
     obj);
   }
 
+  updateArticulo(obj:any):Observable<any> {
+    return this.http.post<Articulo>(
+      this.baseUrl + 'articulo/?actualizar=1',
+      obj
+    )
+  }
 
-  /*fin METODO PARA TRABAJAR CON TABLE ARTICULO*/
+  /*FIN METODO PARA TRABAJAR CON TABLE ARTICULO*/
 
   //******************************************************
 
