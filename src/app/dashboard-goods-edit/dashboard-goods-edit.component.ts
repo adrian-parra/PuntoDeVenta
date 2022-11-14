@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
 import { ApiService } from '../servicios/api.service';
@@ -15,11 +15,12 @@ export class DashboardGoodsEditComponent implements OnInit {
   categoriasArticulos:CategoriaArticulo[] = []
 
   articuloFormRegistro = new FormGroup({
+    id:new FormControl(),
     nombre: new FormControl('', [Validators.required, Validators.minLength(2)]),
-    id_categoria:new FormControl('',[Validators.required]),
+    nombre_categoria:new FormControl('',[Validators.required]),
     descripcion:new FormControl(null),
-    disponible:new FormControl(true),
-    id_vendido_por:new FormControl('',[Validators.required]),
+    disponible:new FormControl(),
+    vendido_por:new FormControl('',[Validators.required]),
     ref:new FormControl(null),
     precio:new FormControl('',[Validators.required]),
     coste:new FormControl('',[Validators.required ,Validators.min(0)]),
@@ -28,10 +29,9 @@ export class DashboardGoodsEditComponent implements OnInit {
     stock:new FormControl(0,[Validators.required]),
     stock_bajo:new FormControl(null ,[Validators.min(5)]),
     stock_optimo:new FormControl(null ,[Validators.min(10)]) ,
-    id_proveedor_principal:new FormControl(null),
+    proveedor_principal:new FormControl(null),
     compra_defecto:new FormControl(null),
     
-    id_empresa:new FormControl(this.cookie.get('id_nombre_empresa')),
     //CONTROLES SIN FUNCION POR EL MOMENTO
     id_impuesto:new FormControl(null) ,
     id_color:new FormControl(null) ,
@@ -39,10 +39,15 @@ export class DashboardGoodsEditComponent implements OnInit {
 
   });
 
-  constructor(private router:Router ,private apiSrvice:ApiService ,public cookie:CookieService) { }
+  constructor(private router:Router ,private apiSrvice:ApiService ,public cookie:CookieService ,private route:ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getCategoriasArticulos()
+
+      this.route.params.subscribe((params:Params) => {
+        this.getArticulo(params['id'])
+      })
+    //this.getArticulo()
   }
 
   getCategoriasArticulos(){
@@ -53,6 +58,16 @@ export class DashboardGoodsEditComponent implements OnInit {
 
   irListaArticulos(){
   this.router.navigate(['dashboard/goods/price'])
+  }
+
+  getArticulo(id:number){
+    this.apiSrvice.getArticulo(id).subscribe((articulo:any) => {
+      console.log(articulo)
+
+      this.articuloFormRegistro.patchValue(articulo)
+
+      
+    })
   }
 
   updateArticulo(){
