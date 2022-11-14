@@ -309,13 +309,13 @@ select {
   border: 0;
   padding: 7px 0;
   font-size: .9rem;
-  border-bottom:calc(var(--Border) + .5px) solid var(--ColorDescripcion);
+  border-bottom:calc(var(--Border) + .2px) solid var(--ColorDescripcion);
   transition: border .3s;
 }
 
 .form
 .contenedor-input:after {
-  content: '';
+  
   display: flex;
   position: absolute;
   top: calc(50% - 1px);
