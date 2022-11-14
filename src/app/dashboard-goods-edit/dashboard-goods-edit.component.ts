@@ -71,7 +71,16 @@ export class DashboardGoodsEditComponent implements OnInit {
   }
 
   updateArticulo(){
-    
+    //console.log(JSON.stringify(this.articuloFormRegistro.value))
+
+    this.apiSrvice.updateArticulo(this.articuloFormRegistro.value).subscribe(r => {
+      if(r['0'] == true){
+        alert("Articulo editado")
+        this.router.navigate(['dashboard/goods/price'])
+      }else {
+        alert(r['2'])
+      }
+    })
   }
 
 }
