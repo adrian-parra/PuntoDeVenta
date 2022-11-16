@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Proveedor } from '../modelos/proveedor';
 import { ApiService } from '../servicios/api.service';
 
@@ -10,14 +11,14 @@ import { ApiService } from '../servicios/api.service';
 export class DashboardInventorySupplierlistComponent implements OnInit {
   proveedores:Proveedor [] = []
   proveedoresDisponibles:Boolean = false
-  constructor(private apiService:ApiService) { }
+  constructor(private apiService:ApiService ,private router:Router) { }
 
   ngOnInit(): void {
     this.getProveedores()
   }
   
   irAgregarProveedor(){
-
+    this.router.navigate(['dashboard/inventory/suppliercreate'])
   }
 
   irEditarProveedor(id:number){
