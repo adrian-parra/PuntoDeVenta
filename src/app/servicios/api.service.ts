@@ -6,6 +6,7 @@ import { Articulo } from '../modelos/articulo';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
 import { Cliente } from '../modelos/cliente';
 import { Empleado } from '../modelos/empleado';
+import { Proveedor } from '../modelos/proveedor';
 import { Usuario } from '../modelos/usuario';
 
 @Injectable({
@@ -132,6 +133,16 @@ export class ApiService {
 
   //******************************************************
 
+  /*METODOS PARA TRABAJAR CON TABLE PROVEEDOR */
+  
+  getProveedores(): Observable<Proveedor> { 
+    return this.http.get<Proveedor>(this.baseUrl + 'proveedor/');
+  }
+   
+
+  /*FIN METODOS PARA TRABAJAR CON TABLE PROVEEDOR */
+
+  //******************************************************
 
 
 }
