@@ -1,0 +1,13 @@
+.contenedor-componente 
+.cardview {
+    
+}
+
+
+
+.header-table {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.body-table .contenedor-element-table {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}

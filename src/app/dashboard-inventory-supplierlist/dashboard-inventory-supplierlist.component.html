@@ -1,1 +1,34 @@
-<p>dashboard-inventory-supplierlist works!</p>
+<section class="contenedor-componente">
+    <div class="cardview">
+        <!--SOLO SE MUESTRA CUANDO NO HAY PROVEEDORES REGISTRADOS-->
+        <div class="cardview-content" *ngIf="!proveedoresDisponibles">
+            <div class="contenedor-img">
+                <img src="https://r.loyverse.com/dashboard/images/truck-delivery-white-56a6037c64c16145625950.svg" alt="">
+            </div>
+            <h1>Proveedores</h1>
+            <p>Añade proveedores para crear órdenes de compra y <br> obtener acceso rápido a contactos.</p>
+            <button class="l-btn-d" (click)="irAgregarProveedor()">+ AGREGAR PROVEEDOR</button>
+        </div>
+
+        <div class="cardview-header" *ngIf="proveedoresDisponibles">
+            <button class="l-btn-d" (click)="irAgregarProveedor()">+ AGREGAR PROVEEDOR</button>
+        </div>
+
+        <div class="cardview-body" *ngIf="proveedoresDisponibles">
+            <div class="header-table">
+                <div>Nombre</div>
+                <div>Correo</div>
+                <div>Telefono</div>
+                <div>Sitio web</div>
+            </div>
+            <div class="body-table">
+                <div class="contenedor-element-table" *ngFor="let proveedor of proveedores" (click)="irEditarProveedor(proveedor.id)">
+                    <div>{{proveedor.nombre}}</div>
+                    <div>{{proveedor.correo}} </div>
+                    <div> {{proveedor.telefono}} </div>
+                    <div> {{proveedor.sitio_web}} </div>        
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
