@@ -135,8 +135,8 @@ export class ApiService {
 
   /*METODOS PARA TRABAJAR CON TABLE PROVEEDOR */
   
-  getProveedores(): Observable<Proveedor> { 
-    return this.http.get<Proveedor>(this.baseUrl + 'proveedor/');
+  getProveedores(): Observable<Proveedor[]> { 
+    return this.http.get<Proveedor[]>(this.baseUrl + 'proveedor/');
   }
    
 
