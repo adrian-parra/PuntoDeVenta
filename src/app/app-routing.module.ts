@@ -16,6 +16,7 @@ import { DashboardGoodsPriceComponent } from './dashboard-goods-price/dashboard-
 import { DashboardInventoryAdjustmentComponent } from './dashboard-inventory-adjustment/dashboard-inventory-adjustment.component';
 import { DashboardInventoryHistoryComponent } from './dashboard-inventory-history/dashboard-inventory-history.component';
 import { DashboardInventoryPurchaseComponent } from './dashboard-inventory-purchase/dashboard-inventory-purchase.component';
+import { DashboardInventorySuppliercreateComponent } from './dashboard-inventory-suppliercreate/dashboard-inventory-suppliercreate.component';
 import { DashboardInventorySupplierlistComponent } from './dashboard-inventory-supplierlist/dashboard-inventory-supplierlist.component';
 import { DashboardReportSalesComponent } from './dashboard-report-sales/dashboard-report-sales.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -42,6 +43,8 @@ const routes: Routes = [
 
 
       {path:'inventory/purchase' ,component:DashboardInventoryPurchaseComponent},
+      {path:'inventory/suppliercreate' ,component:DashboardInventorySuppliercreateComponent},
+
       {path:'inventory/adjustment' ,component:DashboardInventoryAdjustmentComponent},
       {path:'inventory/supplierlist' ,component:DashboardInventorySupplierlistComponent},
       {path:'inventory/history' ,component:DashboardInventoryHistoryComponent},
