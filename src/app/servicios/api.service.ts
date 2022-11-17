@@ -138,7 +138,11 @@ export class ApiService {
   getProveedores(): Observable<Proveedor[]> { 
     return this.http.get<Proveedor[]>(this.baseUrl + 'proveedor/');
   }
-   
+  
+  addProveedor(obj:any):Observable<Proveedor> {
+    return this.http.post<Proveedor>(this.baseUrl + 'proveedor/?insertar=1' ,
+    obj);
+  }
 
   /*FIN METODOS PARA TRABAJAR CON TABLE PROVEEDOR */
 
