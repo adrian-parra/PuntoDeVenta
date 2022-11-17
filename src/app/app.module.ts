@@ -36,6 +36,7 @@ import { DashboardGoodsCategoryeditComponent } from './dashboard-goods-categorye
 import { DashboardGoodsNewComponent } from './dashboard-goods-new/dashboard-goods-new.component';
 import { DashboardGoodsEditComponent } from './dashboard-goods-edit/dashboard-goods-edit.component';
 import { DashboardInventorySuppliercreateComponent } from './dashboard-inventory-suppliercreate/dashboard-inventory-suppliercreate.component';
+import { DashboardInventorySuppliereditComponent } from './dashboard-inventory-supplieredit/dashboard-inventory-supplieredit.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { DashboardInventorySuppliercreateComponent } from './dashboard-inventory
     DashboardGoodsNewComponent,
     DashboardGoodsEditComponent,
     DashboardInventorySuppliercreateComponent,
+    DashboardInventorySuppliereditComponent,
  
   ],
   imports: [

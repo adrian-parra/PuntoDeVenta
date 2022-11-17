@@ -1,0 +1,135 @@
+<section class="contenedor-componente">
+    <div class="cardview">
+        <div class="cardview-header">
+            <img src="https://r.loyverse.com/dashboard/images/truck-delivery-white-56a6037c64c16145625950.svg" width="85px" height="85px" alt="">
+    
+        </div>
+        <form class="form" [formGroup]="proveedorFormRegistro" (ngSubmit)="updateProveedor()">
+
+            <div class="contenedor-input">
+                <input type="text" placeholder=" " required formControlName="nombre">
+                <label for="">nombre completo</label>
+                <label for="">Ingrese</label>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('nombre')?.touched && proveedorFormRegistro.get('nombre')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('nombre')?.touched && proveedorFormRegistro.get('nombre')?.errors?.['minlength']">
+                    Introduzca un nombre valido</p>
+            </div>
+
+            <div class="contenedor-input">
+                <input type="email" placeholder=" " required formControlName="correo">
+                <label for="">correo electronico</label>
+                <label for="">Ingrese</label>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('correo')?.touched && proveedorFormRegistro.get('correo')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('correo')?.touched && proveedorFormRegistro.get('correo')?.errors?.['email']">
+                    Ingrese correo validocliente
+            </div>
+
+            <div class="contenedor-input">
+                <input type="tel" placeholder=" " required formControlName="telefono">
+                <label for="">numero de teléfono</label>
+                <label for="">Ingrese</label>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('telefono')?.touched && proveedorFormRegistro.get('telefono')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('telefono')?.touched && proveedorFormRegistro.get('telefono')?.errors?.['minlength'] && !proveedorFormRegistro.get('telefono')?.errors?.['pattern']">
+                    Introdusca numero valido</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('telefono')?.touched && proveedorFormRegistro.get('telefono')?.errors?.['maxlength'] && !proveedorFormRegistro.get('telefono')?.errors?.['pattern']">
+                    Introdusca numero valido, igual a 10 caracteres</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('telefono')?.touched && proveedorFormRegistro.get('telefono')?.errors?.['pattern']">
+                    Solo numeros</p>
+
+            </div>
+
+            <div class="contenedor-input">
+                <input type="text" placeholder=" " required formControlName="direccion">
+                <label for="">dirección</label>
+                <label for="">Ingrese</label>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('direccion')?.touched && proveedorFormRegistro.get('direccion')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('direccion')?.touched && proveedorFormRegistro.get('direccion')?.errors?.['minlength']">
+                    Introduzca una direccion valida</p>
+            </div>
+
+            <div class="contenedor-input">
+                <input type="text" placeholder=" " required formControlName="ciudad">
+                <label for="">ciudad</label>
+                <label for="">Ingrese</label>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('ciudad')?.touched && proveedorFormRegistro.get('ciudad')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('ciudad')?.touched && proveedorFormRegistro.get('ciudad')?.errors?.['minlength']">
+                    Introduzca un nombre valido</p>
+
+            </div>
+
+
+            <div class="contenedor-input">
+                <input type="text" placeholder=" " required formControlName="estado">
+                <label for="">estado</label>
+                <label for="">Ingrese</label>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('estado')?.touched && proveedorFormRegistro.get('estado')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('estado')?.touched && proveedorFormRegistro.get('estado')?.errors?.['minlength']">
+                    Introduzca un nombre valido</p>
+
+            </div>
+
+            <div class="contenedor-input">
+                <input type="text" placeholder=" " required formControlName="codigo_postal">
+                <label for="">codigo postal</label>
+                <label for="">Ingrese</label>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('codigo_postal')?.touched && proveedorFormRegistro.get('codigo_postal')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('codigo_postal')?.touched && proveedorFormRegistro.get('codigo_postal')?.errors?.['minlength'] && !proveedorFormRegistro.get('codigo_postal')?.errors?.['pattern']">
+                    Introdusca codigo postal valido</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('codigo_postal')?.touched && proveedorFormRegistro.get('codigo_postal')?.errors?.['maxlength'] && !proveedorFormRegistro.get('codigo_postal')?.errors?.['pattern']">
+                    Introdusca codigo postal valido, igual a 5 caracteres</p>
+                <p class="smsError"
+                    *ngIf="proveedorFormRegistro.get('codigo_postal')?.touched && proveedorFormRegistro.get('codigo_postal')?.errors?.['pattern']">
+                    Solo numeros</p>
+
+            </div>
+
+            <div class="contenedor-input">
+                <input type="text" placeholder=" " formControlName="sitio_web">
+                <label for="">pagina web</label>
+                <label for="">Ingrese</label>
+            </div>
+
+
+
+            <div class="contenedor-input">
+                <input type="text" placeholder=" " formControlName="nota">
+                <label for="">nota</label>
+                <label for="">Ingrese</label>
+            </div>
+
+
+            <div class="contenedor-botones">
+                <button type="button" (click)="irListaProveedores()">CANCELAR</button>
+                <button type="submit" [disabled]="proveedorFormRegistro.invalid">GUARDAR</button>
+            </div>
+
+        </form>
+    </div>
+
+
+
+</section>
