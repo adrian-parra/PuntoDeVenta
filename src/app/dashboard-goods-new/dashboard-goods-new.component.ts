@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-goods-new',
@@ -40,7 +41,10 @@ export class DashboardGoodsNewComponent implements OnInit {
   });
 
 
-  constructor(private router:Router ,private apiSrvice:ApiService ,public cookie:CookieService) { }
+  constructor(private router:Router ,private apiSrvice:ApiService ,public cookie:CookieService ,
+    private sharedTitleComponente:SharedTitleComponentService) {
+      sharedTitleComponente.emitChange('Crear artículo')
+     }
 
   ngOnInit(): void {
     this.getCategoriasArticulos()

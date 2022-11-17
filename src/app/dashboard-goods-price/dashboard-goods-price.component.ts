@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Articulo } from '../modelos/articulo';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-goods-price',
@@ -15,7 +16,9 @@ export class DashboardGoodsPriceComponent implements OnInit {
   articulosDisponibles:Boolean = false
 
   
-  constructor(private apiService:ApiService , private router:Router) { }
+  constructor(private apiService:ApiService , private router:Router ,private sharedTitleComponente:SharedTitleComponentService) {
+    sharedTitleComponente.emitChange('Lista de artículos')
+   }
 
   ngOnInit(): void {
     this.obtenerArticulos()

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Proveedor } from '../modelos/proveedor';
 import { ApiService } from '../servicios/api.service';
+import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
 @Component({
   selector: 'app-dashboard-inventory-supplieredit',
@@ -27,9 +28,15 @@ export class DashboardInventorySuppliereditComponent implements OnInit {
   });
   constructor(private apiService:ApiService ,
     private router:Router ,
-    private route:ActivatedRoute) { }
+    private route:ActivatedRoute ,
+    private sharedTitleComponente:SharedTitleComponentService) {
+      this.sharedTitleComponente.emitChange('Editar proveedor')
+     }
 
   ngOnInit(): void {
+
+    
+
     this.route.params.subscribe((params:Params) => {
       this.getProveedor(params['id'])
     })
