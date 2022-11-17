@@ -17,6 +17,7 @@ import { DashboardInventoryAdjustmentComponent } from './dashboard-inventory-adj
 import { DashboardInventoryHistoryComponent } from './dashboard-inventory-history/dashboard-inventory-history.component';
 import { DashboardInventoryPurchaseComponent } from './dashboard-inventory-purchase/dashboard-inventory-purchase.component';
 import { DashboardInventorySuppliercreateComponent } from './dashboard-inventory-suppliercreate/dashboard-inventory-suppliercreate.component';
+import { DashboardInventorySuppliereditComponent } from './dashboard-inventory-supplieredit/dashboard-inventory-supplieredit.component';
 import { DashboardInventorySupplierlistComponent } from './dashboard-inventory-supplierlist/dashboard-inventory-supplierlist.component';
 import { DashboardReportSalesComponent } from './dashboard-report-sales/dashboard-report-sales.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -39,12 +40,9 @@ const routes: Routes = [
       {path:'goods/new' ,component:DashboardGoodsNewComponent},
       {path:'goods/edit/:id' ,component:DashboardGoodsEditComponent},
 
-  
-
-
       {path:'inventory/purchase' ,component:DashboardInventoryPurchaseComponent},
       {path:'inventory/suppliercreate' ,component:DashboardInventorySuppliercreateComponent},
-
+      {path:'inventory/supplieredit/:id' ,component:DashboardInventorySuppliereditComponent},
       {path:'inventory/adjustment' ,component:DashboardInventoryAdjustmentComponent},
       {path:'inventory/supplierlist' ,component:DashboardInventorySupplierlistComponent},
       {path:'inventory/history' ,component:DashboardInventoryHistoryComponent},
