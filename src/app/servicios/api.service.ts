@@ -148,6 +148,13 @@ export class ApiService {
     obj);
   }
 
+  updateProveedor(obj:any):Observable<any> {
+    return this.http.post<Proveedor>(
+      this.baseUrl + 'Proveedor/?actualizar=1',
+      obj
+    )
+  }
+
   /*FIN METODOS PARA TRABAJAR CON TABLE PROVEEDOR */
 
   //******************************************************
