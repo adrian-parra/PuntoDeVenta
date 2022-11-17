@@ -39,7 +39,14 @@ export class DashboardInventorySuppliereditComponent implements OnInit {
     this.router.navigate(['dashboard/inventory/supplierlist'])
   }
   updateProveedor() {
-  
+    this.apiService.updateProveedor(this.proveedorFormRegistro.value).subscribe(option => {
+      if(option['0'] == true){
+        alert("Proveedor actualizado")
+        this.router.navigate(['dashboard/inventory/supplierlist'])
+      }else {
+        alert(option['2'])
+      }
+    })
   }
 
   getProveedor(id:number){
