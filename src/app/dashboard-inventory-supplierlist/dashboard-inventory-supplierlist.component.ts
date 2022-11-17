@@ -22,7 +22,7 @@ export class DashboardInventorySupplierlistComponent implements OnInit {
   }
 
   irEditarProveedor(id:number){
-
+    this.router.navigate(['dashboard/inventory/supplieredit' ,id])
   }
 
   getProveedores(){
