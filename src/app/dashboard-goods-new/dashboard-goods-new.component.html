@@ -133,7 +133,7 @@
             <div class="contenedor-grid-2">
                 <div class="contenedor-input">
                     <select formControlName="id_proveedor_principal">
-                       
+                       <option value="{{proveedor.id}}" *ngFor="let proveedor of proveedores">{{proveedor.nombre}}</option>
                     </select>
                     <label for="">proveedor principal</label>
                 

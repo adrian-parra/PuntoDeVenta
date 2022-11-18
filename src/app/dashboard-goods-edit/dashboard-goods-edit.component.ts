@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
+import { Proveedor } from '../modelos/proveedor';
 import { ApiService } from '../servicios/api.service';
 import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
@@ -14,6 +15,7 @@ import { SharedTitleComponentService } from '../servicios/shared-title-component
 export class DashboardGoodsEditComponent implements OnInit {
   
   categoriasArticulos:CategoriaArticulo[] = []
+  proveedores:Proveedor[]=[]
 
   articuloFormRegistro = new FormGroup({
     id:new FormControl(),
@@ -47,11 +49,16 @@ export class DashboardGoodsEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategoriasArticulos()
+    this.getProveedores()
 
       this.route.params.subscribe((params:Params) => {
         this.getArticulo(params['id'])
       })
     //this.getArticulo()
+  }
+
+  getProveedores(){
+    this.apiSrvice.getProveedores().subscribe(proveedores =>this.proveedores = proveedores)
   }
 
   getCategoriasArticulos(){

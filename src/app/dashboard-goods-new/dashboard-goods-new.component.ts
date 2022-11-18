@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
+import { Proveedor } from '../modelos/proveedor';
 import { ApiService } from '../servicios/api.service';
 import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
 
@@ -14,6 +15,7 @@ import { SharedTitleComponentService } from '../servicios/shared-title-component
 export class DashboardGoodsNewComponent implements OnInit {
 
   categoriasArticulos:CategoriaArticulo[] = []
+  proveedores:Proveedor[] = []
 
   articuloFormRegistro = new FormGroup({
     nombre: new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -48,6 +50,7 @@ export class DashboardGoodsNewComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCategoriasArticulos()
+    this.getProveedores()
   }
 
   addArticulo(){
@@ -61,6 +64,10 @@ export class DashboardGoodsNewComponent implements OnInit {
       }
 
     })
+  }
+
+  getProveedores(){
+    this.apiSrvice.getProveedores().subscribe(proveedores => this.proveedores = proveedores)
   }
 
   getCategoriasArticulos(){
