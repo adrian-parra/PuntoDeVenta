@@ -27,22 +27,25 @@ export class InicioSesionComponent implements OnInit {
 
 
   vericarSesion() {
-    console.log(this.usuarioFormLogin.value)
+  
     this.apiService.vericarSecionUsuario(this.usuarioFormLogin.value).subscribe((r:any) => {
    
-      if(r['0'].errors){
+      if(r.errors){
         alert("error ,verifique correo o contraseña")
       }else {
         //CREAR COOKIE ENCARGADA DE MANEJAR LA SESION ACTIVA DEL USUARIO
         this.cookie.set('login','true')
 
         //DATOS IMPORTANTES QUE SE TIENEN QUE GUARDAR EN COOKIES
-        this.cookie.set('correo',r['0'].correo)
-        this.cookie.set('id',r['0'].id)
-        this.cookie.set('id_nombre_empresa',r['0'].id_nombre_empresa)
-        this.cookie.set('id_rol',r['0'].id_rol)
-        this.cookie.set('nombre_empresa',r['0'].nombre_empresa)
-        this.cookie.set('nombre_rol',r['0'].nombre_rol)
+        this.cookie.set('correo',r.correo)
+        this.cookie.set('id',r.id)
+        this.cookie.set('id_nombre_empresa',r.id_nombre_empresa)
+        this.cookie.set('id_rol',r.id_rol)
+        this.cookie.set('nombre_empresa',r.nombre_empresa)
+        this.cookie.set('nombre_rol',r.nombre_rol)
+        this.cookie.set('id_empleado',r.id_empleado)
+        this.cookie.set('nombre_empleado',r.nombre)
+
         
         this.router.navigate(['dashboard/report/sales']);
       }
