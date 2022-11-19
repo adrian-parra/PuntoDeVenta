@@ -3,6 +3,7 @@ import { FormControl, FormGroup, FormsModule, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
+import { HistorialInventario } from '../modelos/historialInventario';
 import { Proveedor } from '../modelos/proveedor';
 import { ApiService } from '../servicios/api.service';
 import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
@@ -16,6 +17,8 @@ export class DashboardGoodsNewComponent implements OnInit {
 
   categoriasArticulos:CategoriaArticulo[] = []
   proveedores:Proveedor[] = []
+
+  historialInventario!:HistorialInventario
 
   articuloFormRegistro = new FormGroup({
     nombre: new FormControl('', [Validators.required, Validators.minLength(2)]),
@@ -56,14 +59,40 @@ export class DashboardGoodsNewComponent implements OnInit {
   addArticulo(){
  
     this.apiSrvice.addArticulo(this.articuloFormRegistro.value).subscribe((options:any) => {
+      
       if(options['0'] == true){
         alert("Articulo agregado")
-        this.router.navigate(['dashboard/goods/price'])
+
+        //SI SE MODIFICO EL STOCK SE AGREGA REGISTRO EN TABLE HISTORIAL DE INVENTARIO
+        //MOTIVO ARTICULO EDITADO
+        if(this.articuloFormRegistro.controls.stock.value != 0){
+         this.addHistorialInventario(options['id_articulo'])
+        }else {
+          this.router.navigate(['dashboard/goods/price'])
+        }
+      
       }else {
         alert(options['2'])
       }
 
     })
+  }
+
+  addHistorialInventario(idArticulo:number){
+    
+  let stock = this.articuloFormRegistro.controls.stock.value
+   this.historialInventario = 
+   {
+    id_articulo:idArticulo 
+    ,id_empleado:parseInt(this.cookie.get('id_empleado') )
+    ,id_motivo:9,referencia_id:null
+    ,ajuste:stock 
+    ,stock_final:stock
+  }
+   this.apiSrvice
+   .addHistorialInventario(this.historialInventario)
+   .subscribe(() => this.router.navigate(['dashboard/goods/price']))
+   
   }
 
   getProveedores(){
