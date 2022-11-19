@@ -6,6 +6,7 @@ import { Articulo } from '../modelos/articulo';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
 import { Cliente } from '../modelos/cliente';
 import { Empleado } from '../modelos/empleado';
+import { HistorialInventario } from '../modelos/historialInventario';
 import { Proveedor } from '../modelos/proveedor';
 import { Usuario } from '../modelos/usuario';
 
@@ -156,6 +157,17 @@ export class ApiService {
   }
 
   /*FIN METODOS PARA TRABAJAR CON TABLE PROVEEDOR */
+
+  //******************************************************
+  
+  //METODOS PARA TRABAJAR CON TABLE HISTORIAL DE INVENTARIO
+
+  addHistorialInventario(obj:any):Observable<HistorialInventario> {
+    return this.http.post<HistorialInventario>(this.baseUrl + 'historial_de_inventario/?insertar=1' ,
+    obj);
+  }
+
+  //FIN METODOS PARA TRABAJAR CON TABLE HISTORIAL DE INVENTARIO
 
   //******************************************************
 
