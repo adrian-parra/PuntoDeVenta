@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
+import { HistorialInventario } from '../modelos/historialInventario';
 import { Proveedor } from '../modelos/proveedor';
 import { ApiService } from '../servicios/api.service';
 import { SharedTitleComponentService } from '../servicios/shared-title-component.service';
@@ -16,6 +17,10 @@ export class DashboardGoodsEditComponent implements OnInit {
   
   categoriasArticulos:CategoriaArticulo[] = []
   proveedores:Proveedor[]=[]
+
+  stockArticulo!:number
+
+  historialInventario!:HistorialInventario
 
   articuloFormRegistro = new FormGroup({
     id:new FormControl(),
@@ -73,21 +78,46 @@ export class DashboardGoodsEditComponent implements OnInit {
 
   getArticulo(id:number){
     this.apiSrvice.getArticulo(id).subscribe((articulo:any) => {
-      console.log(articulo)
-
+     
+      this.stockArticulo = articulo.stock
+    
       this.articuloFormRegistro.patchValue(articulo)
 
       
     })
   }
-
+  
+  addHistorialInventario(idArticulo:number ,stock:any){
+    
+    this.historialInventario = 
+     {
+      id_articulo:idArticulo 
+      ,id_empleado:parseInt(this.cookie.get('id_empleado') )
+      ,id_motivo:9,referencia_id:null
+      ,ajuste:(stock - this.stockArticulo) 
+      ,stock_final:stock
+    }
+     this.apiSrvice
+     .addHistorialInventario(this.historialInventario)
+     .subscribe(() =>  this.router.navigate(['dashboard/goods/price']))
+     
+    }
   updateArticulo(){
     //console.log(JSON.stringify(this.articuloFormRegistro.value))
+    let stock = this.articuloFormRegistro.controls.stock.value
+   
 
     this.apiSrvice.updateArticulo(this.articuloFormRegistro.value).subscribe(r => {
       if(r['0'] == true){
         alert("Articulo editado")
-        this.router.navigate(['dashboard/goods/price'])
+
+         //VERIFICAR SI STOCK FUE EDITADO
+    if(this.stockArticulo != stock){
+      this.addHistorialInventario(this.articuloFormRegistro.controls.id.value ,stock)
+    }else {
+      this.router.navigate(['dashboard/goods/price'])
+    }
+       
       }else {
         alert(r['2'])
       }
