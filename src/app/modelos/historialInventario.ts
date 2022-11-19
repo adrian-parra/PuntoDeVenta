@@ -1,9 +1,9 @@
 export interface HistorialInventario {
-    id:number,
+    id?:number,
+    id_empleado:number,
     id_articulo:number,
-    id_inventario:number,
     id_motivo:number,
-    referencia_id:number,
-    ajuste:number,
-    stock_final:number
+    referencia_id:any,
+    ajuste:any,
+    stock_final:any
 }
