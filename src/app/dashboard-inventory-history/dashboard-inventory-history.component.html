@@ -1,1 +1,24 @@
-<p>dashboard-inventory-history works!</p>
+<section class="contenedor-componente">
+    <div class="cardview" >
+        <div class="cardview-body" >
+            <div class="header-table">
+                <div>Fecha</div>
+                <div>Articulo</div>
+                <div>Empleado</div>
+                <div>Motivo</div>
+                <div>Ajuste</div>
+                <div>Stock final</div>
+            </div>
+            <div class="body-table">
+                <div class="contenedor-element-table" *ngFor="let historial of historialInventario" >
+                    <div> {{historial.fecha_hora}} </div>
+                    <div> {{historial.nombre}} </div>
+                    <div> {{historial.nombre_empleado}} </div>
+                    <div> {{historial.nombre_motivo}} </div>
+                    <div> {{historial.ajuste}} </div>
+                    <div> {{historial.stock_final}} </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

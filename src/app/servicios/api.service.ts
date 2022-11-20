@@ -167,6 +167,11 @@ export class ApiService {
     obj);
   }
 
+  getHistorialInventario(): Observable<HistorialInventario[]> { 
+    return this.http.get<HistorialInventario[]>(this.baseUrl + 'historial_de_inventario/');
+  }
+
+
   //FIN METODOS PARA TRABAJAR CON TABLE HISTORIAL DE INVENTARIO
 
   //******************************************************

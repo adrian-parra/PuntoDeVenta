@@ -5,5 +5,10 @@ export interface HistorialInventario {
     id_motivo:number,
     referencia_id:any,
     ajuste:any,
-    stock_final:any
+    stock_final:any ,
+
+    fecha_hora?:string,
+    nombre?:string,
+    nombre_empleado?:string,
+    nombre_motivo?:string
 }
