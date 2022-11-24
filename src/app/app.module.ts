@@ -40,6 +40,7 @@ import { DashboardInventorySuppliereditComponent } from './dashboard-inventory-s
 import { DashboardInventoryCreateorderComponent } from './dashboard-inventory-createorder/dashboard-inventory-createorder.component';
 import { DashboardInventoryOrderdetailComponent } from './dashboard-inventory-orderdetail/dashboard-inventory-orderdetail.component';
 import { DashboardInventoryReceiveorderComponent } from './dashboard-inventory-receiveorder/dashboard-inventory-receiveorder.component';
+import { DashboardSalesComponent } from './dashboard-sales/dashboard-sales.component';
 
 @NgModule({
   declarations: [
@@ -70,6 +71,7 @@ import { DashboardInventoryReceiveorderComponent } from './dashboard-inventory-r
     DashboardInventoryCreateorderComponent,
     DashboardInventoryOrderdetailComponent,
     DashboardInventoryReceiveorderComponent,
+    DashboardSalesComponent,
  
   ],
   imports: [
