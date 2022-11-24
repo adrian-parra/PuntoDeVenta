@@ -81,6 +81,16 @@
                 <h1 *ngIf="menuDesplegado">Clientes</h1>
             </div>
         </div>
+        <div class="menu-item">
+            <div class="contenedor-enlases" routerLinkActive="menu-item-active" [routerLinkActiveOptions]="{exact:true}">
+                <a routerLinkActive="active-link" routerLink="/dashboard/clients/database">Realizar venta</a>
+            </div>
+            <div id="eventClick" title="Ventas">
+                <img src="../../assets/dashboard-ventas-icon.svg" alt="">
+                <h1 *ngIf="menuDesplegado">Ventas</h1>
+            </div>
+        </div>
+        
     </aside>
     <router-outlet></router-outlet>
     
