@@ -1,0 +1,66 @@
+<section class="contenedor-componente">
+    <div class="cardview">
+        <div class="navbar">
+            <div class="contenedor-left">
+                <button class="l-btn-outline" type="button" (click)="irOrdenesDeCompra()" ><img src="https://r.loyverse.com/dashboard/images/ic_chevron_left4f7cbec42fccfe6a0b71.svg" width="20px" height="20px" alt=""> ÓRDENES DE COMPRA</button>
+            </div>
+            <div class="contenedor-right">
+                <button  class="l-btn-outline" type="button" (click)="irRecibirAriculos(idOrdenCompra)" *ngIf="ordenDeCompra.estado !== 'cerrado'" >RECIBIR</button>
+                <button  class="l-btn-outline" type="button" *ngIf="ordenDeCompra.estado !== 'cerrado'">EDITAR</button>
+                <button class="l-btn-outline" type="button">MÁS <img src="https://r.loyverse.com/dashboard/images/ic_arrow_drop_downfc93d66bee92da4aedf6.svg" width="20px" height="20px" alt=""></button>
+            </div>
+        </div>
+
+        <div class="cardview-header">
+            <div class="grid-2">
+                <div class="contenedor">
+                    <h1>P010{{ordenDeCompra.id}}</h1>
+                    <p>{{ordenDeCompra.estado}}</p>
+                </div>
+                <p> recibido {{ordenDeCompra.recibido}} de {{ordenDeCompra.total_articulos}}</p>
+               
+            </div>
+            <div class="column">
+                <span>Fecha: </span> <p> {{ordenDeCompra.fecha_orden}}</p>
+            </div>
+            <div class="column">
+                <span>Esperado: </span> <p> {{ordenDeCompra.fecha_espera}} </p>
+            </div>
+
+            <div class="column">
+                <span>Ordenado por: </span> <p> {{ordenDeCompra.empleado}} </p>
+            </div>
+
+            <div class="column">
+                <span>Proveedor: </span> <p> {{ordenDeCompra.proveedor}} </p>
+            </div>
+        </div>
+
+       
+        
+        <div class="cardview-body">
+
+            <h1 style="margin-left:24px;">Artículos</h1>
+            <div class="header-table">
+                <div>Artículo</div>
+                <div>Cantidad</div>
+                <div>Costo</div>
+                <div>Total</div>
+            </div>
+            <div class="body-table">
+                <div class="contenedor-element-table" *ngFor="let detalleOrdenCompra of detalleOrdenDeCompra">
+                    <div> {{detalleOrdenCompra.articulo}} </div>
+                    <div> {{detalleOrdenCompra.cantidad}} </div>
+                    <div>${{detalleOrdenCompra.costo}} </div>
+                    <div>${{detalleOrdenCompra.total}}</div>
+                </div>
+            </div>
+            <div class="footer">
+                <p>Total: ${{ordenDeCompra.total}} </p>
+            </div>
+
+        </div>
+
+       
+    </div>
+</section>

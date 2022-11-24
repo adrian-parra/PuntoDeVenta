@@ -1,0 +1,79 @@
+.contenedor-componente .cardview {
+    max-width: 714px;
+}
+
+/*STYLE PARA NAV DENTRO DEL CARDVIEW */
+.contenedor-componente .cardview .navbar {
+    height: 48px;
+    padding: 0 var(--Padding);
+    border-bottom: var(--Border) solid #eaeaea;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedor-componente .cardview .navbar div img {
+    filter: invert(42%) sepia(20%) saturate(21%) hue-rotate(17deg) brightness(99%) contrast(95%);
+}
+
+
+
+.contenedor-componente .cardview .navbar .contenedor-right{
+    display: flex;
+    flex-direction: row;
+}
+
+/*FIN STYLE PARA NAV DENTRO DEL CARDVIEW */
+.contenedor-componente .cardview .cardview-header {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 24px;
+    border-bottom: var(--Border) solid #eaeaea;
+}
+.contenedor-componente .cardview .cardview-header .grid-2 {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 24px;
+   
+}
+.contenedor-componente .cardview .cardview-header .grid-2 h1 {
+    font-size: 34px;
+    font-weight: 400;
+}
+.contenedor-componente .cardview .cardview-header .grid-2 p {
+    font-size:calc(var(--SizeDescripcion) + 2px);
+}
+.contenedor-componente .cardview .cardview-header .column {
+    display: flex;
+    width: 100%;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.contenedor-componente .cardview .cardview-header .column p {
+    font-size:calc(var(--SizeDescripcion) + 2px);
+}
+.contenedor-componente .cardview .cardview-header .column span {
+    font-size:calc(var(--SizeDescripcion) + 2px);
+    font-weight: 600;
+}
+
+.header-table {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.body-table .contenedor-element-table {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.contenedor-componente .cardview .cardview-body .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: right;
+    padding: 18px 24px;
+}
