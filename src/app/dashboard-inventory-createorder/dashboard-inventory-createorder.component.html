@@ -1,0 +1,92 @@
+<section class="contenedor-componente">
+    <div class="cardview">
+        <form class="form" [formGroup]="ordenCompraFormRegistro" (ngSubmit)="addOrdenCompra()">
+            <div class="contenedor-grid-2">
+                <div class="contenedor-input">
+                    <select formControlName="id_proveedor">
+                        <option value="{{proveedor.id}}" *ngFor="let proveedor of proveedores"> {{proveedor.nombre}} </option>
+                    </select>
+                    <label for="">Proveedor</label>
+                    <p class="smsError"
+                    *ngIf="ordenCompraFormRegistro.get('id_proveedor')?.touched && ordenCompraFormRegistro.get('id_proveedor')?.errors?.['required']">
+                    El campo no puede estar en blanco</p>
+               
+                </div>
+            </div>
+            <div class="contenedor-grid-2">
+            <div class="contenedor-input">
+               <input type="date" placeholder=" " formControlName="fecha_orden">
+                <label for="">Fecha de orden</label>
+                <label for="">Ingrese</label>
+                
+                <p class="smsError"
+                *ngIf="ordenCompraFormRegistro.get('fecha_orden')?.touched && ordenCompraFormRegistro.get('fecha_orden')?.errors?.['required']">
+                El campo no puede estar en blanco</p>
+            </div>
+            <div class="contenedor-input">
+                <input type="date" placeholder=" " formControlName="fecha_espera">
+                 <label for="">Fecha de espera</label>
+                 <label for="">Ingrese</label>
+                 <p class="smsError"
+                *ngIf="ordenCompraFormRegistro.get('fecha_espera')?.touched && ordenCompraFormRegistro.get('fecha_espera')?.errors?.['required']">
+                El campo no puede estar en blanco</p>
+             </div>
+        </div>
+
+        <div class="contenedor-input">
+            <input type="text" placeholder=" " id="anotaciones" formControlName="anotaciones">
+             <label for="">Anotaciones</label>
+             <label for="">Ingrese</label>
+            
+         </div>
+
+         <h1>Artículos</h1>
+
+         <div class="cardview-body" >
+            <div class="header-table">
+                <div>Articulo</div>
+                <div>En stock</div>
+                <div>Entrantes</div>
+                <div>Cantidad</div>
+                <div>Costo</div>
+                <div>total</div>
+                <div>__</div>
+            </div>
+            <div class="body-table">
+                <div class="contenedor-element-table" *ngFor="let articulo of detalleArticulo">
+                    <div> {{articulo.nombre}} REF  100<p id="ref">{{articulo.id}}</p> </div>
+                    <div>  {{articulo.stock}} </div>
+                    <div>  0 </div>
+                    <div> <input type="text" id="cantidad" (change)="obtenerCostoTotal($event ,1)"> </div>
+                    <div> <input type="text" id="costo" (change)="obtenerCostoTotal($event ,2)"> </div>
+                    <div> $<p id="costoTotal">0</p> </div>
+                    <div> <button type="button" id="btnDelete" (click)="deleteDetalleArticulo(articulo.id)">X</button> </div>
+
+                </div>
+            </div>
+
+       
+        </div>
+
+        <div class="contenedor-input">
+            <input type="text" list="data" placeholder=" " (change)="obtenerArticulo($event)" formControlName="id_articulo">
+             <label for="">nombre de articulo</label>
+             <label for="">Ingrese</label>
+             <p class="smsError"
+             *ngIf="ordenCompraFormRegistro.get('id_articulo')?.touched && ordenCompraFormRegistro.get('id_articulo')?.errors?.['required']">
+             Articulo no encontrado</p>
+             <datalist id="data">
+                <option value="{{articulo.id}}" *ngFor="let articulo of articulos">{{articulo.nombre}}</option>
+            </datalist>
+         </div>
+
+         <div class="contenedor-botones">
+            <button (click)="irListaOrdenesDeCompra()">CANCELAR</button>
+            <button type="submit" [disabled]="ordenCompraFormRegistro.invalid">GUARDAR</button>
+        </div>
+        </form>
+
+        
+       
+    </div>
+</section>

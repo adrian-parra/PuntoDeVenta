@@ -1,0 +1,40 @@
+.contenedor-componente .cardview {
+    max-width: 773px;
+    padding: 24px;
+    padding-top: 48px;
+    
+}
+
+
+.header-table {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr .3fr;
+}
+.body-table .contenedor-element-table {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr .3fr;
+}
+
+#cantidad {
+    padding: var(padding);
+    background-color: transparent;
+    outline: none;
+    width: 50px;
+    border-bottom: var(--Border) solid var(--ColorSecundario);
+    
+  
+}
+#costo {
+    padding: var(padding);
+    background-color: transparent;
+    outline: none;
+    width: 50px;
+
+    border-bottom: var(--Border) solid var(--ColorSecundario);
+}
+#btnDelete {
+    padding: 10px;
+    background-color: var(--ColorDanger);
+    border-radius: var(--BorderRadius);
+    color: white;
+    cursor: pointer;
+    font-weight: 800;
+}
