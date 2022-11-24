@@ -1,6 +1,16 @@
 <section class="contenedor-componente">
     <div class="cardview" >
-        <div class="cardview-body" >
+
+         <!--SOLO SE MUESTRA CUANDO NO HAY CLIENTES REGISTRADOS-->
+         <div class="cardview-content" *ngIf="!historialDisponibles">
+            <div class="contenedor-img">
+                <img src="https://r.loyverse.com/dashboard/images/clock-72pxfb893ac3f94621f44a16.svg" alt="">
+            </div>
+            <h1>No hay datos disponibles</h1>
+            <p>No hay movimientos de stock en el período de tiempo seleccionado.</p>
+      
+        </div>
+        <div class="cardview-body"  *ngIf="historialDisponibles">
             <div class="header-table">
                 <div>Fecha</div>
                 <div>Articulo</div>
@@ -14,7 +24,7 @@
                     <div> {{historial.fecha_hora}} </div>
                     <div> {{historial.nombre}} </div>
                     <div> {{historial.nombre_empleado}} </div>
-                    <div> {{historial.nombre_motivo}} </div>
+                    <div> <p> {{historial.nombre_motivo }} </p> <a style="color: var(--ColorSecundario);" *ngIf="historial.nombre_motivo == 'recibido'" (click)="irDetalleOrdenDeCompra(historial.referencia_id)"> #P010{{historial.referencia_id}}</a> </div>
                     <div> {{historial.ajuste}} </div>
                     <div> {{historial.stock_final}} </div>
                 </div>

@@ -1,1 +1,44 @@
-<p>dashboard-inventory-purchase works!</p>
+<section class="contenedor-componente">
+    <div class="cardview" >
+        
+        <!--SOLO SE MUESTRA CUANDO NO HAY CLIENTES REGISTRADOS-->
+        
+        <div class="cardview-content" *ngIf="!ordenesDeCompraDisponibles">
+            <div class="contenedor-img">
+                <img src="https://r.loyverse.com/dashboard/images/ic_description5c5ae598d055afeca204.svg" alt="">
+            </div>
+            <h1>Órdenes de compra</h1>
+            <p>Planea compras, envía pedidos a proveedores y mantén el registro de recibos de stock.</p>
+            <button class="l-btn-d" (click)="irAgregarOrdenDeCompra()">+ AÑADIR ORDEN DE COMPRA</button>
+        </div> 
+
+        <div class="cardview-header" *ngIf="ordenesDeCompraDisponibles">
+            <button class="l-btn-d" (click)="irAgregarOrdenDeCompra()">+ AÑADIR ORDEN DE COMPRA</button>
+        </div>
+
+        <div class="cardview-body" *ngIf="ordenesDeCompraDisponibles">
+            <div class="header-table">
+                <div>Órden de compra #</div>
+                <div>Fecha</div>
+                <div>Proveedor</div>
+                <div>Estado</div>
+                <div>Recibido</div>
+                <div>Esperado para</div>
+                <div>Total</div>
+
+            </div>
+            <div class="body-table">
+                <div class="contenedor-element-table" *ngFor="let orden of ordenDeCompra" (click)="irDetalleOrdenCompra(orden.id)">
+                    <div> P010{{orden.id}} </div>
+                    <div> {{orden.fecha_orden}} </div>
+                    <div> {{orden.proveedor}}  </div>
+                    <div> {{orden.estado}}</div>
+                    <div> {{orden.recibido}} de {{orden.total_articulos}}  </div>
+                    <div> {{orden.fecha_espera}}  </div>
+                    <div> ${{orden.total}} </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

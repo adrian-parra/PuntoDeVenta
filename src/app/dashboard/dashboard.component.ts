@@ -60,9 +60,7 @@ export class DashboardComponent implements OnInit {
 
 
     if(elemento.className == 'contenedor-perfil'){
-      console.log(elemento)
       elemento.classList.toggle('cardview-float-perfil-active')
-      console.log(elemento)
     }
 
     if (elemento.tagName == 'A') {

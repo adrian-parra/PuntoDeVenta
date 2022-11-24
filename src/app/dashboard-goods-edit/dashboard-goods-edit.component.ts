@@ -93,6 +93,7 @@ export class DashboardGoodsEditComponent implements OnInit {
      {
       id_articulo:idArticulo 
       ,id_empleado:parseInt(this.cookie.get('id_empleado') )
+      ,id_empresa:parseInt(this.cookie.get('id_nombre_empresa'))
       ,id_motivo:9,referencia_id:null
       ,ajuste:(stock - this.stockArticulo) 
       ,stock_final:stock
