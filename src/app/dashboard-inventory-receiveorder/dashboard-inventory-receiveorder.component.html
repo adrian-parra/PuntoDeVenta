@@ -1,0 +1,47 @@
+<section class="contenedor-componente">
+    <div class="cardview">
+
+        
+        <div class="cardview-header">
+            <h1>Artículos</h1>
+
+            <button class="l-btn-outline" (click)="recibirTodosLosArticulos()">MARCAR TODOS COMO RECIBIDO</button>
+        </div>
+
+       
+        
+        <div class="cardview-body">
+
+          
+            <div class="header-table">
+                <div>Artículo</div>
+                <div>Ordenado</div>
+                <div>Recibido</div>
+                <div>A recibir</div>
+            </div>
+            <div class="body-table">
+                <div class="contenedor-element-table" *ngFor="let detalleOrdenCompra of detallesOrdenCompra">
+                    <div> {{detalleOrdenCompra.articulo}} REF 100<p id="id_articulo">{{detalleOrdenCompra.id_articulo}}</p> <p id="id" style="display: none;">{{detalleOrdenCompra.id}}</p> </div>
+                    <div class="articulos-ordenados"> {{detalleOrdenCompra.cantidad}} </div>
+                    <div> {{detalleOrdenCompra.recibido}} </div>
+                    <div> <input type="text" id="articuloArecibir" value="0"> </div>
+                </div>
+            </div>
+
+            
+            
+
+        </div>
+
+        <form class="form">
+            <div class="contenedor-botones">
+                <button (click)="irDetalleOrdenCompra()" >CANCELAR</button>
+                <button (click)="actualizarOrdenComppra()">RECIBIR</button>
+
+            </div>
+        </form>
+        
+
+       
+    </div>
+</section>

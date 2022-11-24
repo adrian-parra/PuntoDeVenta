@@ -1,0 +1,35 @@
+.contenedor-componente .cardview {
+    max-width: 714px;
+    padding: 24px 0;
+}
+
+.form .contenedor-botones {
+    padding: 24px 0 0 24px;
+}
+
+.contenedor-componente .cardview .cardview-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.contenedor-componente .cardview .cardview-header h1 {
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.header-table {
+    grid-template-columns: 40% 20% 20% 20%;
+}
+.body-table .contenedor-element-table {
+    grid-template-columns: 40% 20% 20% 20%;
+}
+
+#articuloArecibir{
+    padding: var(padding);
+    background-color: transparent;
+    outline: none;
+    width: 50px;
+    border-bottom: var(--Border) solid var(--ColorSecundario);
+}
