@@ -14,8 +14,11 @@ import { DashboardGoodsEditComponent } from './dashboard-goods-edit/dashboard-go
 import { DashboardGoodsNewComponent } from './dashboard-goods-new/dashboard-goods-new.component';
 import { DashboardGoodsPriceComponent } from './dashboard-goods-price/dashboard-goods-price.component';
 import { DashboardInventoryAdjustmentComponent } from './dashboard-inventory-adjustment/dashboard-inventory-adjustment.component';
+import { DashboardInventoryCreateorderComponent } from './dashboard-inventory-createorder/dashboard-inventory-createorder.component';
 import { DashboardInventoryHistoryComponent } from './dashboard-inventory-history/dashboard-inventory-history.component';
+import { DashboardInventoryOrderdetailComponent } from './dashboard-inventory-orderdetail/dashboard-inventory-orderdetail.component';
 import { DashboardInventoryPurchaseComponent } from './dashboard-inventory-purchase/dashboard-inventory-purchase.component';
+import { DashboardInventoryReceiveorderComponent } from './dashboard-inventory-receiveorder/dashboard-inventory-receiveorder.component';
 import { DashboardInventorySuppliercreateComponent } from './dashboard-inventory-suppliercreate/dashboard-inventory-suppliercreate.component';
 import { DashboardInventorySuppliereditComponent } from './dashboard-inventory-supplieredit/dashboard-inventory-supplieredit.component';
 import { DashboardInventorySupplierlistComponent } from './dashboard-inventory-supplierlist/dashboard-inventory-supplierlist.component';
@@ -46,6 +49,12 @@ const routes: Routes = [
       {path:'inventory/adjustment' ,component:DashboardInventoryAdjustmentComponent},
       {path:'inventory/supplierlist' ,component:DashboardInventorySupplierlistComponent},
       {path:'inventory/history' ,component:DashboardInventoryHistoryComponent},
+      {path:'inventory/createorder' ,component:DashboardInventoryCreateorderComponent},
+      {path:'inventory/orderdetail/:id' ,component:DashboardInventoryOrderdetailComponent},
+      {path:'inventory/receiveorder/:id' ,component:DashboardInventoryReceiveorderComponent},
+
+
+
 
       {path:'employees/list' ,component:DashboardEmployeesListComponent},
       {path:'employees/createemployee' ,component:DashboardEmployeesCreateemployeeComponent},
