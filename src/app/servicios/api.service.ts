@@ -5,8 +5,10 @@ import { environment } from 'src/environments/environment';
 import { Articulo } from '../modelos/articulo';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
 import { Cliente } from '../modelos/cliente';
+import { DetalleOrdenDeCompra } from '../modelos/detalleOrdenCompra';
 import { Empleado } from '../modelos/empleado';
 import { HistorialInventario } from '../modelos/historialInventario';
+import { OrdenDeCompra } from '../modelos/ordenCompra';
 import { Proveedor } from '../modelos/proveedor';
 import { Usuario } from '../modelos/usuario';
 
@@ -171,10 +173,81 @@ export class ApiService {
     return this.http.get<HistorialInventario[]>(this.baseUrl + 'historial_de_inventario/');
   }
 
+  updateHistorialInventario(obj:any):Observable<any> {
+    return this.http.post<any>(
+      this.baseUrl + 'historial_de_inventario/?actualizar=1',
+      obj
+    )
+  }
+
 
   //FIN METODOS PARA TRABAJAR CON TABLE HISTORIAL DE INVENTARIO
 
   //******************************************************
+
+  //METODOS PARA TRABAJAR CON TABLE ORDEN DE COMPRA
+
+  addOrdenDeCompra(obj:any):Observable<any> {
+    return this.http.post<any>(this.baseUrl + 'orden_de_compra/?insertar=1' ,
+    obj);
+  }
+
+  getOrdenesDeCompra(): Observable<OrdenDeCompra[]> { 
+    return this.http.get<OrdenDeCompra[]>(this.baseUrl + 'orden_de_compra/');
+  }
+
+  getOrdenDeCompra(id:any):Observable<OrdenDeCompra>{
+    return this.http.get<OrdenDeCompra>(this.baseUrl +'orden_de_compra/?id='+id)
+  }
+
+  updateOrdenDeCompra(obj:any):Observable<any> {
+    return this.http.post<any>(
+      this.baseUrl + 'orden_de_compra/?actualizar=1',
+      obj
+    )
+  }
+
+  //FIN METODOS PARA TRABAJAR CON TABLE ORDEN DE COMPRA
+
+  
+  //******************************************************
+
+   //METODOS PARA TRABAJAR CON TABLE DETALLE ORDEN DE COMPRA
+  
+   addDetalleOrdenDeCompra(obj:any):Observable<any> {
+    return this.http.post<any>(this.baseUrl + 'orden_de_compra/?insertarDetalleOrdenDeCompra=1' ,
+    obj);
+  }
+
+  getDetallesOrdenDeCompra(id:any): Observable<DetalleOrdenDeCompra[]> { 
+    return this.http.get<DetalleOrdenDeCompra[]>(this.baseUrl + 'detalle_orden_de_compra/?id='+id);
+  }
+
+  updateDetalleOrdenDeCompra(obj:any):Observable<any> {
+    return this.http.post<any>(
+      this.baseUrl + 'detalle_orden_de_compra/?actualizar=1',
+      obj
+    )
+  }
+
+   //FIN METODOS PARA TRABAJAR CON TABLE DETALLE ORDEN DE COMPRA
+
+  //******************************************************
+  
+   //METODOS PARA TRABAJAR CON TABLE INVENTARIO
+    
+   updateInventario(obj:any):Observable<any> {
+    return this.http.post<any>(
+      this.baseUrl + 'inventario/?actualizar=1',
+      obj
+    )
+  }
+
+   //FIN METODOS PARA TRABAJAR CON TABLE INVENTARIO
+  //******************************************************
+  
+
+
 
 
 }
