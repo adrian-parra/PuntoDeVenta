@@ -22,7 +22,9 @@ import { DashboardInventoryReceiveorderComponent } from './dashboard-inventory-r
 import { DashboardInventorySuppliercreateComponent } from './dashboard-inventory-suppliercreate/dashboard-inventory-suppliercreate.component';
 import { DashboardInventorySuppliereditComponent } from './dashboard-inventory-supplieredit/dashboard-inventory-supplieredit.component';
 import { DashboardInventorySupplierlistComponent } from './dashboard-inventory-supplierlist/dashboard-inventory-supplierlist.component';
+import { DashboardReportAverageComponent } from './dashboard-report-average/dashboard-report-average.component';
 import { DashboardReportSalesComponent } from './dashboard-report-sales/dashboard-report-sales.component';
+import { DashboardSalesComponent } from './dashboard-sales/dashboard-sales.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { InicioSesionComponent } from './inicio-sesion/inicio-sesion.component';
 import { RegistroComponent } from './registro/registro.component';
@@ -35,6 +37,8 @@ const routes: Routes = [
   {path:'dashboard' ,component:DashboardComponent ,canActivate:[LoginGuard],
     children:[
       {path:'report/sales' ,component:DashboardReportSalesComponent},
+      {path:'report/average' ,component:DashboardReportAverageComponent},
+
 
       {path:'goods/price' ,component:DashboardGoodsPriceComponent},
       {path:'goods/categories' ,component:DashboardGoodsCategoriesComponent},
@@ -52,6 +56,9 @@ const routes: Routes = [
       {path:'inventory/createorder' ,component:DashboardInventoryCreateorderComponent},
       {path:'inventory/orderdetail/:id' ,component:DashboardInventoryOrderdetailComponent},
       {path:'inventory/receiveorder/:id' ,component:DashboardInventoryReceiveorderComponent},
+
+      {path:'sales' ,component:DashboardSalesComponent},
+
 
 
 
