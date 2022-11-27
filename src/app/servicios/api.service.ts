@@ -6,10 +6,12 @@ import { Articulo } from '../modelos/articulo';
 import { CategoriaArticulo } from '../modelos/categoriaArticulo';
 import { Cliente } from '../modelos/cliente';
 import { DetalleOrdenDeCompra } from '../modelos/detalleOrdenCompra';
+import { DetalleVenta } from '../modelos/detalleVenta';
 import { Empleado } from '../modelos/empleado';
 import { HistorialInventario } from '../modelos/historialInventario';
 import { OrdenDeCompra } from '../modelos/ordenCompra';
 import { Proveedor } from '../modelos/proveedor';
+import { Recibo } from '../modelos/reciboDeVenta';
 import { Usuario } from '../modelos/usuario';
 
 @Injectable({
@@ -246,7 +248,42 @@ export class ApiService {
    //FIN METODOS PARA TRABAJAR CON TABLE INVENTARIO
   //******************************************************
   
+  //METODOS PARA TRABAJAR CON TABLE VENTA
+  addVenta(obj:any):Observable<any> {
+    return this.http.post<any>(this.baseUrl + 'venta/?insertar=1' ,
+    obj);
+  }
 
+  updateStockArticuloInventario(obj:any):Observable<any> {
+    return this.http.post<any>(
+      this.baseUrl + 'venta/?actualizarStockArticulo=1',
+      obj
+    )
+  }
+
+  getRecibosVenta(id:any ,colaborador:any): Observable<Recibo[]> { 
+    return this.http.get<Recibo[]>(this.baseUrl + 'venta/?id='+id+'&colaborador='+colaborador);
+  }
+
+  
+  
+  //FIN METODOS PARA TRABAJAR CON TABLE VENTA
+  //******************************************************
+  
+  //METODOS PARA TRTABAJAR CON TABLE DETALLE VENTA
+
+  addDetalleVenta(obj:any):Observable<any> {
+    return this.http.post<any>(this.baseUrl + 'detalle_venta/?insertar=1' ,
+    obj);
+  }
+
+  getDetallesVenta(id:any): Observable<DetalleVenta[]> { 
+    return this.http.get<DetalleVenta[]>(this.baseUrl + 'detalle_venta/?id='+id);
+  }
+
+  //FIN METODOS PARA TRABAJAR CON TABLE DETALLE VENTA
+  //******************************************************
+  
 
 
 
