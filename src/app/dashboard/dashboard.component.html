@@ -24,13 +24,13 @@
                 <a (click)="cerrarSecion()">Cerrar sesión</a>
             </div>
         </div>
-        <div class="menu-item">
-            <div class="contenedor-enlases" routerLinkActive="menu-item-active" [routerLinkActiveOptions]="{exact:true}">
+        <div class="menu-item" *ngIf="rol == 'Propietario' || rol == 'Gerente' || rol == 'Administrador'">
+            <div class="contenedor-enlases" routerLinkActive="menu-item-active" [routerLinkActiveOptions]="{exact:true}" >
                 <a routerLinkActive="active-link" routerLink="/dashboard/report/sales">Resumen de ventas</a>
                 <a routerLink="">Ventas por articulo</a>
                 <a routerLink="">Ventas por categoria</a>
                 <a routerLink="">Ventas por empleado</a>
-                <a routerLink="">Recibos</a>
+                <a routerLinkActive="active-link" routerLink="/dashboard/report/average" (click)="irRecibos('all','all')" >Recibos</a>
             </div>
             <div id="eventClick" title="Informes">
                 <img src="https://r.loyverse.com/dashboard/images/ic_reportsa54b269abfd191558e00.svg" alt="">
@@ -38,7 +38,7 @@
             </div>
             
         </div>
-        <div class="menu-item">
+        <div class="menu-item" *ngIf="rol == 'Propietario' || rol == 'Gerente' || rol == 'Administrador'">
             <div class="contenedor-enlases" routerLinkActive="menu-item-active" [routerLinkActiveOptions]="{exact:true}">
                 <a routerLinkActive="active-link" routerLink="/dashboard/goods/price">Lista de articulos</a>
                 <a routerLinkActive="active-link" routerLink="/dashboard/goods/categories">Categorias</a>
@@ -49,10 +49,10 @@
             </div>
             
         </div>
-        <div class="menu-item">
+        <div class="menu-item" *ngIf="rol == 'Propietario' || rol == 'Gerente' || rol == 'Administrador'">
             <div class="contenedor-enlases" routerLinkActive="menu-item-active" [routerLinkActiveOptions]="{exact:true}">
                 <a routerLinkActive="active-link" routerLink="/dashboard/inventory/purchase">Órdenes de compra</a>
-                <a routerLinkActive="active-link" routerLink="/dashboard/inventory/adjustment">Ajustes de stock</a>
+               <!-- <a routerLinkActive="active-link" routerLink="/dashboard/inventory/adjustment">Ajustes de stock</a>-->
                 <a routerLinkActive="active-link" routerLink="/dashboard/inventory/supplierlist">Proveedores</a>
                 <a routerLinkActive="active-link" routerLink="/dashboard/inventory/history">Historial de inventario</a>
 
@@ -62,7 +62,7 @@
                 <h1 *ngIf="menuDesplegado">Administración de inventario</h1>
             </div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item" *ngIf="rol == 'Propietario' || rol == 'Administrador'">
             <div class="contenedor-enlases" routerLinkActive="menu-item-active" [routerLinkActiveOptions]="{exact:true}">
                 <a routerLinkActive="active-link" routerLink="/dashboard/employees/list">Lista de empleados</a>
                 
@@ -72,7 +72,7 @@
                 <h1 *ngIf="menuDesplegado">Empleados</h1>
             </div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item" *ngIf="rol == 'Propietario' || rol == 'Gerente' || rol == 'Administrador' || rol =='Cajero'">
             <div class="contenedor-enlases" routerLinkActive="menu-item-active" [routerLinkActiveOptions]="{exact:true}">
                 <a routerLinkActive="active-link" routerLink="/dashboard/clients/database">Lista de clientes</a>
             </div>
@@ -81,9 +81,10 @@
                 <h1 *ngIf="menuDesplegado">Clientes</h1>
             </div>
         </div>
-        <div class="menu-item">
+        <div class="menu-item" *ngIf="rol == 'Propietario' || rol == 'Gerente' || rol == 'Administrador' || rol== 'Cajero'">
             <div class="contenedor-enlases" routerLinkActive="menu-item-active" [routerLinkActiveOptions]="{exact:true}">
-                <a routerLinkActive="active-link" routerLink="/dashboard/clients/database">Realizar venta</a>
+                <a routerLinkActive="active-link" routerLink="/dashboard/sales">Realizar venta</a>
+                <a routerLinkActive="active-link" routerLink="/dashboard/report/average" (click)="irRecibos('all',idEmpleado)" >Recibos</a>
             </div>
             <div id="eventClick" title="Ventas">
                 <img src="../../assets/dashboard-ventas-icon.svg" alt="">

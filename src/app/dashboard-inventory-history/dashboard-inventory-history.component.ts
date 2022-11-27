@@ -39,4 +39,10 @@ export class DashboardInventoryHistoryComponent implements OnInit {
       this.router.navigate(['dashboard/inventory/orderdetail',id])
   }  
 
+
+  irTicket(id:number ,colaborador:string){
+      this.router.navigate(['dashboard/report/average'] ,{queryParams:{id:id,colaborador:colaborador}})
+      
+  }
+
 }

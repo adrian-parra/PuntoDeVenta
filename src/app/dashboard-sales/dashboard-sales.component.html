@@ -1,1 +1,108 @@
-<p>dashboard-sales works!</p>
+<section class="contenedor-componente">
+
+    <!--CARDVIEW FLOTANTE -->
+    <div class="cardvie-flotante">
+
+
+        <div class="cardview-pago">
+            <div class="cardview-header">
+                <h1>{{totalAcumuladoEnArticulo}}</h1>
+                <p>Cantidad total a pagar</p>
+            </div>
+            <div class="cardview-body">
+                <form class="form" [formGroup]="pagoFormRegistro" (ngSubmit)="addRrgistroVenta()">
+
+                    <div class="contenedor-input">
+                        <input type="number" placeholder=" " formControlName="efectivo_recibido"
+                            value="{{totalAcumuladoEnArticulo}}">
+                        <label for="">Efectivo recibido</label>
+                        <label for="">Ingrese</label>
+                        <p class="smsError"
+                            *ngIf="pagoFormRegistro.get('efectivo_recibido')?.touched && pagoFormRegistro.get('efectivo_recibido')?.errors?.['required']">
+                            El campo no puede estar en blanco</p>
+
+                        <p class="smsError"
+                            *ngIf="pagoFormRegistro.get('efectivo_recibido')?.touched && pagoFormRegistro.get('efectivo_recibido')?.errors?.['min']">
+                            Ingrese Efectivo valido</p>
+                    </div>
+
+                    <div class="contenedor-input">
+                        <select formControlName="tipo_pago">
+                            <option value="1">Efectivo</option>
+                            <option value="2">Tarjeta</option>
+
+                        </select>
+                        <label for="">Tipo de pago</label>
+                    </div>
+
+                    <button class="l-btn-d" type="submit">NUEVA VENTA</button>
+
+                    <button class="btn-cerra-float" type="button" (click)="abrirOCerrarCardviewPago()">X</button>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="cardview-ticket">
+            <div class="contenedor-element-ticket" *ngFor="let detalleVenta of detallesVenta">
+                <div>
+                    <p>{{detalleVenta.nombre_articulo}}</p> x <input id="inputCantidad"
+                        (change)="masCantidadArticulo($event ,detalleVenta)" type="number"
+                        value="{{detalleVenta.cantidad}}">
+                </div>
+                <div>
+                    <p>${{detalleVenta.total}}</p> <button class="btn-delete-articulo"
+                        (click)="eliminarArticuloDeTicket(detalleVenta.id_articulo)">X</button>
+                </div>
+            </div>
+
+            <div class="contenedor-element-total">
+                <div>
+                    <p>Total</p>
+                </div>
+                <div>
+                    <p>$ {{totalAcumuladoEnArticulo}}</p>
+                </div>
+            </div>
+
+            <div class="contenedor-buton">
+                <button class="l-btn-d" (click)="abrirOCerrarCardviewPago()">COBRAR</button>
+            </div>
+
+            <button class="btn-cerra-float" (click)="cerrarOrAbrirCardviewTicket()">X</button>
+
+        </div>
+    </div>
+    <div class="cardview">
+
+        <div class="cardview-header">
+            <div class="contenedor-ticket">
+                <h1>Ticket</h1>
+                <div (click)="cerrarOrAbrirCardviewTicket()">
+                    <p>{{cantidadArticulosTicket}}</p>
+                </div>
+            </div>
+            <div class="contenedor-input-search">
+                <input type="text">
+            </div>
+        </div>
+        <div class="cardview-body">
+            <div class="header-table">
+                <div>__</div>
+                <div>Artículo</div>
+                <div>Precio</div>
+
+            </div>
+            <div class="body-table">
+                <div class="contenedor-element-table" *ngFor="let articulo of articulos"
+                    (click)="agregarATicket(articulo)">
+                    <div></div>
+                    <div>{{articulo.nombre}}</div>
+                    <div>${{articulo.precio}}</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

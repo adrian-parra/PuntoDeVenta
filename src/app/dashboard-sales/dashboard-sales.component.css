@@ -1,0 +1,207 @@
+
+.contenedor-componente {
+    position: relative;
+}
+.header-table {
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+.body-table .contenedor-element-table {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.contenedor-componente .cardview .cardview-header {
+    
+    display: flex;
+    flex-direction: column;
+}
+.contenedor-componente .cardview .cardview-header .contenedor-ticket {
+   margin-top: 24px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 5px;
+}
+.contenedor-componente .cardview .cardview-header .contenedor-ticket h1 {
+    font-size: var(--SizeTitulo);
+    color: var(--ColorDescripcion);
+
+}
+.contenedor-componente .cardview .cardview-header .contenedor-ticket div {
+   background-color: transparent;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: var(--Border) solid var(--ColorSecundario);
+    color: var(--ColorSecundario);
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s;
+}
+.contenedor-componente .cardview .cardview-header .contenedor-ticket div:hover {
+    background-color: var(--ColorSecundario);
+    color: white;
+}
+
+
+/*STYLE PARA CARDVIEW MODAL FONDO */
+.cardvie-flotante {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:calc(100% - 72px);
+    height:calc(100%);
+    background-color: var(--ColorFondo);
+    z-index: 100001;
+    margin: 0 0 0px 72px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    overflow: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s;
+    
+}
+
+/*FONDO DE CARDVIEW FLOTANTE RESPONSIBE*/
+@media (max-width:600px) {
+    .cardvie-flotante {
+        margin: 0;
+        width: 100%;
+    }
+}
+
+.cerrar-cardview-flotante {
+    opacity: 1 !important;
+    pointer-events: all !important;
+}
+
+.cardvie-flotante .cardview-ticket ,
+.cardvie-flotante .cardview-pago {
+    
+    margin: 24px;
+    padding: 44px 24px 24px 24px;
+    background-color: var(--ColorPrincipal);
+  box-shadow: 0 2px 5px rgb(0 0 0 / 15%);
+  border-radius: var(--BorderRadius);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  transition: all .3s;
+
+}
+
+/*CARDVIEW FLOTANTES RESPONSIBE */
+@media (max-width:600px) {
+    .cardvie-flotante .cardview-ticket ,
+.cardvie-flotante .cardview-pago {
+    width: 100%;
+    margin: 0;
+    max-width: none;
+}
+    
+}
+
+
+
+.cardvie-flotante .cardview-ticket .contenedor-element-ticket {
+    border-bottom: var(--Border) solid var(--ColorDescripcion);
+    padding-bottom: 5px;
+}
+
+.cardvie-flotante .cardview-ticket .contenedor-element-ticket ,
+.cardvie-flotante .cardview-ticket .contenedor-element-total {
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.cardvie-flotante .cardview-ticket .contenedor-element-total {
+    font-weight: 600;
+}
+.cardvie-flotante .cardview-ticket .contenedor-element-ticket div {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.cardvie-flotante .cardview-ticket .contenedor-buton {
+}
+.cardvie-flotante .cardview-ticket .contenedor-buton button {
+    width: 100%;
+}
+
+#inputCantidad {
+    width: 40px;
+    background-color: transparent;
+    border-bottom: var(--Border) solid var(--ColorSecundario);
+}
+
+
+/*btn float*/
+.btn-cerra-float {
+    position: absolute;
+    top: 14px;
+    left: 24px;
+    width: 23px;
+    height: 23px;
+    border-radius: var(--BorderRadius);
+    background-color: var(--ColorDanger);
+    color: white;
+    cursor: pointer;
+
+}
+
+/*btn eliminar articulo de ticket */
+.btn-delete-articulo {
+    width: 23px;
+    height: 23px;
+    border-radius: var(--BorderRadius);
+    background-color: var(--ColorDanger);
+    color: white;
+    cursor: pointer;
+}
+
+/*CARDVIEW PAGO */
+.cardview-pago {
+    opacity: 0;
+    pointer-events: none;
+    position: fixed !important;
+}
+.cardview-pago .cardview-header {
+   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.cardview-pago .cardview-header h1 {
+    font-size: 34px;
+}
+.cardview-pago .cardview-header p {
+    font-size:calc(var(--ColorDescripcion) + 2px);
+    color: var(--ColorDescripcion);
+    font-weight: 400;
+}
+
+
+/*CLASS PARA CERRA CARDVIEW TICKET*/
+.hide-and-show-ticket {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    position: fixed !important
+}
+
+.hide-and-show-pago {
+    opacity: 1 !important;
+    pointer-events: all !important;
+    position: relative !important
+}

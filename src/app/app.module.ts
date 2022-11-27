@@ -41,6 +41,7 @@ import { DashboardInventoryCreateorderComponent } from './dashboard-inventory-cr
 import { DashboardInventoryOrderdetailComponent } from './dashboard-inventory-orderdetail/dashboard-inventory-orderdetail.component';
 import { DashboardInventoryReceiveorderComponent } from './dashboard-inventory-receiveorder/dashboard-inventory-receiveorder.component';
 import { DashboardSalesComponent } from './dashboard-sales/dashboard-sales.component';
+import { DashboardReportAverageComponent } from './dashboard-report-average/dashboard-report-average.component';
 
 @NgModule({
   declarations: [
@@ -72,6 +73,7 @@ import { DashboardSalesComponent } from './dashboard-sales/dashboard-sales.compo
     DashboardInventoryOrderdetailComponent,
     DashboardInventoryReceiveorderComponent,
     DashboardSalesComponent,
+    DashboardReportAverageComponent,
  
   ],
   imports: [

@@ -16,7 +16,10 @@ export class DashboardComponent implements OnInit {
   correo?:string
   rol?:string
 
-
+  idEmpleado:string = ''
+  
+  
+  
   constructor(private sharedTitleService: SharedTitleComponentService ,private cookie:CookieService ,private router:Router) {
     sharedTitleService.changeEmitted$.subscribe((tituloComponente) => {
       this.tituloComponente = tituloComponente;
@@ -24,6 +27,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.idEmpleado = this.cookie.get('id_empleado')
     this.correo = this.cookie.get('correo')
     this.rol = this.cookie.get('nombre_rol')
   }
@@ -112,4 +116,8 @@ export class DashboardComponent implements OnInit {
       }
     }
   }
+  irRecibos(id:string,colaborador:string){
+      this.router.navigate(['/dashboard/report/average'] ,{queryParams:{id:id,colaborador:colaborador}})
+  }
+  
 }

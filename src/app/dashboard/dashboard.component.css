@@ -60,6 +60,16 @@
     transition: all .3s;
 }
 
+/*ASIDE RESPONSIBE */
+@media (max-width:600px) {
+    .app-dashboard aside {
+        /*width: 72px;*/
+        width: 0px;
+        overflow: hidden;
+       
+    }   
+}
+
 .espandible-menu {
     width: 320px !important;
 }

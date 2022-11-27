@@ -24,7 +24,12 @@
                     <div> {{historial.fecha_hora}} </div>
                     <div> {{historial.nombre}} </div>
                     <div> {{historial.nombre_empleado}} </div>
-                    <div> <p> {{historial.nombre_motivo }} </p> <a style="color: var(--ColorSecundario);" *ngIf="historial.nombre_motivo == 'recibido'" (click)="irDetalleOrdenDeCompra(historial.referencia_id)"> #P010{{historial.referencia_id}}</a> </div>
+                    <div> 
+                        <p> {{historial.nombre_motivo }} </p> 
+                        <a style="color: var(--ColorSecundario);" *ngIf="historial.nombre_motivo == 'recibido'" (click)="irDetalleOrdenDeCompra(historial.referencia_id)"> #P010{{historial.referencia_id}}</a> 
+                        <a style="color: var(--ColorSecundario);" *ngIf="historial.nombre_motivo == 'vendido'" (click)="irTicket(historial.referencia_id ,'all')"> 1-100{{historial.referencia_id}}</a> 
+                        
+                    </div>
                     <div> {{historial.ajuste}} </div>
                     <div> {{historial.stock_final}} </div>
                 </div>
