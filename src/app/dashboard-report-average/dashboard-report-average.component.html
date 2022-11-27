@@ -1,0 +1,82 @@
+<section class="contenedor-componente">
+    <div class="cardview" >
+
+        <!--CONTENEDOR TICKET FLOTANTE-->
+        <div class="contenedor-ticket" *ngIf="reciboVenta != null">
+            <div class="nav">
+                <button class="l-btn-outline" (click)="cerrarTicket()">X</button>
+            </div>
+            <div class="header">
+                <h1>${{reciboVenta.total}}</h1>
+                <p>Total</p>
+            </div>
+            <div class="body">
+                <div class="conetenedor-info-empleado">
+                    Cajero:{{reciboVenta.empleado}}
+                </div>
+
+                <div class="contenedor-detalle-venta" *ngFor="let detalleVenta of detallesVenta">
+                    <div>
+                        <p>{{detalleVenta.nombre_articulo}}</p>
+                       <p> {{detalleVenta.cantidad}} x ${{detalleVenta.costo}} </p>
+                    </div>
+
+                    <div>
+                        ${{detalleVenta.total}}
+                    </div>
+                </div>
+
+                <div class="contenedor-total">
+                    <div>
+                       <p>Total</p>
+                       <p>{{reciboVenta.tipo_pago}}</p>
+                       <p>Cambio</p>
+                    </div>
+                    <div>
+                        <p>${{reciboVenta.total}}</p>
+                        <p>${{obtenerEfectivo(reciboVenta)}}</p>
+                        <p>${{reciboVenta.cambio}}</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer">
+                <p>{{reciboVenta.fecha}}</p>
+                    <p>N. 1-100{{reciboVenta.id}}</p>
+            </div>
+        </div>
+
+         <!--SOLO SE MUESTRA CUANDO NO HAY CLIENTES REGISTRADOS-->
+         
+         <div class="cardview-content" *ngIf="!ventasDisponibles">
+            <div class="contenedor-img">
+                <img src="https://r.loyverse.com/dashboard/images/ic_receipt_24pxcf0512ed41dc39393d00.svg" alt="">
+            </div>
+            <h1>No hay datos disponibles</h1>
+            <p>No hay ventas en el período de tiempo seleccionado.</p>
+      
+        </div>
+        <div class="cardview-body"  *ngIf="ventasDisponibles">
+            <div class="header-table">
+                <div>N. Recibo</div>
+                <div>Fecha</div>
+                <div>Empleado</div>
+                <div>Cliente</div>
+                <div>Tipo</div>
+                <div>Total</div>
+            </div>
+            <div class="body-table">
+                <div class="contenedor-element-table"  *ngFor="let recibo of recibosVenta" (click)="llenarTicket(recibo)">
+                    <div> 1-100{{recibo.id}} </div>
+                    <div> {{recibo.fecha}} </div>
+                    <div> {{recibo.empleado}} </div>
+                    <div> {{recibo.cliente}} </div>
+                    <div> {{recibo.tipo_venta}} </div>
+                    <div> ${{recibo.total}} </div>
+
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

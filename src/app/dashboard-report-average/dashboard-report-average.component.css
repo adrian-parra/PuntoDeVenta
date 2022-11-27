@@ -1,0 +1,100 @@
+.contenedor-componente 
+.cardview {
+    max-width: none;
+}
+
+
+
+.header-table {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+.body-table .contenedor-element-table {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+
+.contenedor-ticket {
+    background-color:var(--ColorPrincipal);
+    position: fixed;
+    width: 400px;
+    top: -26px;
+    right: -24px;
+    z-index: 1000;
+    height: calc(100vh - 46px);
+    
+}
+.contenedor-ticket .nav {
+   border-bottom: var(--Border) solid #eaeaea;
+   padding: var(--Padding) 5px;
+   
+}
+
+.contenedor-ticket .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 25px 0;
+    gap: 5px;
+    border-bottom: var(--Border) solid #eaeaea;
+}
+
+.contenedor-ticket .header h1 {
+    font-size: 34px;
+    font-weight: 600;
+}
+
+.contenedor-ticket .body .conetenedor-info-empleado {
+    
+    margin: 0 15px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    border-bottom: var(--Border) solid #eaeaea;
+    font-size: calc(var(--SizeDescripcion) + 2px);
+
+}
+
+.contenedor-ticket .body .contenedor-detalle-venta {
+    
+    margin: 0 15px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--Border) solid #eaeaea;
+    font-size: calc(var(--SizeDescripcion) + 2px);
+
+    
+}
+
+.contenedor-ticket .body .contenedor-total{
+    margin: 0 15px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--Border) solid #eaeaea;
+    font-size: calc(var(--SizeDescripcion) + 2px);
+    
+}
+.contenedor-ticket .body .contenedor-total div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contenedor-ticket .footer {
+    margin: 0 15px;
+    padding: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #CECECE;
+    font-size: calc(var(--SizeDescripcion) + 2px);
+}
+
