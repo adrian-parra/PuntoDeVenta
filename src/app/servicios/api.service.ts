@@ -28,11 +28,16 @@ export class ApiService {
   }
 
   addUsuario(obj: any): Observable<any> {
-    return this.http.post(this.baseUrl + 'usuario/?insertar=1', obj);
+
+    
+   // const headers = { 'content-type': 'application/json' ,'X-Requested-With': 'XMLHttpRequest'}  
+    
+    return this.http.post(this.baseUrl + 'usuario/index.php?insertar=1', obj);
   }
   vericarSecionUsuario(obj: any): Observable<Usuario> {
+   // const headers = { 'content-type': 'application/json'}  
     return this.http.post<Usuario>(
-      this.baseUrl + 'usuario/?verificar_sesion',
+      this.baseUrl + 'usuario/index.php?verificar_sesion',
       obj
     );
   }
@@ -155,7 +160,7 @@ export class ApiService {
 
   updateProveedor(obj:any):Observable<any> {
     return this.http.post<Proveedor>(
-      this.baseUrl + 'Proveedor/?actualizar=1',
+      this.baseUrl + 'proveedor/?actualizar=1',
       obj
     )
   }
