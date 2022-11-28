@@ -47,7 +47,7 @@ export class InicioSesionComponent implements OnInit {
         this.cookie.set('nombre_empleado',r.nombre)
 
         
-        this.router.navigate(['dashboard/report/sales']);
+        this.router.navigate(['/dashboard/report/average']);
       }
 
     })
