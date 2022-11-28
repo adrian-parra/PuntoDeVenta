@@ -75,8 +75,11 @@ export class DashboardInventoryReceiveorderComponent implements OnInit {
         'div input'
       ) as HTMLInputElement;
 
+      //ARTICULOS YA RECIBIDOS PREVIAMENTE
+      let pCantidadRecibidap = contenedor.querySelector('div #cantidadRecibida') as HTMLInputElement
+
       //CONTEO DE ARTICULOS RECIBIDOS
-      contArticulosRecibidos += parseInt(inputArticulosRecibidos.value);
+      contArticulosRecibidos += (parseInt(inputArticulosRecibidos.value) + parseInt(pCantidadRecibidap.innerText));
     });
 
     if (contArticulosRecibidos > contArticulosOrdenados) {
@@ -85,6 +88,9 @@ export class DashboardInventoryReceiveorderComponent implements OnInit {
     }
 
     contenedorDetallesArticulos.forEach((contenedor) => {
+      let pCantidadRecibida = contenedor.querySelector('div #cantidadRecibida') as HTMLInputElement
+
+
       let divArticulosOrdenados = contenedor.querySelector(
         '.articulos-ordenados'
       ) as HTMLInputElement;
@@ -98,7 +104,9 @@ export class DashboardInventoryReceiveorderComponent implements OnInit {
         'div #id_articulo'
       ) as HTMLInputElement;
 
-      let data = { recibido: inputArticulosRecibidos.value, id: id.innerText };
+      let totalArticulosRecibidos = parseInt(inputArticulosRecibidos.value) + parseInt(pCantidadRecibida.innerText)
+
+      let data = { recibido: totalArticulosRecibidos, id: id.innerText };
 
       this.apiService.updateDetalleOrdenDeCompra(data).subscribe();
 

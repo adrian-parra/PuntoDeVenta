@@ -23,7 +23,7 @@
                 <div class="contenedor-element-table" *ngFor="let detalleOrdenCompra of detallesOrdenCompra">
                     <div> {{detalleOrdenCompra.articulo}} REF 100<p id="id_articulo">{{detalleOrdenCompra.id_articulo}}</p> <p id="id" style="display: none;">{{detalleOrdenCompra.id}}</p> </div>
                     <div class="articulos-ordenados"> {{detalleOrdenCompra.cantidad}} </div>
-                    <div> {{detalleOrdenCompra.recibido}} </div>
+                    <div> <p id="cantidadRecibida">{{detalleOrdenCompra.recibido}}</p> </div>
                     <div> <input type="text" id="articuloArecibir" value="0"> </div>
                 </div>
             </div>
