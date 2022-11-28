@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false ,
-  API:'http://localhost/api_punto_venta/'
+   API:'http://localhost/api_punto_venta/'
+  //API:'https://loalangular.000webhostapp.com/api_punto_venta/'
 };
 
 /*
