@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true ,
+  API:'https://loalangular.000webhostapp.com/api_punto_venta/'
 };
