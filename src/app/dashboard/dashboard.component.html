@@ -26,10 +26,11 @@
         </div>
         <div class="menu-item" *ngIf="rol == 'Propietario' || rol == 'Gerente' || rol == 'Administrador'">
             <div class="contenedor-enlases" routerLinkActive="menu-item-active" [routerLinkActiveOptions]="{exact:true}" >
-                <a routerLinkActive="active-link" routerLink="/dashboard/report/sales">Resumen de ventas</a>
+               <!-- <a routerLinkActive="active-link" routerLink="/dashboard/report/sales">Resumen de ventas</a>
+                
                 <a routerLink="">Ventas por articulo</a>
                 <a routerLink="">Ventas por categoria</a>
-                <a routerLink="">Ventas por empleado</a>
+                <a routerLink="">Ventas por empleado</a>-->
                 <a routerLinkActive="active-link" routerLink="/dashboard/report/average" (click)="irRecibos('all','all')" >Recibos</a>
             </div>
             <div id="eventClick" title="Informes">
