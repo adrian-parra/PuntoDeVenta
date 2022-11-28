@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from '../servicios/api.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class RegistroComponent implements OnInit {
   });
 
 
-  constructor(public apiService:ApiService) { }
+  constructor(public apiService:ApiService ,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -29,8 +30,10 @@ export class RegistroComponent implements OnInit {
   
     this.apiService.addUsuario(this.usuarioForm.value).subscribe((r:any) => {
       if(r['0'] == true){
-        this.usuarioForm.reset
+        this.usuarioForm.reset()
         alert("Cuenta creada")
+        
+        this.router.navigate(['login'])
       }else {
         alert(r['2'])
       }
