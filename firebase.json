@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/punto_de_venta",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}

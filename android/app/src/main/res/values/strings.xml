@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">punto_de_venta</string>
+    <string name="title_activity_main">punto_de_venta</string>
+    <string name="package_name">com.puntoventa.app</string>
+    <string name="custom_url_scheme">com.puntoventa.app</string>
+</resources>
